@@ -40,7 +40,7 @@ def print_cluster(cluster_points):
 def plot_clusters(X, y_kmeans, centers):
     """Plot the clusters and their centers."""
     plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap="viridis")
-    plt.scatter(centers[:, 0], centers[:, 1], c="red", s=200, alpha=0.75, marker="*")
+    plt.scatter(centers[:, 0], centers[:, 1], c="red", s=200, alpha=0.75, marker=".")
     plt.xlabel("Feature 1")
     plt.ylabel("Feature 2")
     plt.title("K-Means Clustering")
