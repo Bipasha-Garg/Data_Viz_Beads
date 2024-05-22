@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
 
 
 def apply_kmeans(X, clusters):
@@ -44,7 +45,7 @@ def plot_clusters(X, y_kmeans, centers):
 def calculate_and_find_best_p(cluster):
     """Calculate the l_p norms for a range of p values and find the best p value for a given cluster."""
     norms = []
-    p_values = np.arange(1, 1000, 0.1)  # Generate p values from 1 to 100 with step 0.1
+    p_values = np.arange(1, 100.5, 0.1)  # Generate p values from 1 to 100 with step 0.1
 
     # Calculate l_p norms for each p value in the specified range
     for p in p_values:
@@ -151,8 +152,12 @@ if __name__ == "__main__":
     iris = load_iris()
     X_iris = iris.data
 
-    # Apply KMeans clustering to the dataset
-    y_kmeans, centers = apply_kmeans(X_iris, clusters)
+    # Normalize the dataset
+    scaler = StandardScaler()
+    X_iris_normalized = scaler.fit_transform(X_iris)
+
+    # Apply KMeans clustering to the normalized dataset
+    y_kmeans, centers = apply_kmeans(X_iris_normalized, clusters)
 
     # Store and print clusters
     cluster_points = store_and_print_clusters(X_iris, y_kmeans, clusters)
@@ -166,11 +171,11 @@ if __name__ == "__main__":
         )
 
     # Plot clusters (using the first two dimensions for visualization)
-    plot_clusters(X_iris[:, :2], y_kmeans, centers[:, :2])
+    plot_clusters(X_iris_normalized[:, :2], y_kmeans, centers[:, :2])
 
     # Plot clusters with different shapes based on p and lp norm
     plot_cluster_shapes(
-        X_iris[:, :2],
+        X_iris_normalized[:, :2],
         y_kmeans,
         centers[:, :2],
         cluster_points,
