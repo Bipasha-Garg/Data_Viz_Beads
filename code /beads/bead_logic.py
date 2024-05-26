@@ -72,9 +72,19 @@ def plot_beads(beads, bead_analysis_results, cluster_num):
 def plot_bead_boundaries(beads, bead_analysis_results):
     """Plot the boundaries of beads based on their lp norm values."""
     plt.figure(figsize=(8, 6))
-    for center, (best_p, best_norm) in zip(beads[1], bead_analysis_results):
+
+    # Ensure beads and bead_centers are numpy arrays
+    centroids = np.array(beads[1])
+    bead_positions = np.array(beads[1])
+
+    for center, (best_p, best_norm) in zip(centroids, bead_analysis_results):
+        # Ensure center is a 1D array
+        center = np.asarray(center)
+
+        # Determine the shape based on best_p value
         shape = get_shape(best_p)
         adjusted_norm = float(best_norm) * 0.5
+
         if shape == "D":
             diamond = np.array(
                 [
@@ -84,12 +94,19 @@ def plot_bead_boundaries(beads, bead_analysis_results):
                     [center[0], center[1] + adjusted_norm],
                 ]
             )
+            print(f"Diamond vertices: {diamond}")  # Debug statement
             boundary = Polygon(diamond, edgecolor="blue", facecolor="none")
         elif shape == "o":
+            print(
+                f"Circle center: {center}, radius: {adjusted_norm}"
+            )  # Debug statement
             boundary = Circle(
                 center, radius=adjusted_norm, edgecolor="green", facecolor="none"
             )
         else:
+            print(
+                f"Rectangle bottom left: {(center[0] - adjusted_norm, center[1] - adjusted_norm)}, width and height: {2 * adjusted_norm}"
+            )  # Debug statement
             boundary = Rectangle(
                 (center[0] - adjusted_norm, center[1] - adjusted_norm),
                 2 * adjusted_norm,
@@ -99,17 +116,26 @@ def plot_bead_boundaries(beads, bead_analysis_results):
             )
         plt.gca().add_patch(boundary)
 
-        # Calculate distance from cluster centroid to closest bead
-        closest_bead_index = np.argmin(np.linalg.norm(beads[1] - center, axis=1))
-        closest_bead = beads[1][closest_bead_index]
-        distance_to_closest_bead = np.linalg.norm(center - closest_bead)
+        # Step 1: Identify the closest bead to the centroid
+        distances = np.linalg.norm(bead_positions - center, axis=1)
+        closest_bead_index = np.argmin(distances)
+        closest_bead = bead_positions[closest_bead_index]
 
-        # Compute the position of the bead in axes-division of space
+        # Step 2: Compute distance to cluster centroid
+        distance_to_closest_bead = distances[closest_bead_index]
+
+        # Step 3: Obtain radius of the closest bead
+        ric = adjusted_norm
+
+        # Step 4: Obtain the position of the bead in axes-division of space
         dim_values = (closest_bead > center).astype(int)
         bit_vector = int("".join(map(str, dim_values)), 2)
-        sector_angle = 2 * np.pi * bit_vector / (2 * len(dim_values))
 
-        # Obtain lp-norm information of bead
+        # Step 5: Calculate the sector angle
+        num_dimensions = len(center)
+        sector_angle = 2 * np.pi * bit_vector / (2**num_dimensions)
+
+        # Step 6: Place the bead in the corresponding sector in the 2D plot
         bx = distance_to_closest_bead * np.cos(sector_angle)
         by = distance_to_closest_bead * np.sin(sector_angle)
 
@@ -119,11 +145,29 @@ def plot_bead_boundaries(beads, bead_analysis_results):
             center[0] + bx, center[1] + by, marker=shape_marker, s=50, c="black"
         )
 
-    plt.scatter(beads[1][:, 0], beads[1][:, 1], c="red", s=200, alpha=0.75, marker=".")
+    # Plot all bead positions in red
+    plt.scatter(
+        bead_positions[:, 0],
+        bead_positions[:, 1],
+        c="red",
+        s=200,
+        alpha=0.75,
+        marker=".",
+    )
     plt.xlabel("Feature 1")
     plt.ylabel("Feature 2")
     plt.title("Bead Boundaries based on lp norm")
     plt.show()
+
+
+def get_shape(p):
+    """Return shape identifier based on p value."""
+    if p <= 1:
+        return "D"  # Diamond
+    elif p < 2.5:
+        return "o"  # Circle
+    else:
+        return "s"  # Square
 
 
 def get_shape_marker(p):
