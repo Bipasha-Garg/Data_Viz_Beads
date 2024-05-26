@@ -35,13 +35,18 @@ if __name__ == "__main__":
     plot_clusters(X, y_kmeans, centers)
 
     # Analyze and plot each cluster's beads separately
-    # Analyze and plot each cluster's beads separately
-    for i, (beads, bead_centers) in enumerate(all_beads):
-        bead_analysis_results = analyze_beads([(beads, bead_centers)])
-        # print p and lp norm value
-        print(f"Cluster {i + 1} Beads:")
-        for j, result in enumerate(bead_analysis_results[0]):
-            best_p, best_norm = result
-            print(f"  Bead {j + 1}: Best p = {best_p}, Best l_p norm = {best_norm}")
-        plot_beads((beads, bead_centers), bead_analysis_results[0], i + 1)
-        plot_bead_boundaries((beads, bead_centers), bead_analysis_results[0])
+for i, (beads, bead_centers) in enumerate(all_beads):
+    bead_analysis_results = analyze_beads([(beads, bead_centers)])
+    # Print p and lp norm value
+    print(f"Cluster {i + 1} Beads:")
+    for j, result in enumerate(bead_analysis_results[0]):
+        best_p, best_norm = result
+        print(f"  Bead {j + 1}: Best p = {best_p}, Best l_p norm = {best_norm}")
+
+    # Assuming bead_centers[i] gives the center of the current cluster
+    cluster_center = bead_centers
+
+    plot_beads((beads, bead_centers), bead_analysis_results[0], i + 1)
+    plot_bead_boundaries(
+        (beads, bead_centers), bead_analysis_results[0], cluster_center
+    )

@@ -69,13 +69,13 @@ def plot_beads(beads, bead_analysis_results, cluster_num):
     plt.show()
 
 
-def plot_bead_boundaries(beads, bead_analysis_results):
+def plot_bead_boundaries(beads, bead_analysis_results, cluster_centers):
     """Plot the boundaries of beads based on their lp norm values."""
     plt.figure(figsize=(8, 6))
 
     # Ensure beads and bead_centers are numpy arrays
-    centroids = np.array(beads[1])
     bead_positions = np.array(beads[1])
+    centroids = np.array(cluster_centers)  # Directly using the passed cluster_centers
 
     for center, (best_p, best_norm) in zip(centroids, bead_analysis_results):
         # Ensure center is a 1D array
