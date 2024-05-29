@@ -1,9 +1,10 @@
-# cluster_logic.py
-
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
-from matplotlib.patches import Polygon
+from sklearn.decomposition import PCA
+from matplotlib.patches import Polygon, Circle, Rectangle
+import seaborn as sns
 
 
 def apply_kmeans(X, clusters):
@@ -24,12 +25,18 @@ def store_and_print_clusters(X, y_kmeans, clusters):
 
 
 def plot_clusters(X, y_kmeans, centers):
-    """Plot the clusters and their centers."""
-    plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap="viridis")
-    plt.scatter(centers[:, 0], centers[:, 1], c="red", s=200, alpha=0.75, marker=".")
-    plt.xlabel("Feature 1")
-    plt.ylabel("Feature 2")
-    plt.title("K-Means Clustering")
+    """Plot the clusters and their centers using PCA for dimensionality reduction."""
+    pca = PCA(n_components=2)
+    X_pca = pca.fit_transform(X)
+
+    plt.scatter(X_pca[:, 0], X_pca[:, 1], c=y_kmeans, s=50, cmap="viridis")
+    centers_pca = pca.transform(centers)
+    plt.scatter(
+        centers_pca[:, 0], centers_pca[:, 1], c="red", s=200, alpha=0.75, marker="."
+    )
+    plt.xlabel("PCA Feature 1")
+    plt.ylabel("PCA Feature 2")
+    plt.title("K-Means Clustering (PCA-reduced)")
     plt.show()
 
 
@@ -74,7 +81,11 @@ def analyze_clusters(cluster_points):
 
 
 def plot_cluster_shapes(X, y_kmeans, centers, cluster_points, analysis_results):
-    """Plot the clusters with different shapes based on their p and l_p norm values."""
+    """Plot the clusters with different shapes based on their p and l_p norm values using PCA for dimensionality reduction."""
+    pca = PCA(n_components=2)
+    X_pca = pca.fit_transform(X)
+    centers_pca = pca.transform(centers)
+
     plt.figure(figsize=(8, 6))
     num_clusters = len(cluster_points)
     colors = plt.cm.viridis(np.linspace(0, 1, num_clusters))
@@ -82,19 +93,26 @@ def plot_cluster_shapes(X, y_kmeans, centers, cluster_points, analysis_results):
         cluster_num, best_p, best_norm = result
         shape = get_shape(best_p)
         color = colors[i]
-        for point in cluster:
+        cluster_pca = pca.transform(np.array(cluster))
+        for point in cluster_pca:
             plt.scatter(point[0], point[1], marker=shape, s=50, c=[color])
-    plt.scatter(centers[:, 0], centers[:, 1], c="red", s=200, alpha=0.75, marker=".")
-    plt.xlabel("Feature 1")
-    plt.ylabel("Feature 2")
-    plt.title("Cluster Shapes based on p and l_p norm")
+    plt.scatter(
+        centers_pca[:, 0], centers_pca[:, 1], c="red", s=200, alpha=0.75, marker="."
+    )
+    plt.xlabel("PCA Feature 1")
+    plt.ylabel("PCA Feature 2")
+    plt.title("Cluster Shapes based on p and l_p norm (PCA-reduced)")
     plt.show()
 
 
 def plot_cluster_boundaries(X, centers, analysis_results):
-    """Plot the boundaries of clusters based on their lp norm values."""
+    """Plot the boundaries of clusters based on their lp norm values using PCA for dimensionality reduction."""
+    pca = PCA(n_components=2)
+    X_pca = pca.fit_transform(X)
+    centers_pca = pca.transform(centers)
+
     plt.figure(figsize=(8, 6))
-    for center, (_, best_p, best_norm) in zip(centers, analysis_results):
+    for center, (_, best_p, best_norm) in zip(centers_pca, analysis_results):
         shape = get_shape(best_p)
         adjusted_norm = float(best_norm) * 0.5
         if shape == "D":
@@ -120,10 +138,12 @@ def plot_cluster_boundaries(X, centers, analysis_results):
                 facecolor="none",
             )
         plt.gca().add_patch(boundary)
-    plt.scatter(centers[:, 0], centers[:, 1], c="red", s=200, alpha=0.75, marker=".")
-    plt.xlabel("Feature 1")
-    plt.ylabel("Feature 2")
-    plt.title("Cluster Boundaries based on lp norm")
+    plt.scatter(
+        centers_pca[:, 0], centers_pca[:, 1], c="red", s=200, alpha=0.75, marker="."
+    )
+    plt.xlabel("PCA Feature 1")
+    plt.ylabel("PCA Feature 2")
+    plt.title("Cluster Boundaries based on lp norm (PCA-reduced)")
     plt.show()
 
 
@@ -135,3 +155,5 @@ def get_shape(p):
         return "o"  # Circle
     else:
         return "s"  # Square
+
+
