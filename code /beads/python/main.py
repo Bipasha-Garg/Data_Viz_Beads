@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.datasets import make_blobs
 import csv
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 
 def generate_dataset(datapoints, clusters):
     """Generate sample data with the specified number of datapoints and clusters."""
@@ -21,7 +22,16 @@ def file_dataset(file_path):
     numeric_columns = data.select_dtypes(include=[np.number]).columns
     data[numeric_columns] = data[numeric_columns].fillna(data[numeric_columns].mean())
 
-    # Return the values as a NumPy array
+    # Perform label encoding for categorical columns
+    label_encoders = {}
+    for column in data.select_dtypes(include=["object"]):
+        label_encoders[column] = LabelEncoder()
+        data[column] = label_encoders[column].fit_transform(data[column])
+
+    # Convert all columns to numeric (including the encoded categorical columns)
+    data = data.apply(pd.to_numeric, errors="ignore")
+
+    # Return the processed data as a single NumPy array
     return data.values
 
 
@@ -47,15 +57,18 @@ def commands(X, k, num_beads):
         cluster_centers = [centers[label] for label in y_kmeans]
 
         plot_beads((beads, bead_centers), bead_analysis_results[0], i + 1)
+        value = i+1
+        plot_name = "Cluster_" + str(value)   # Converting integers to strings explicitly
 
         # Set cluster center to the center of the cluster
         plot_bead_boundaries(
-            (beads, bead_centers), bead_analysis_results[0], cluster_centers
+            (beads, bead_centers), bead_analysis_results[0], cluster_centers,plot_name
         )
 
 def csv_file():
     # filename = input("Enter the name of the CSV file: ")
-    file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/dataset/diabetes.csv"
+    # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/dataset/diabetes.csv"
+    file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/dataset/Iris.csv"
     k = int(input("Enter the number of clusters (k): "))
     num_beads = int(input("Enter the number of beads per cluster: "))
 
