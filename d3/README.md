@@ -1,0 +1,1 @@
+run ```python3 -m http.server 8000``` in the same directory as index.html and open the link in terminal

@@ -52,14 +52,14 @@ def analyze_beads(beads):
     return bead_analysis_results
 
 
-def get_shape(best_p):
-    """Define the shape based on the p value."""
-    if best_p <= 1:
-        return "d"  # Circle for p < 0.5
-    elif 1 < best_p < 2.5:
-        return "o"  # circle for 1 <= p < 2
+def get_shape(p):
+    """Return the shape class based on the value of p."""
+    if p <= 1:
+        return "D"  # Diamond
+    elif p <= 2.5:
+        return "o"  # Circle
     else:
-        return "s"  # square for p >= 2.5
+        return "s"  # Square
 
 
 def plot_beads(beads, p_value, cluster_num):
@@ -78,67 +78,102 @@ def plot_beads(beads, p_value, cluster_num):
     # Define the number of variables we're plotting.
     num_vars = len(cluster_points[0][0])
 
-    # Compute angle for each axis
-    angles = [n / float(num_vars) * 2 * pi for n in range(num_vars)]
-    angles += angles[:1]  # Complete the loop
+    if num_vars == 2:
+        # Plot 2D data on normal X and Y axes
+        for i, (cluster, result) in enumerate(zip(cluster_points, p_value)):
+            best_p, best_norm = result
+            shape = get_shape(best_p)
+            color = plt.cm.get_cmap("hsv", len(cluster_points))(
+                i
+            )  # Get a unique color for each cluster
 
-    # Plot each bead's data
-    ax = plt.subplot(111, polar=True)
+            for point in cluster:
+                plt.scatter(
+                    point[0],
+                    point[1],
+                    marker=shape,
+                    s=30,
+                    color=color,
+                    label=f"Cluster {i} (p={best_p:.2f})" if i == 0 else "",
+                )
 
-    # Keep track of legend handles and labels
-    handles = []
-    labels = []
-
-    for i, (cluster, result) in enumerate(zip(cluster_points, p_value)):
-        best_p, best_norm = result
-        shape = get_shape(best_p)
-        color = plt.cm.get_cmap("hsv", len(cluster_points))(
-            i
-        )  # Get a unique color for each cluster
-
-        for point in cluster:
-            values = point.tolist()
-            values += values[:1]  # Repeat the first value to close the loop
-            scatter = ax.scatter(
-                angles[:-1], values[:-1], marker=shape, s=30, color=color
-            )
-        # Add a handle and label for the legend
-        handles.append(scatter)
-        labels.append(f"Cluster {i} (p={best_p:.2f})")
-
-    # Plot bead centers
-    center_scatter = None
-    for center in bead_centers:
-        center_values = center.tolist()
-        center_values += center_values[:1]
-        center_scatter = ax.scatter(
-            angles[:-1], center_values[:-1], c="red", s=200, alpha=0.75, marker="."
+        # Plot bead centers
+        plt.scatter(
+            bead_centers[:, 0],
+            bead_centers[:, 1],
+            c="red",
+            s=200,
+            alpha=0.75,
+            marker=".",
+            label="Cluster Centers",
         )
 
-    # Add bead center handle and label to the legend
-    if center_scatter:
-        handles.append(center_scatter)
-        labels.append("Cluster Centers")
+        plt.xlabel("X-axis")
+        plt.ylabel("Y-axis")
+        plt.title(f"Cluster {cluster_num} Beads Shapes based on p and l_p norm")
 
-    # Add labels for each variable
-    plt.xticks(
-        angles[:-1], [f"Dim {i+1}" for i in range(num_vars)], color="grey", size=8
-    )
+        # Add a legend
+        plt.legend(loc="upper right", bbox_to_anchor=(1.1, 1.05))
 
-    plt.title(
-        f"Cluster {cluster_num} Beads Shapes based on p and l_p norm (Radar Chart)"
-    )
+    else:
+        # Compute angle for each axis for radar plot
+        angles = [n / float(num_vars) * 2 * pi for n in range(num_vars)]
+        angles += angles[:1]  # Complete the loop
 
-    # Add a legend
-    plt.legend(handles, labels, loc="upper right", bbox_to_anchor=(0.1, 0.1))
+        # Plot each bead's data on radar plot
+        ax = plt.subplot(111, polar=True)
 
-    plt.tight_layout()
+        # Keep track of legend handles and labels
+        handles = []
+        labels = []
+
+        for i, (cluster, result) in enumerate(zip(cluster_points, p_value)):
+            best_p, best_norm = result
+            shape = get_shape(best_p)
+            color = plt.cm.get_cmap("hsv", len(cluster_points))(
+                i
+            )  # Get a unique color for each cluster
+
+            for point in cluster:
+                values = point.tolist()
+                values += values[:1]  # Repeat the first value to close the loop
+                scatter = ax.scatter(
+                    angles[:-1], values[:-1], marker=shape, s=30, color=color
+                )
+            # Add a handle and label for the legend
+            handles.append(scatter)
+            labels.append(f"Cluster {i} (p={best_p:.2f})")
+
+        # Plot bead centers
+        center_scatter = None
+        for center in bead_centers:
+            center_values = center.tolist()
+            center_values += center_values[:1]
+            center_scatter = ax.scatter(
+                angles[:-1], center_values[:-1], c="red", s=200, alpha=0.75, marker="."
+            )
+
+        # Add bead center handle and label to the legend
+        if center_scatter:
+            handles.append(center_scatter)
+            labels.append("Cluster Centers")
+
+        # Add labels for each variable
+        plt.xticks(
+            angles[:-1], [f"Dim {i+1}" for i in range(num_vars)], color="grey", size=8
+        )
+
+        plt.title(f"Cluster {cluster_num} Beads Shapes based on p and l_p norm")
+
+        # Add a legend
+        plt.legend(handles, labels, loc="upper right", bbox_to_anchor=(0.1, 0.1))
+
+        plt.tight_layout()
 
     # Save the plot to the specified directory with a unique name
-    plot_name = f"cluster_{cluster_num}_beads_radar.png"
+    plot_name = f"cluster_{cluster_num}_beads_plot.png"
     plot_filename = os.path.join(save_dir, plot_name)
     plt.savefig(plot_filename)
     plt.close()  # Close the figure after saving to avoid display in interactive environments
 
     print(f"Plot for Cluster {cluster_num} saved as {plot_filename}")
-

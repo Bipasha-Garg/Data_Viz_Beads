@@ -49,9 +49,7 @@ def plot_bead_boundaries(beads, bead_analysis_results, cluster_centers, plotname
     all_x = []
     all_y = []
 
-    for center, b_cen, (best_p, best_norm) in zip(
-        centroids, bead_centers, bead_analysis_results
-    ):
+    for center, B_ic, (best_p, best_norm) in zip(centroids,bead_centers, bead_analysis_results):
         # Step 1: Identify the closest bead center to the centroid of the cluster
         distances = np.linalg.norm(bead_centers - center, axis=1)
         closest_bead_index = np.argmin(distances)
@@ -73,9 +71,15 @@ def plot_bead_boundaries(beads, bead_analysis_results, cluster_centers, plotname
         bx = center[0] + d_Ci_Bic * cos(theta)
         by = center[1] + d_Ci_Bic * sin(theta)
 
-        print(
-            f"Cluster center: {center}, Bead center: {B_ic}, Calculated position: ({bx}, {by})"
-        )
+        # Debug print statements
+        print(f"Cluster center: {center}")
+        print(f"Closest bead center: {B_ic}")
+        print(f"Distance to cluster centroid: {d_Ci_Bic}")
+        print(f"Radius of bead: {r_ic}")
+        print(f"Bit vector: {bit_vector}")
+        print(f"Sector index (i): {i}")
+        print(f"Angle (theta): {theta} radians")
+        print(f"Calculated bead position: ({bx}, {by})")
 
         shape_class = shape_of_boundary(best_p)
         if shape_class == Diamond:
@@ -122,11 +126,9 @@ def plot_bead_boundaries(beads, bead_analysis_results, cluster_centers, plotname
     plt.title("Bead Boundaries Plot")
     plt.grid(True)
 
-
     plot_name = plotname + ".png"
     plot_filename = os.path.join(save_dir, plot_name)
     plt.savefig(plot_filename)
-    plt.close()  
+    plt.close()
 
     print(f"Plot saved as {plot_filename}")
-
