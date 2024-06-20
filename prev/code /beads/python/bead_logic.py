@@ -32,7 +32,7 @@ def store_and_print_beads(cluster_points, num_beads):
             print(f"  Bead {j + 1}:")
             for point in bead:
                 print(f"    {tuple(point)}")
-            print()  # Add an empty line between beads
+            print()  
     return all_beads
 
 
