@@ -1,0 +1,55 @@
+function zoomBitString(handles,intervalLen)
+    
+    [m,n]=size(handles.distribution);
+    hold on;
+    
+    %***************************Draw Outline*******************************
+    t=0:0.01:2*pi;
+    r=intervalLen;
+    for i=1:m
+        plot(r*sin(t),r*cos(t),'Color',[0.0,0.0,0.0]);
+        r=r+intervalLen;
+    end
+    
+    rmax=m*intervalLen;
+    degree=pi/2;
+    
+   line([0,rmax*cos(pi/4)],[0,rmax*sin(pi/4)],'LineWidth',1,'Color',[0.0 0.0 0.0]); 
+   line([0,rmax*cos(-pi/4)],[0,rmax*sin(-pi/4)],'LineWidth',1,'Color',[0.0 0.0 0.0]); 
+   line([0,rmax],[0,0],'LineWidth',1,'Color',[0.0 0.0 0.0]);
+    
+   axis square;
+   axis([0 rmax -rmax/2 (rmax+intervalLen)/2]);
+   ylabel('radius');
+   xlabel('radius');
+   grid on
+  
+    
+    %*******************************Draw Scatter Plot**********************
+    for i=1:m
+           
+            distArray=handles.distribution{i,handles.qnum};
+            [m1 n1]=size(distArray);
+            refVec=zeros(1,n1);
+            string=num2str(dec2bin(handles.qnum-1,4));
+            refVec(handles.baseAxes)=1;
+            if string(handles.baseAxes)=='1'
+                refVec(handles.baseAxes)=-1;
+            end
+            plotArray=ones(m1,2);
+            
+            for k=1:m1
+               plotArray(k,1)=sqrt(sum(distArray(k,:).*distArray(k,:)));
+               angle=acos(dot(distArray(k,:), refVec)/(norm(distArray(k,:))*norm(refVec)));
+               %if angle>pi/2
+                   %refVec
+                   %distArray
+                   %angle
+               %end
+               plotArray(k,2)= (2*degree/pi)*angle+pi/4; 
+            end
+            colorpoints=chooseColor(length(handles.distribution{i,handles.qnum}),handles.colorDist);
+            plot(plotArray(:,1).*sin(plotArray(:,2)),plotArray(:,1).*cos(plotArray(:,2)),'.','Color',colorpoints);
+       
+    end
+end

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cluster Radar Charts</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+  <div id="chart-container"></div>
+  <button id="toggleButton">Toggle Bead Points</button>
+
+  <script type="module" src="commonLogic.js"></script>
+  <script type="module" src="plotBeads.js"></script>
+  <script type="module" src="plotBoundaries.js"></script>
+  <script type="module">
+    import { loadData } from "./commonLogic.js";
+    import { plotBeads } from "./plotBeads.js";
+    import { plotBoundaries } from "./plotBoundaries.js";
+
+    const width = 1200;
+    const height = 800;
+    const margin = { top: 50, right: 50, bottom: 50, left: 50 };
+    const radius = Math.min(width, height) / 2 - margin.top * 2;
+    let showBeads = true; // Initial state: show bead points
+
+    // Load JSON data
+    loadData()
+      .then((data) => {
+        // Finding dimension, number of sectors, and angle slice of the sector
+        const dimension = data[0].data_dimension;
+        const numSectors = Math.pow(2, dimension);
+        const angleSlice = (Math.PI * 2) / numSectors;
+
+        // Calculate max value for normalization
+        const maxValues = Array(dimension).fill(0);
+        data.slice(1).forEach((cluster) => {
+          cluster.beads.forEach((bead) => {
+            bead.data_points.forEach((dataPoint) => {
+              dataPoint.coordinates.forEach((coord, idx) => {
+                maxValues[idx] = Math.max(maxValues[idx], Math.abs(coord));
+              });
+            });
+          });
+        });
+
+        // Scale for the radius based on max values
+        const rScale = d3
+          .scaleLinear()
+          .range([0, radius])
+          .domain([0, Math.max(...maxValues)]);
+
+        // Plot beads on radar charts
+        plotBeads(data, rScale, radius, numSectors, angleSlice, maxValues, showBeads);
+
+        // Iterate through each cluster and plot boundaries around beads
+        data.slice(1).forEach((cluster, index) => {
+          const svg = d3.select(`#chart-container svg:nth-child(${index + 1}) g`);
+          plotBoundaries(cluster, index + 1, svg);
+        });
+      })
+      .catch((error) => {
+        console.error("Error loading or processing data:", error);
+      });
+  </script>
+</body>
+</html>
