@@ -2,7 +2,7 @@
 
 // Load JSON data
 function loadData() {
-  return d3.json("new.json");
+  return d3.json("iris.json");
 }
 
 // Function to toggle bead points visibility

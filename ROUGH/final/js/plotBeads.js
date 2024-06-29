@@ -1,7 +1,7 @@
 // plotBeads.js
 
 import * as d3 from "d3";
-import { toggleBeadPoints, distance } from "./commonLogic.js";
+import { toggleBeadPoints, distance } from "commonLogic.js";
 
 // Function to plot beads on radar charts
 function plotBeads(
