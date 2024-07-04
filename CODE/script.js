@@ -22,18 +22,17 @@ d3.json("new.json")
     const angleSlice = (Math.PI * 2) / numSectors;
 
     // Calculate max value for normalization
-const maxValues = Array(dimension).fill(0);
-data.slice(1).forEach((cluster) => {
-  cluster.beads.forEach((bead) => {
-    bead.data_points.forEach((dataPoint) => {
-      dataPoint.coordinates.forEach((coord, idx) => {
-        maxValues[idx] = Math.max(maxValues[idx], Math.abs(coord));
+    const maxValues = Array(dimension).fill(0);
+    data.slice(1).forEach((cluster) => {
+      cluster.beads.forEach((bead) => {
+        bead.data_points.forEach((dataPoint) => {
+          dataPoint.coordinates.forEach((coord, idx) => {
+            maxValues[idx] = Math.max(maxValues[idx], Math.abs(coord));
+          });
+        });
       });
     });
-  });
-});
-console.log(...maxValues);
-
+    console.log(...maxValues);
 
     // Scale for the radius based on max values
     const rScale = d3
@@ -184,7 +183,7 @@ console.log(...maxValues);
         clusterData.beads.flatMap((bead) =>
           bead.data_points.map((dp) => dp.coordinates)
         ),
-        radius / 4,
+        radius/3,
         1
       );
 
