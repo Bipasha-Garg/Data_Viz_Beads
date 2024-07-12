@@ -1,4 +1,4 @@
-d3.json("new.json")
+d3.json("3_6_iris.json")
   .then((data) => {
     console.log("Data loaded:", data); // Debug log
     const width = 800;
@@ -10,6 +10,26 @@ d3.json("new.json")
     // Process the data
     const processedData = exportFunction(data);
     console.log("Processed data:", processedData); // Debug log
+
+    // Find the maximum values across all dimensions for normalization
+    const dataDimension = data[0].data_dimension;
+    const maxValues = Array(dataDimension).fill(0);
+
+    data.slice(1).forEach((cluster) => {
+      cluster.beads.forEach((bead) => {
+        bead.data_points.forEach((dataPoint) => {
+          dataPoint.coordinates.forEach((coord, idx) => {
+            maxValues[idx] = Math.max(maxValues[idx], Math.abs(coord));
+          });
+        });
+      });
+    });
+
+    // Create a radius scale
+    const rScale = d3
+      .scaleLinear()
+      .range([0, plotRadius])
+      .domain([0, Math.max(...maxValues)]);
 
     // Function to create radar chart for a specific cluster
     function createRadarChart(clusterData) {
@@ -24,26 +44,14 @@ d3.json("new.json")
 
       console.log("Creating radar chart for cluster:", clusterData); // Debug log
 
-      // Calculate maximum distance for normalization
-      let min = 0;
-      clusterData.beads.forEach((bead) => {
-        const distance = Math.sqrt(
-          bead.coordinates.x ** 2 + bead.coordinates.y ** 2
-        );
-        if (distance < min) {
-          min = distance;
+      clusterData.beads.forEach((bead, beadIndex) => {
+        let { shape, radius, coordinates } = bead;
+        if (radius === 0) {
+          radius = 0.5;
         }
-      });
+        const scaledRadius = rScale(radius);
+        const beadColor = d3.schemeCategory10[beadIndex % 10];
 
-      if (min === 0) {
-        console.error("Min distance is zero, skipping cluster:", clusterData);
-        // return;
-      }
-
-      clusterData.beads.forEach((bead) => {
-        const { shape, radius, coordinates } = bead;
-        // const scaledRadius = (radius / maxDistance) * plotRadius; // Adjust scaling factor as needed
-        const scaledRadius = radius * 50;
         let shapeElement;
         switch (shape) {
           case "diamond":
@@ -59,7 +67,7 @@ d3.json("new.json")
               )
               .attr("class", "bead diamond")
               .style("fill", "none")
-              .style("stroke", "blue"); // Change color as needed
+              .style("stroke", beadColor); // Change color as needed
             break;
           case "circle":
             shapeElement = svg
@@ -69,7 +77,7 @@ d3.json("new.json")
               .attr("r", scaledRadius)
               .attr("class", "bead circle")
               .style("fill", "none")
-              .style("stroke", "red"); // Change color as needed
+              .style("stroke", beadColor); // Change color as needed
             break;
           case "square":
             shapeElement = svg
@@ -80,7 +88,7 @@ d3.json("new.json")
               .attr("height", 2 * scaledRadius)
               .attr("class", "bead square")
               .style("fill", "none")
-              .style("stroke", "green"); // Change color as needed
+              .style("stroke", beadColor); // Change color as needed
             break;
         }
       });
@@ -96,8 +104,8 @@ d3.json("new.json")
           .attr("r", gridStep * i)
           .attr("class", "grid")
           .style("fill", "none")
-          .style("stroke", "lightgrey")
-          .style("stroke-opacity", 0.7);
+          .style("stroke", "grey")
+          .style("stroke-opacity", 0.5);
       }
     }
 

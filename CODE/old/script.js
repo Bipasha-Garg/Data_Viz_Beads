@@ -1,16 +1,18 @@
-d3.json("new.json")
+d3.json("3_6_iris.json")
   .then((data) => {
-    const width = 600; // Increased width
-    const height = 600; // Increased height
+    const width = 800;
+    const height = 800;
     const margin = { top: 50, right: 50, bottom: 50, left: 50 };
     const radius = Math.min(width, height) / 2 - margin.top * 2;
-    let showBeads = true; // Initial state: show bead points
+    let showBeads = true;
 
     // Function to toggle bead points visibility
     function toggleBeadPoints() {
-      showBeads = !showBeads; // Toggle state
-      d3.selectAll(".radarCircle") // Select all bead points
-        .style("visibility", showBeads ? "visible" : "hidden"); // Show or hide based on state
+      showBeads = !showBeads;
+      d3.selectAll(".radarCircle").style(
+        "visibility",
+        showBeads ? "visible" : "hidden"
+      );
     }
 
     // Bind toggle function to button click
@@ -183,7 +185,7 @@ d3.json("new.json")
         clusterData.beads.flatMap((bead) =>
           bead.data_points.map((dp) => dp.coordinates)
         ),
-        radius/3,
+        radius / 3,
         1
       );
 
