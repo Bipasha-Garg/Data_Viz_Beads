@@ -48,17 +48,17 @@ def cure_algorithm(points, num_representatives, shrink_factor=0.5):
     points = np.array(points, dtype=float)
 
     # Debugging statements
-    print(f"Points type: {type(points)}, Points shape: {points.shape}")
-    print(f"Points data type: {points.dtype}")
-    print(
-        f"num_representatives type: {type(num_representatives)}, value: {num_representatives}"
-    )
+    # print(f"Points type: {type(points)}, Points shape: {points.shape}")
+    # print(f"Points data type: {points.dtype}")
+    # print(
+    #     f"num_representatives type: {type(num_representatives)}, value: {num_representatives}"
+    # )
 
     # Ensure num_representatives is an integer
     if isinstance(num_representatives, str):
         try:
             num_representatives = int(num_representatives)
-            print(f"Converted num_representatives to integer: {num_representatives}")
+            # print(f"Converted num_representatives to integer: {num_representatives}")
         except ValueError:
             raise TypeError(
                 "num_representatives must be an integer or a string convertible to an integer"
@@ -111,11 +111,11 @@ def cureBeads(all_beads, representatives):
             # Ensure each point in bead is properly formatted and numeric
             bead_points = [np.array(point).flatten().astype(float) for point in bead]
             bead_points = np.array(bead_points)
-            print(f"Bead points: {bead_points}")  # Debugging statement
-            print(f"Shape of bead_points: {bead_points.shape}")  # Debugging statement
-            print(
-                f"Type of bead_points elements: {type(bead_points[0])}"
-            )  # Debugging statement
+            # print(f"Bead points: {bead_points}")  # Debugging statement
+            # print(f"Shape of bead_points: {bead_points.shape}")  # Debugging statement
+            # print(
+            #     f"Type of bead_points elements: {type(bead_points[0])}"
+            # )  # Debugging statement
 
             reduced_points = cure_algorithm(bead_points, representatives)
             new_beads.append([np.array(rep) for rep in reduced_points])
@@ -127,3 +127,66 @@ def cureBeads(all_beads, representatives):
         cured_beads.append((new_beads, np.array(new_centers)))
 
     return cured_beads
+
+
+def calculate_and_find_best_p(cluster):
+    """
+    Calculate the tuples (p, radius, farthest_point) for a range of p values and find the best p value for a given cluster.
+    """
+    alpha_range = np.linspace(
+        1.1, 1.2, 11
+    )  # Create 11 evenly spaced alpha values between 1.1 and 1.2
+    centroid = np.mean(cluster, axis=0)  # will be bead center if bead is passed
+    p_values = [0.25, 0.5, 1.0, 2.0, 5.0]
+    T = []
+    for p in p_values:
+        distances = []
+        for point in cluster:
+            distance = np.linalg.norm(point - centroid, ord=p)
+            distances.append((distance, point))
+        dis_max, point_max = max(distances, key=lambda x: x[0])
+        # print(f"p:{p}, distance: {dis_max}")
+        T.append((p, dis_max, point_max))
+    T.sort(key=lambda x: x[0], reverse=True)
+
+    # Initialize the best_p and best_t values
+    best_p = None
+    best_t = None
+    # print("printing best norm")
+    # Process the sorted tuples to find the best p value
+    while T:
+        # Step 1: Get the tuple with the largest p
+        t1 = T.pop(0)
+        p1, r1, f1 = t1
+
+        if not T:
+            best_p, best_t = p1, t1
+            break
+        # Step 2: Get the next tuple with the largest p
+        t2 = T[0]
+        p2, r2, f2 = t2
+        # Step 3: Check if the condition is satisfied for all alpha values
+        if all(r2 < alpha * r1 for alpha in alpha_range):
+            best_p, best_t = p2, t1
+        else:
+            best_p, best_t = p1, t1
+            break
+        # print(f"p: {best_p}, lp: {best_t}")
+    # If no suitable p value is found, return the last processed tuple
+    return best_p, best_t
+
+
+def analyze_beads(beads):
+    """Analyze each bead to find the best p value and the corresponding l_p norm."""
+    bead_analysis_results = []
+    for cluster_beads in beads:
+        cluster_results = []
+        for bead in cluster_beads[0]:
+            bead = np.array(bead)
+            best_p, best_norm_tuple = calculate_and_find_best_p(bead)
+            best_norm = best_norm_tuple[1]
+            # print(best_p)
+            # print(best_norm)
+            cluster_results.append((best_p, best_norm))
+        bead_analysis_results.append(cluster_results)
+    return bead_analysis_results
