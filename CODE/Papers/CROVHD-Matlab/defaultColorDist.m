@@ -1,0 +1,55 @@
+% defaultColorDist-
+% Classifies the points and draws the plots
+%*************************************************************************
+
+function colorDist = defColorDist(points,intervalLen)
+%--------------------Create n-dimensional points--------------------------
+meanPt=mean(points);
+[m n]=size(points);
+npts=m;
+for i=1:n
+    points(:,i)=points(:,i)-meanPt(i);
+end
+
+inter=(max(points)-min(points));
+rmax=sqrt(sum(inter.*inter));
+bins=ceil(rmax/intervalLen);
+distribution=zeros(bins,2^n);
+
+for i=1:npts
+	%----------(a) According to the radius----------------------------
+	rad=sqrt(sum(points(i,:).*points(i,:)));
+	index=ceil(rad/intervalLen);
+	if index==0 , index=1;  end
+    %----------(b) According to the quadrants-------------------------	
+	qnum=0;
+	pt=points(i,:);
+	for j=1:n
+		if (pt(j)>=0) 
+			qnum=2*qnum; 
+		else  
+			qnum=2*qnum+1;   
+		end	
+	end
+	
+    qnum=qnum+1;
+	distribution(index,qnum)=distribution(index,qnum)+1;
+end
+
+maxdis=max(max(distribution));
+numColors=6;
+iLen=(maxdis)/numColors;
+count=0;
+for i=1:numColors
+    colorDist(i,1)=count;
+    colorDist(i,2)=count+iLen;
+    count=count+iLen;
+end
+    colorDist(1,3:5)=[0.0,0.0,0.0]/255.0;
+    colorDist(2,3:5)=[0,0,205]/255.0;
+    colorDist(3,3:5)=[205,0,0]/255.0;
+    colorDist(4,3:5)=[34,139,34]/255.0;
+    colorDist(5,3:5)=[205,205,0]/255.0;
+    colorDist(6,3:5)=[210,105,30]/255.0;  
+end
+%*************************************************************************
