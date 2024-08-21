@@ -1,21 +1,24 @@
+// Load the JSON data
 d3.json("out.json")
   .then((data) => {
-    console.log("Data loaded:", data); // Debug log
+    console.log("Data loaded:", data);
+
+    // Constants for the plot dimensions and margins
     const width = 800;
     const height = 800;
     const margin = { top: 50, right: 50, bottom: 50, left: 50 };
     const plotRadius =
       Math.min(width, height) / 2 - Math.max(margin.top, margin.bottom);
 
-    // Process the data
+    // Process the data using the exportFunction
     const processedData = exportFunction(data);
-    console.log("Processed data:", processedData); // Debug log
+    console.log("Processed data:", processedData);
 
-    // Find the maximum values across all dimensions for normalization
+    // Determine the dimension of the data
     const dataDimension = data[0].data_dimension;
     const maxValues = Array(dataDimension).fill(0);
-    console.log(dataDimension);
 
+    // Calculate the maximum values across all dimensions for normalization
     data.slice(1).forEach((cluster) => {
       cluster.beads.forEach((bead) => {
         bead.data_points.forEach((dataPoint) => {
@@ -26,14 +29,15 @@ d3.json("out.json")
       });
     });
 
-    // Create a radius scale
+    // Create a scale for the radius
     const rScale = d3
       .scaleLinear()
       .range([0, plotRadius])
       .domain([0, Math.max(...maxValues)]);
 
-    // Function to create radar chart for a specific cluster
+    // Function to create a radar chart for a specific cluster
     function createRadarChart(clusterData) {
+      // Create an SVG element for each radar chart
       const svg = d3
         .select("#chart-container")
         .append("svg")
@@ -43,64 +47,77 @@ d3.json("out.json")
         .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
 
-      console.log("Creating radar chart for cluster:", clusterData); // Debug log
+      console.log("Creating radar chart for cluster:", clusterData);
 
+      // Create beads for each cluster
       clusterData.beads.forEach((bead, beadIndex) => {
-        let { shape, radius, coordinates } = bead;
-        if (radius === 0) {
-          // radius = 0.5;
-        }
+        const { shape, radius, coordinates } = bead;
         const scaledRadius = rScale(radius);
         const beadColor = d3.schemeCategory10[beadIndex % 10];
 
+        // Plot the bead center
+        svg
+          .append("circle")
+          .attr("cx", rScale(coordinates.x))
+          .attr("cy", rScale(coordinates.y))
+          .attr("r", 5) // Thicker center point
+          .attr("class", "bead-center")
+          .style("fill", beadColor)
+          .style("stroke", beadColor)
+          .style("stroke-width", 2);
+
+        // Create the shape elements based on the bead's shape
         let shapeElement;
         switch (shape) {
           case "diamond":
             shapeElement = svg
               .append("rect")
-              .attr("x", coordinates.x)
-              .attr("y", coordinates.y)
+              .attr("x", rScale(coordinates.x) - scaledRadius)
+              .attr("y", rScale(coordinates.y) - scaledRadius)
               .attr("width", 2 * scaledRadius)
               .attr("height", 2 * scaledRadius)
               .attr(
                 "transform",
-                `translate(${-scaledRadius}, ${-scaledRadius}) rotate(45, ${scaledRadius}, ${scaledRadius})`
+                `rotate(45, ${rScale(coordinates.x)}, ${rScale(coordinates.y)})`
               )
               .attr("class", "bead diamond")
               .style("fill", "none")
-              .style("stroke", beadColor); // Change color as needed
+              .style("stroke", beadColor)
+              .style("stroke-width", 2)
+              .style("stroke-dasharray", "5,5"); // Dashed line for style
             break;
           case "circle":
             shapeElement = svg
               .append("circle")
-              .attr("cx", coordinates.x)
-              .attr("cy", coordinates.y)
+              .attr("cx", rScale(coordinates.x))
+              .attr("cy", rScale(coordinates.y))
               .attr("r", scaledRadius)
               .attr("class", "bead circle")
               .style("fill", "none")
-              .style("stroke", beadColor); // Change color as needed
+              .style("stroke", beadColor)
+              .style("stroke-width", 2);
             break;
           case "square":
             shapeElement = svg
               .append("rect")
-              .attr("x", coordinates.x - scaledRadius)
-              .attr("y", coordinates.y - scaledRadius)
+              .attr("x", rScale(coordinates.x) - scaledRadius)
+              .attr("y", rScale(coordinates.y) - scaledRadius)
               .attr("width", 2 * scaledRadius)
               .attr("height", 2 * scaledRadius)
               .attr("class", "bead square")
               .style("fill", "none")
-              .style("stroke", beadColor); // Change color as needed
+              .style("stroke", beadColor)
+              .style("stroke-width", 2);
             break;
         }
 
-        console.log("printing before the function");
-        // Plot data points
+        // Plot data points within the bead
         bead.data_points.forEach((dataPoint) => {
-          const pointCoordinates = dataPoint.coordinates.map((coord, idx) =>
+          const pointCoordinates = dataPoint.coordinates.map((coord) =>
             rScale(coord)
           );
 
-          console.log("Plotting data point:", pointCoordinates); // Debug log
+          console.log("Plotting data point:", pointCoordinates);
 
           svg
             .append("circle")
@@ -109,7 +126,21 @@ d3.json("out.json")
             .attr("r", 2)
             .attr("class", "data-point")
             .style("fill", beadColor)
-            .style("opacity", 0.8);
+            .style("opacity", 0.6) // Increased opacity for better view
+            .on("mouseover", function () {
+              d3.select(this)
+                .transition()
+                .duration(100)
+                .attr("r", 4)
+                .style("opacity", 1);
+            })
+            .on("mouseout", function () {
+              d3.select(this)
+                .transition()
+                .duration(100)
+                .attr("r", 2)
+                .style("opacity", 0.6);
+            });
         });
       });
 
@@ -125,8 +156,20 @@ d3.json("out.json")
           .attr("class", "grid")
           .style("fill", "none")
           .style("stroke", "black")
-          .style("stroke-opacity", 0.5);
+          .style("stroke-opacity", 0.3); // Subtle grid lines
       }
+
+      // Add labels
+      svg
+        .append("text")
+        .attr("x", 0)
+        .attr("y", -plotRadius - 20)
+        .attr("text-anchor", "middle")
+        .attr("class", "chart-title")
+        .text(`Cluster ${clusterData.clusterNumber}`)
+        .style("font-size", "16px")
+        .style("font-weight", "bold");
+
     }
 
     // Create radar charts for each cluster
@@ -164,34 +207,19 @@ function exportFunction(data) {
       // Calculate the sector angle θ
       let theta = (2 * Math.PI * bitVector) / Math.pow(2, dataDimension);
 
-      // Find the minimum distance between cluster center and bead points
-      let minDistance = 100;
-      bead.data_points.forEach((point) => {
-        let distance = calculateDistance(cluster.cluster_center, point);
-        if (distance < minDistance) {
-          minDistance = distance;
-        }
-      });
+      // Get the coordinates of the bead center for plotting
+      const bx = bead.bead_center[0];
+      const by = bead.bead_center[1];
 
-      // Handle cases where minDistance is not finite
-      if (!isFinite(minDistance)) {
-        console.error("Invalid minDistance for bead:", bead);
-        return;
-      }
-
-      // Place the bead in the corresponding sector in the 2-D plot
-      let pNorm = bead.best_p;
-      let shape = getShape(pNorm);
-      let radius = bead.lp_norm;
-
-      let bx = minDistance * Math.cos(theta);
-      let by = minDistance * Math.sin(theta);
-
-      // Handle cases where bx or by are not finite
+      // Ensure bx and by are finite
       if (!isFinite(bx) || !isFinite(by)) {
         console.error("Invalid coordinates for bead:", bead);
         return;
       }
+
+      let pNorm = bead.best_p;
+      let shape = getShape(pNorm);
+      let radius = bead.lp_norm;
 
       clusterResult.beads.push({
         beadNumber: bead.bead_number,
