@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload CSV and Radar Chart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #uploadForm {
+      margin: 20px;
+    }
+    #chart-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .chart {
+      margin: 20px;
+    }
+    .radarCircle {
+      fill-opacity: 0.8;
+    }
+    .legend {
+      font-size: 12px;
+    }
+    .legend rect {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upload CSV and Display Radar Chart</h1>
+  <form id="uploadForm">
+    <input type="file" id="fileInput" accept=".csv" />
+    <button type="submit">Upload</button>
+  </form>
+  <div id="chart-container"></div>
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="app.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

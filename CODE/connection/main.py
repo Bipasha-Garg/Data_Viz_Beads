@@ -185,25 +185,19 @@ def check_and_convert_excel(file_path):
 
 
 if __name__ == "__main__":
-    # file_path = input("Enter the path to the CSV file: ")
-    # k = int(input("Enter the number of clusters (k): "))
-    # num_beads = int(input("Enter the number of beads per cluster: "))
-    # output_path = input("Enter the output path for the clusters and beads JSON: ")
-    # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/old/Iris.csv"\
-    # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/new/dataset/Customers.csv"
-    # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/new/dataset/diabetes.csv"
-    file_path = (
-        "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/dataset/Iris.csv"
-    )
-    # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/new/dataset/User Knowledge.xls"
-    # file_path = check_and_convert_excel(file_path)
+    if len(sys.argv) != 2:
+        print("Usage: python process_csv.py <input_file>")
+        sys.exit(1)
+    input_file = sys.argv[1]
+    print("printing")
+    print(input_file)
     k = 4
     num_beads = 6
-    output_path = "nba_cure.json"
+    output_path = "./uploads/data.json"
     cure = str(input("Do you want to apply cure? (y/n):"))
-    X = file_dataset(file_path)
-    # print(X)
+    X = file_dataset(input_file)
+    print(X)
     if cure == "y":
-        implement_cure(file_path, k, num_beads, output_path,X)
+        implement_cure(input_file, k, num_beads, output_path,X)
     else:
-        implement_kmeans(file_path, k, num_beads, output_path,X)
+        implement_kmeans(input_file, k, num_beads, output_path,X)

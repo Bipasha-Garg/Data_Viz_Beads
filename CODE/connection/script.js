@@ -1,7 +1,7 @@
 // Load the JSON data
-d3.json("cust.json")
-  .then((data) => {
-    console.log("Data loaded:", data);
+function processData(data) {
+    // Your data processing logic here
+    console.log('Processed Data:', data);
 
     // Constants for the plot dimensions and margins
     const width = 800;
@@ -261,11 +261,7 @@ d3.json("cust.json")
     processedData.forEach((cluster) => {
       createRadarChart(cluster);
     });
-  })
-  .catch((error) => {
-    console.error("Error loading or processing data:", error);
-  });
-
+  }
 // Mock exportFunction for testing purposes (replace with your actual function)
 function exportFunction(data) {
   const dataDimension = data[0].data_dimension;
