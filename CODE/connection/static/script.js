@@ -1,4 +1,18 @@
 // Load the JSON data
+async function fetchData() {
+  try {
+    const response = await fetch("../uploads/data.json"); // Fetches from /uploads/data.json
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    processData(data); // Pass data to processData function
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+  }
+}
+
+
 function processData(data) {
     // Your data processing logic here
     console.log('Processed Data:', data);
@@ -336,3 +350,5 @@ function getShape(lpNorm) {
     return "square";
   }
 }
+
+fetchData();

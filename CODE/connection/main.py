@@ -184,7 +184,9 @@ def check_and_convert_excel(file_path):
     return file_path
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
+def main(file_path, cure_choice):
+    
     if len(sys.argv) != 2:
         print("Usage: python process_csv.py <input_file>")
         sys.exit(1)
@@ -194,7 +196,8 @@ if __name__ == "__main__":
     k = 4
     num_beads = 6
     output_path = "./uploads/data.json"
-    cure = str(input("Do you want to apply cure? (y/n):"))
+    # cure = str(input("Do you want to apply cure? (y/n):"))
+    cure = 'n'
     X = file_dataset(input_file)
     print(X)
     if cure == "y":

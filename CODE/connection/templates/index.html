@@ -32,14 +32,18 @@
 </head>
 <body>
   <h1>Upload CSV and Display Radar Chart</h1>
-  <form id="uploadForm">
-    <input type="file" id="fileInput" accept=".csv" />
+<form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".csv" required>
+    <input type="text" name="cure_choice" placeholder="Cure Choice (optional)">
     <button type="submit">Upload</button>
-  </form>
+</form>
+
   <div id="chart-container"></div>
 
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <script src="app.js"></script>
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+
 </body>
 </html>
