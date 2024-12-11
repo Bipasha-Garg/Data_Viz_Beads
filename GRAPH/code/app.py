@@ -3,8 +3,8 @@ from flask_cors import CORS
 import os
 import logging
 import pandas as pd
-import json
 from datetime import datetime
+from process import process_file
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -22,16 +22,36 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(JSON_FOLDER, exist_ok=True)
 
 
-def write_to_json(data, folder, filename_prefix="data"):
+def process_file_and_convert_to_json(file_path, json_folder, filename_prefix="data"):
+    try:
+        # Read the CSV file into a pandas DataFrame
+        df = pd.read_csv(file_path)
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    json_filename = f"{filename_prefix}_{timestamp}.json"
-    json_path = os.path.join(folder, json_filename)
+        # Check if the CSV contains enough columns for clustering
+        if df.shape[1] < 2:
+            raise ValueError("Insufficient columns in the CSV file")
 
-    with open(json_path, "w") as json_file:
-        json.dump(data, json_file, indent=4)
-    logging.debug(f"JSON file created: {json_path}")
-    return json_filename, json_path
+        # Convert the DataFrame to a list of dictionaries
+        json_data = df.to_dict(orient="records")
+
+        # Create a timestamped JSON filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        json_filename = f"{filename_prefix}_{timestamp}.json"
+        json_path = os.path.join(json_folder, json_filename)
+
+        # Process file and convert to JSON with clustering
+        json_folder, json_filename = process_file(
+            file_path, json_folder, json_filename, 5, 3
+        )
+
+        # Correct the logging line to use the correct variable
+        logging.debug(f"JSON file created: {json_filename}")
+
+        return json_folder, json_filename
+
+    except Exception as e:
+        logging.error(f"Error processing file: {e}")
+        raise Exception(f"Error processing file: {str(e)}")
 
 
 @app.route("/upload", methods=["POST"])
@@ -43,41 +63,36 @@ def upload_file():
         return jsonify({"error": "No selected file"}), 400
 
     try:
-        # Save the file
+        # Save the file to the server
         filename = file.filename
         upload_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
         file.save(upload_path)
         logging.debug(f"File uploaded: {filename}")
 
-        # Process the file and convert to JSON
-        try:
-            # Assuming the file is a CSV
-            df = pd.read_csv(upload_path)
-            json_data = df.to_dict(orient="records")
+        # Call the new function to process the file and convert it to JSON
+        json_folder, json_filename = process_file_and_convert_to_json(
+            upload_path, app.config["JSON_FOLDER"]
+        )
 
-            # Write data to a JSON file
-            json_filename, json_path = write_to_json(
-                json_data, app.config["JSON_FOLDER"]
-            )
+        json_path = os.path.join(json_folder, json_filename)  # Full path to JSON file
 
-            return (
-                jsonify(
-                    {
-                        "message": "File uploaded and processed successfully",
-                        "filename": filename,
-                        "json_filename": json_filename,
-                        "json_path": json_path,
-                    }
-                ),
-                200,
-            )
-        except Exception as e:
-            logging.error(f"Error processing file: {e}")
-            return jsonify({"error": f"Error processing file: {str(e)}"}), 500
+        # Return the JSON file details to the front-end
+        return (
+            jsonify(
+                {
+                    "message": "File uploaded and processed successfully",
+                    "filename": filename,
+                    "json_folder": json_folder,
+                    "json_filename": json_filename,
+                    "json_path": json_path,
+                }
+            ),
+            200,
+        )
 
     except Exception as e:
-        logging.error(f"Error saving file: {e}")
-        return jsonify({"error": f"Error saving file: {str(e)}"}), 500
+        logging.error(f"Error: {e}")
+        return jsonify({"error": f"Error: {str(e)}"}), 500
 
 
 if __name__ == "__main__":
