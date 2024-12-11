@@ -1,12 +1,12 @@
 // Load the JSON data
-d3.json("cust.json")
+d3.json("Iris_outlier.json")
   .then((data) => {
     console.log("Data loaded:", data);
 
     // Constants for the plot dimensions and margins
     const width = 800;
     const height = 800;
-    const margin = { top: 50, right: 50, bottom: 50, left: 50 };
+    const margin = { top: 100, right: 100, bottom: 100, left: 100 };
     const plotRadius =
       Math.min(width, height) / 2 - Math.max(margin.top, margin.bottom);
 

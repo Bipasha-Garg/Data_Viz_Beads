@@ -192,15 +192,14 @@ if __name__ == "__main__":
     # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/old/Iris.csv"\
     # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/new/dataset/Customers.csv"
     # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/new/dataset/diabetes.csv"
-    file_path = (
-        "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/dataset/Iris.csv"
-    )
+    file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/dataset/Iris.csv"
     # file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/new/dataset/User Knowledge.xls"
     # file_path = check_and_convert_excel(file_path)
-    k = 4
-    num_beads = 6
-    output_path = "nba_cure.json"
-    cure = str(input("Do you want to apply cure? (y/n):"))
+    k = 3
+    num_beads = 4
+    output_path = "Iris_3_4.json"
+    # cure = str(input("Do you want to apply cure? (y/n):"))
+    cure = str("n")
     X = file_dataset(file_path)
     # print(X)
     if cure == "y":

@@ -1,4 +1,4 @@
-d3.json("out.json")
+d3.json("Iris.json")
   .then((data) => {
     console.log("Data loaded:", data); // Debug log
     const width = 800;

@@ -5,21 +5,30 @@ from scipy.spatial.distance import euclidean
 from sklearn.cluster import KMeans
 import json
 
-# def apply_kmeans(X, clusters):
-#     """Apply KMeans clustering to the dataset."""
-#     kmeans = KMeans(n_clusters=clusters, random_state=0)
-#     kmeans.fit(X)
-#     sample_labels = kmeans.predict(X)
-#     centers = kmeans.cluster_centers_
-#     return sample_labels, centers #array
+def apply_kmeans(X, clusters):
+    """Apply KMeans clustering to the dataset."""
+    kmeans = KMeans(n_clusters=clusters, random_state=0)
+    kmeans.fit(X)
+    sample_labels = kmeans.predict(X)
+    centers = kmeans.cluster_centers_
+    return sample_labels, centers #array
 
 
-# def store_cluster(X, y_kmeans, k):
-#     """Store the clusters in an array of arrays."""
-#     cluster_points = [[] for _ in range(k)]
-#     for i, label in enumerate(y_kmeans):
-#         cluster_points[label].append(X[i])
-#     return cluster_points
+def store_cluster(X, y_kmeans, k):
+    """Store the clusters in an array of arrays."""
+    cluster_points = [[] for _ in range(k)]
+    for i, label in enumerate(y_kmeans):
+        cluster_points[label].append(X[i])
+    return cluster_points
+
+
+def store_and_print_beads(cluster_points, num_beads):
+    """Store and print the sub-clusters (beads) within each cluster."""
+    all_beads = []
+    for i, cluster in enumerate(cluster_points):
+        beads, bead_centers = divide_cluster_into_beads(np.array(cluster), num_beads)
+        all_beads.append((beads, bead_centers))
+    return all_beads
 
 
 def divide_cluster_into_beads(cluster, num_beads):
@@ -32,15 +41,6 @@ def divide_cluster_into_beads(cluster, num_beads):
     for i, label in enumerate(y_beads):
         bead_points[label].append(cluster[i])
     return bead_points, bead_centers
-
-
-# def store_and_print_beads(cluster_points, num_beads):
-#     """Store and print the sub-clusters (beads) within each cluster."""
-#     all_beads = []
-#     for i, cluster in enumerate(cluster_points):
-#         beads, bead_centers = divide_cluster_into_beads(np.array(cluster), num_beads)
-#         all_beads.append((beads, bead_centers))
-#     return all_beads
 
 
 def cure_algorithm(points, num_representatives, shrink_factor=0.5):

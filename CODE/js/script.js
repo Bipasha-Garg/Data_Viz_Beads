@@ -1,4 +1,4 @@
-d3.json("out.json")
+d3.json("Iris_cure.json")
   .then((data) => {
     const width = 800;
     const height = 800;

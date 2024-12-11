@@ -1,20 +1,16 @@
 // Load the JSON data
-d3.json("out.json")
+d3.json("Iris_3_4.json")
   .then((data) => {
-    console.log("Data loaded:", data);
-
     // Constants for the plot dimensions and margins
     const width = 800;
     const height = 800;
     const margin = { top: 50, right: 50, bottom: 50, left: 50 };
-    const plotRadius =
-      Math.min(width, height) / 2 - Math.max(margin.top, margin.bottom);
+    const plotRadius = Math.min(width, height) / 2 - Math.max(margin.top, margin.bottom);
 
     const svgContainer = d3.select("#chart-container");
 
     // Process the data using the exportFunction
     const processedData = exportFunction(data);
-    console.log("Processed data:", processedData);
 
     // Determine the dimension of the data
     const dataDimension = data[0].data_dimension;
@@ -32,10 +28,7 @@ d3.json("out.json")
     });
 
     // Create a scale for the radius
-    const rScale = d3
-      .scaleLinear()
-      .range([0, plotRadius])
-      .domain([0, Math.max(...maxValues)]);
+    const rScale = d3.scaleLinear().range([0, plotRadius]).domain([0, Math.max(...maxValues)]);
 
     // Function to create a radar chart for a specific cluster
     function createRadarChart(clusterData) {
@@ -46,8 +39,6 @@ d3.json("out.json")
         .attr("class", "chart")
         .append("g")
         .attr("transform", `translate(${width / 2},${height / 2})`);
-
-      console.log("Creating radar chart for cluster:", clusterData);
 
       clusterData.beads.forEach((bead, beadIndex) => {
         const { shape, radius, coordinates } = bead;
@@ -115,17 +106,13 @@ d3.json("out.json")
           const pointCoordinates = dataPoint.coordinates.map((coord) =>
             rScale(coord)
           );
-
-          console.log("Plotting data point:", pointCoordinates);
-
           mainSvg
             .append("circle")
-            // .attr("cx", pointCoordinates[0])
-            // .attr("cy", pointCoordinates[1])
             .attr("r", 2)
             .attr("class", "data-point")
             .style("fill", beadColor)
             .style("opacity", 0.6)
+            .style("color", "white")
             .on("mouseover", function () {
               d3.select(this)
                 .transition()
@@ -186,7 +173,6 @@ d3.json("out.json")
               const pointCoordinates = dataPoint.coordinates.map((coord) =>
                 rScale(coord)
               );
-
               fanPlotSvg
                 .append("circle")
                 .attr("cx", pointCoordinates[0])
@@ -235,8 +221,8 @@ d3.json("out.json")
           .attr("r", gridStep * i)
           .attr("class", "grid")
           .style("fill", "none")
-          .style("stroke", "black")
-          .style("stroke-opacity", 0.3);
+          .style("stroke", "white");
+          // .style("stroke-opacity", 0.3);
       }
 
       // Add labels
@@ -247,8 +233,48 @@ d3.json("out.json")
         .attr("text-anchor", "middle")
         .attr("class", "chart-title")
         .text(`Cluster ${clusterData.clusterNumber}`)
-        .style("font-size", "16px")
-        .style("font-weight", "bold");
+        .style("stroke", "white")
+        .style("font-size", "30px");
+        // .style("font-weight", "bold");
+
+      // Add legend
+      const legend = mainSvg
+        .append("g")
+        .attr("transform", `translate(-250, ${plotRadius + 10})`); // Shifted the legend to the left by 30 units
+
+      const uniqueShapesAndColors = clusterData.beads.map((bead, index) => ({
+        shape: bead.shape,
+        color: d3.schemeCategory10[index % 10],
+        beadNumber: bead.beadNumber,
+      }));
+
+      const legendItemSize = 30;
+      const legendSpacing = 130;
+
+      uniqueShapesAndColors.forEach((item, index) => {
+        const legendItem = legend
+          .append("g")
+          .attr(
+            "transform",
+            `translate(${index * (legendItemSize + legendSpacing)}, 0)`
+          );
+
+        legendItem
+          .append("rect")
+          .attr("width", legendItemSize)
+          .attr("height", legendItemSize)
+          .style("fill", item.color)
+          .style("stroke", item.color)
+          .style("stroke-width", 1);
+
+        legendItem
+          .append("text")
+          .attr("x", legendItemSize + 10)
+          .attr("y", legendItemSize / 2)
+          .attr("alignment-baseline", "middle")
+          .style("stroke", "white")
+          .text(`Bead ${item.beadNumber} (${item.shape})`);
+      });
     }
 
     // Create radar charts for each cluster

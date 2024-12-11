@@ -122,7 +122,7 @@ def upload_file():
 
 
 # Route to serve the JSON file if requested
-@app.route("/upload", methods=["GET"])
+@app.route("/", methods=["GET"])
 def get_file(filename):
     try:
         return send_from_directory(UPLOAD_FOLDER, filename)

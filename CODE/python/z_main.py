@@ -1,6 +1,7 @@
-import numpy as np
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
+import numpy as np
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+
 from sklearn.cluster import KMeans
 from sklearn.neighbors import NearestNeighbors
 import json
@@ -26,6 +27,10 @@ def file_dataset(file_path):
     for column in data.select_dtypes(include=["object"]):
         label_encoders[column] = LabelEncoder()
         data[column] = label_encoders[column].fit_transform(data[column])
+
+    # Normalize the numeric columns
+    scaler = MinMaxScaler()
+    data[numeric_columns] = scaler.fit_transform(data[numeric_columns])
 
     # Apply to_numeric to all columns
     data = data.apply(pd.to_numeric, errors="ignore")
@@ -164,14 +169,12 @@ def implement_kmeans_with_outliers(file_path, k, num_beads, output_path, X):
 
 if __name__ == "__main__":
     # Load the dataset (modify file_path as needed)
-    file_path = (
-        "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/dataset/Customers.csv"
-    )
+    file_path = "/home/bipasha/Desktop/research/Data_Viz_Beads/CODE/dataset/Iris.csv"
 
     # Parameters
     k = 4
-    num_beads = 3
-    output_path = "cust.json"
+    num_beads = 4
+    output_path = "Iris_outlier.json"
 
     # Preprocess the dataset and return as numpy array
     X = file_dataset(file_path)
