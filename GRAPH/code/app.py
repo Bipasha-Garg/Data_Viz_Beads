@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask import send_from_directory
 from flask_cors import CORS
 import os
 import logging
@@ -10,12 +11,16 @@ from process import process_file
 logging.basicConfig(level=logging.DEBUG)
 
 # Initialize Flask app
+# app = Flask(__name__)
 app = Flask(__name__)
-CORS(app)  # Enable CORS for cross-origin requests
+CORS(app, resources={
+    r"/upload": {"origins": ["http://localhost:3000"]},
+    r"/public/*": {"origins": ["http://localhost:3000"]}
+})# Enable CORS for cross-origin requests
 
 # Configure upload and JSON folders
 UPLOAD_FOLDER = "uploads"
-JSON_FOLDER = "./my-react-app/public"  # Directly store JSON files here
+JSON_FOLDER = "uploads"  # Directly store JSON files here
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["JSON_FOLDER"] = JSON_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -58,6 +63,7 @@ def upload_file():
         return jsonify({"error": "No selected file"}), 400
 
     try:
+        
         # Save the file to the server
         filename = file.filename
         upload_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
@@ -93,11 +99,18 @@ def upload_file():
 # Serve the processed JSON file when requested
 @app.route("/public/<filename>")
 def serve_file(filename):
-    return send_from_directory(app.config["JSON_FOLDER"], filename)
+    try:
+        logging.debug(f"Requesting file: {filename}")
+        # Serve the file from the public folder
+        return send_from_directory(app.config["JSON_FOLDER"], filename)
+    except Exception as e:
+        logging.error(f"Error serving file: {e}")
+        return jsonify({"error": "File not found"}), 404
+
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
 
 # from flask import Flask, request, jsonify
 # from flask_cors import CORS  # Allow cross-origin requests
