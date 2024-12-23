@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-
-const JsonDisplay = ({ jsonData }) => {
-  if (!jsonData) return null;
-  return (
-    <div className="mt-6 bg-white p-4 rounded shadow">
-      <pre className="whitespace-pre-wrap">
-        {JSON.stringify(jsonData, null, 2)}
-      </pre>
-    </div>
-  );
-};
+import JsonDisplay from "./JsonDisplay";
 
 const App = () => {
   const [selectedFile, setSelectedFile] = useState(null);
