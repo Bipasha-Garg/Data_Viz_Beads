@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import JsonDisplay from "./JsonDisplay";
+import HierarchicalGraph from "./JsonDisplay";
 
 const App = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -21,7 +21,7 @@ const App = () => {
   // Separate upload handler
   const handleUpload = async (e) => {
     e.preventDefault(); // Prevent form refresh
-    
+
     if (!selectedFile) {
       setError("Please select a file first");
       return;
@@ -45,10 +45,11 @@ const App = () => {
       console.log("Upload successful:", result);
 
       // Fetch processed data
-      const jsonResponse = await fetch(`http://127.0.0.1:5000/public/${result.json_filename}`);
+      const jsonResponse = await fetch(
+        `http://127.0.0.1:5000/public/${result.json_filename}`
+      );
       const processedData = await jsonResponse.json();
       setJsonData(processedData);
-      
     } catch (err) {
       setError(err.message);
     } finally {
@@ -56,56 +57,104 @@ const App = () => {
     }
   };
 
+  //   return (
+  //     <div className="max-h-screen bg-gray-100 p-6">
+  //       <div className="max-w-2xl mx-auto">
+  //         <h1 className="text-2xl font-bold mb-4">File Upload</h1>
+
+  //         <div className="bg-white p-6 rounded-lg shadow mb-4">
+  //           <div className="mb-4">
+  //             <input
+  //               type="file"
+  //               accept=".csv"
+  //               onChange={handleFileSelect}
+  //               className="mb-2"
+  //               disabled={isLoading}
+  //             />
+
+  //             {fileName && (
+  //               <div className="mt-2 p-2 bg-blue-50 rounded">
+  //                 Selected file: <span className="font-semibold">{fileName}</span>
+  //               </div>
+  //             )}
+  //           </div>
+
+  //           <button
+  //             type="button"
+  //             onClick={handleUpload}
+  //             disabled={!selectedFile || isLoading}
+  //             className="bg-blue-500 text-white px-4 py-2 rounded 
+  //                      disabled:bg-blue-300 disabled:cursor-not-allowed"
+  //           >
+  //             {isLoading ? "Processing..." : "Upload"}
+  //           </button>
+
+  //           {error && <div className="mt-2 text-red-500">{error}</div>}
+
+  //           {isLoading && (
+  //             <div className="mt-2 text-blue-500">Processing your file...</div>
+  //           )}
+  //         </div>
+  //         <div>
+  //           <h2 className="text-2xl font-bold mb-4">JSON Data</h2>
+  //         </div>
+  //         <div className="flex content-center" style={{ width: "1500px", height: "1200px" }}>
+  //           {jsonData && <HierarchicalGraph jsonData={jsonData} />}
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-2xl font-bold mb-4">File Upload</h1>
-        
-        <div className="bg-white p-6 rounded-lg shadow mb-4">
-          <div className="mb-4">
-            <input
-              type="file"
-              accept=".csv"
-              onChange={handleFileSelect}
-              className="mb-2"
-              disabled={isLoading}
-              
-            />
-            
-            {fileName && (
-              <div className="mt-2 p-2 bg-blue-50 rounded">
-                Selected file: <span className="font-semibold">{fileName}</span>
-              </div>
-            )}
-          </div>
+    <div className="h-screen bg-gray-100 p-6 flex">
+      {/* Sidebar with CSV input */}
+      <div className="w-1/4 p-4 bg-white shadow rounded-lg">
+        <h1 className="text-xl font-bold mb-4">File Upload</h1>
 
-          <button
-            type="button"
-            onClick={handleUpload}
-            disabled={!selectedFile || isLoading}
-            className="bg-blue-500 text-white px-4 py-2 rounded 
-                     disabled:bg-blue-300 disabled:cursor-not-allowed"
-          >
-            {isLoading ? "Processing..." : "Upload"}
-          </button>
+        <div className="mb-4">
+          <input
+            type="file"
+            accept=".csv"
+            onChange={handleFileSelect}
+            className="mb-2 w-full"
+            disabled={isLoading}
+          />
 
-          {error && (
-            <div className="mt-2 text-red-500">
-              {error}
-            </div>
-          )}
-
-          {isLoading && (
-            <div className="mt-2 text-blue-500">
-              Processing your file...
+          {fileName && (
+            <div className="mt-2 p-2 bg-blue-50 rounded">
+              Selected file: <span className="font-semibold">{fileName}</span>
             </div>
           )}
         </div>
 
-        {jsonData && <JsonDisplay jsonData={jsonData} />}
+        <button
+          type="button"
+          onClick={handleUpload}
+          disabled={!selectedFile || isLoading}
+          className="bg-blue-500 text-white px-4 py-2 rounded 
+                   disabled:bg-blue-300 disabled:cursor-not-allowed w-full"
+        >
+          {isLoading ? "Processing..." : "Upload"}
+        </button>
+
+        {error && <div className="mt-2 text-red-500">{error}</div>}
+
+        {isLoading && (
+          <div className="mt-2 text-blue-500">Processing your file...</div>
+        )}
+      </div>
+
+      {/* Main content area */}
+      <div className=" h-full flex-1 flex flex-col items-center justify-center">
+        <h2 className="text-2xl font-bold mb-4">JSON Data</h2>
+        <div
+          className="flex justify-center items-center bg-white shadow rounded-lg p-4"
+          style={{ width: "1400px", height: "1000px" }}
+        >
+          {jsonData && <HierarchicalGraph jsonData={jsonData} />}
+        </div>
       </div>
     </div>
   );
 };
-
 export default App;
