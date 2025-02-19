@@ -43,38 +43,31 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
       .style("padding", "5px")
       .style("border-radius", "4px")
       .style("font-size", "12px");
-
+  const getSectorColor = (index, sectorIndex) => {
+    return d3.hsl(sectorIndex % 2 === 1 ? 240 : 0, 1, 0.5);
+  };
     pointsData.forEach((subspace, index) => {
       const innerRadius = (index / subspaces.length) * maxRadius;
       const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
       const sectors = 2 ** (index + 1);
-      const colorScale = d3
-        .scaleOrdinal()
-        .range(["#FFD700", 
-    "#FF69B4", 
-    "#33B5E5", 
-    "#32CD32", 
-    "#FF4500", 
-    "#8A2BE2", 
-    "#00CED1", 
-    "#DC143C", 
-    "#1E90FF", 
-    "#FF8C00", 
-    "#ADFF2F", 
-    "#C71585", 
-    "#20B2AA", 
-    "#8B4513", 
-    "#7B68EE", 
-    ]);
-      const subspaceColor = colorScale((index + 1) % colorScale.range().length);
 
-      g.append("circle")
-        .attr("r", outerRadius)
-        .attr("stroke", "black")
-        .attr("fill", subspaceColor)
-        .attr("fill-opacity", 0.2)
-        .attr("stroke-width", 0.25)
-        .style("pointer-events", "none");
+      for (let i = 0; i < sectors; i++) {
+        g.append("path")
+          .attr(
+            "d",
+            d3
+              .arc()
+              .innerRadius(innerRadius)
+              .outerRadius(outerRadius)
+              .startAngle((2 * Math.PI * i) / sectors)
+              .endAngle((2 * Math.PI * (i + 1)) / sectors)
+          )
+          .attr("fill", getSectorColor(index, i))
+          .attr("fill-opacity", 0.3)
+          .attr("stroke", "black")
+          .attr("stroke-width", 0.25);
+      }
+
 
       for (let i = 0; i < sectors; i++) {
         const angle = (2 * Math.PI * i) / sectors;
@@ -108,11 +101,8 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
         const angleStart = (2 * Math.PI * bitVectorIndex) / sectors;
         const angleEnd = (2 * Math.PI * (bitVectorIndex + 1)) / sectors;
        
-       
-       
         const centerAngle = (angleStart + angleEnd) / 2;
        
-
         const totalPoints = subspace.points.length;
         const clusterFactor = 0.86;
         const overlapRadius =innerRadius + (clusterFactor * (outerRadius - innerRadius) * (i % totalPoints)) / totalPoints;
