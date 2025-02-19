@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
@@ -30,7 +31,7 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
       .append("g")
       .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
-    const pointPositions = {}; 
+    const pointPositions = {}; // Store positions of points by Point_ID
 
     const tooltip = d3
       .select("body")
@@ -50,22 +51,7 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
       const sectors = 2 ** (index + 1);
       const colorScale = d3
         .scaleOrdinal()
-        .range(["#FFD700", 
-    "#FF69B4", 
-    "#33B5E5", 
-    "#32CD32", 
-    "#FF4500", 
-    "#8A2BE2", 
-    "#00CED1", 
-    "#DC143C", 
-    "#1E90FF", 
-    "#FF8C00", 
-    "#ADFF2F", 
-    "#C71585", 
-    "#20B2AA", 
-    "#8B4513", 
-    "#7B68EE", 
-    ]);
+        .range(["#FFD700", "#FF69B4", "#33B5E5"]);
       const subspaceColor = colorScale((index + 1) % colorScale.range().length);
 
       g.append("circle")
@@ -73,26 +59,24 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
         .attr("stroke", "black")
         .attr("fill", subspaceColor)
         .attr("fill-opacity", 0.2)
-        .attr("stroke-width", 0.25)
+        .attr("stroke-width", 2)
         .style("pointer-events", "none");
 
       for (let i = 0; i < sectors; i++) {
         const angle = (2 * Math.PI * i) / sectors;
         const x1 = outerRadius * Math.cos(angle);
         const y1 = outerRadius * Math.sin(angle);
-        const x2 = innerRadius * Math.cos(angle);
-        const y2 = innerRadius * Math.sin(angle);
         g.append("line")
-          .attr("x1", x2)
-          .attr("y1", y2)
+          .attr("x1", 0)
+          .attr("y1", 0)
           .attr("x2", x1)
           .attr("y2", y1)
           .attr("stroke", "black")
-          .attr("stroke-width", 0.25)
+          .attr("stroke-width", 1)
           .style("pointer-events", "none");
       }
 
-      subspace.points.forEach((point,i) => {
+      subspace.points.forEach((point) => {
         const pointData = Object.entries(point).filter(
           ([key]) => key !== "Point_ID"
         );
@@ -102,46 +86,38 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
 
         const minRadius = innerRadius;
         const maxRadius = outerRadius;
-        const randomRadius =minRadius + Math.random() * (maxRadius - minRadius);
+        const randomRadius =
+          minRadius + Math.random() * (maxRadius - minRadius);
 
         const bitVectorIndex = parseInt(bitVector, 2);
         const angleStart = (2 * Math.PI * bitVectorIndex) / sectors;
         const angleEnd = (2 * Math.PI * (bitVectorIndex + 1)) / sectors;
-       
-       
-       
-        const centerAngle = (angleStart + angleEnd) / 2;
-       
+        const randomAngle =
+          angleStart + Math.random() * (angleEnd - angleStart);
 
-        const totalPoints = subspace.points.length;
-        const clusterFactor = 0.86;
-        const overlapRadius =innerRadius + (clusterFactor * (outerRadius - innerRadius) * (i % totalPoints)) / totalPoints;
+        const x = randomRadius * Math.cos(randomAngle);
+        const y = randomRadius * Math.sin(randomAngle);
 
-        const x = overlapRadius * Math.cos(centerAngle);
-        const y = overlapRadius * Math.sin(centerAngle);
-        point.Point_ID.forEach((id) => {
-          if (!pointPositions[id]) {
-            pointPositions[id] = [];
-          }
-          pointPositions[id].push({ x, y, point, subspaceId: subspace.key });
-        });
+        if (!pointPositions[point.Point_ID]) {
+          pointPositions[point.Point_ID] = [];
+        }
+        pointPositions[point.Point_ID].push({ x, y, point });
 
         g.append("circle")
           .attr("cx", x)
           .attr("cy", y)
-          .attr("r", 3)
+          .attr("r", 4)
           .attr("fill", "black")
           .attr("stroke", "white")
           .attr("stroke-width", 0.5)
           .style("pointer-events", "visible")
           .on("mouseover", (event) => {
-            const pointIds = point.Point_ID.join(", ");
             tooltip
               .style("visibility", "visible")
               .html(
-                `Point_IDs: ${pointIds}<br>Coordinates: (${x.toFixed(
+                `Point_ID: ${point.Point_ID}<br>Coordinates: (${x.toFixed(
                   2
-                )}, ${y.toFixed(2)})<br>Subspace: ${subspace.key}`
+                )}, ${y.toFixed(2)})`
               );
             setHoveredCoordinates(point);
           })
@@ -157,7 +133,7 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
       });
     });
 
-    Object.entries(pointPositions).forEach(([pointId, positions]) => {
+    Object.values(pointPositions).forEach((positions) => {
       if (positions.length > 1) {
         for (let i = 0; i < positions.length - 1; i++) {
           g.append("line")
@@ -170,7 +146,7 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
             .on("mouseover", (event) => {
               tooltip
                 .style("visibility", "visible")
-                .html(`Connection: Point_ID ${pointId}`);
+                .html(`Connection: Point_ID ${positions[i].point.Point_ID}`);
             })
             .on("mousemove", (event) => {
               tooltip
@@ -184,7 +160,7 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
       }
     });
 
-    
+    // Zoom functionality
     const zoom = d3.zoom().on("zoom", (event) => {
       g.attr("transform", event.transform);
     });

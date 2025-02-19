@@ -98,9 +98,9 @@ const App = () => {
         <div className="my-12">
           {/* Display hovered coordinates */}
           {hoveredCoordinates && (
-            <div className="mb-4 p-2 bg-green-50 rounded text-2xl">
+            <div className="mb-4 p-2 bg-green-50 rounded text-2xl text-wrap">
               <strong>Hovered Node:</strong>
-              <div>ID: {hoveredCoordinates.id}</div>
+              <div>ID: {hoveredCoordinates.Point_IDs}</div>
               {/* Dynamically render the coordinates */}
               {Object.keys(hoveredCoordinates)
                 .filter((key) => key !== "id") // Exclude 'id' from coordinates
