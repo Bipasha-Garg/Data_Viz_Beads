@@ -8,8 +8,9 @@
 
 # def preprocess_csv(file_path, output_file):
 #     try:
-
 #         df = pd.read_csv(file_path)
+
+
 #         id_columns = [
 #             col for col in df.columns if col.lower() in ["id", "identifier", "ID", "Id"]
 #         ]
@@ -39,7 +40,8 @@
 
 #         df.to_csv(output_file, index=False)
 #         logging.debug(f"Preprocessed data saved to {output_file}")
-#         return output_file, numeric_columns
+
+#         return output_file, numeric_columns, df
 
 #     except Exception as e:
 #         logging.error(f"Error during preprocessing: {e}")
@@ -49,26 +51,28 @@
 # def process_file(file_path, json_folder, json_filename):
 #     try:
 
-#         preprocessed_file, numeric_columns = preprocess_csv(
+#         preprocessed_file, numeric_columns, df = preprocess_csv(
 #             file_path, "preprocessed.csv"
 #         )
-#         df = pd.read_csv(preprocessed_file)
 
 
 #         label_column = df.columns[-2]
-#         distinct_labels = df[label_column].unique().tolist()
+
+
+#         label_map = defaultdict(list)
+#         for _, row in df.iterrows():
+#             label_map[row[label_column]].append(int(row["Point_ID"]))
 
 
 #         subspace_data = {}
 #         for i in range(1, len(numeric_columns) + 1):
 #             subspace = numeric_columns[:i]
-#             subspace_name = "".join(subspace)
+#             subspace_name = "_".join(subspace)
 
 #             coordinate_map = defaultdict(list)
 #             for _, row in df.iterrows():
 #                 coordinate = tuple(row[dim] for dim in subspace)
-#                 coordinate_map[coordinate].append(row["Point_ID"])
-
+#                 coordinate_map[coordinate].append(int(row["Point_ID"]))
 
 #             subspace_data[subspace_name] = [
 #                 {**dict(zip(subspace, coord)), "Point_ID": point_ids}
@@ -78,19 +82,21 @@
 
 #         if not os.path.exists(json_folder):
 #             os.makedirs(json_folder)
+
+
 #         json_file_path = os.path.join(json_folder, json_filename)
 #         with open(json_file_path, "w") as json_file:
 #             json.dump(subspace_data, json_file, indent=4)
 
 
-#         labels_file_path = os.path.join(json_folder, "labels.json")
+#         labels_file_path = os.path.join(json_folder, "labels_file.json")
 #         with open(labels_file_path, "w") as labels_file:
-#             json.dump({label_column: distinct_labels}, labels_file, indent=4)
+#             json.dump({"labels": label_map}, labels_file, indent=4)
 
 #         logging.debug(
 #             f"JSON files successfully saved at: {json_file_path} and {labels_file_path}"
 #         )
-#         return json_folder,json_filename, labels_file_path
+#         return json_folder, json_filename, labels_file_path
 
 #     except Exception as e:
 #         logging.error(f"Error processing file: {e}")
@@ -109,7 +115,7 @@ def preprocess_csv(file_path, output_file):
     try:
         df = pd.read_csv(file_path)
 
-        # Drop ID-like columns
+        # Drop ID columns
         id_columns = [
             col for col in df.columns if col.lower() in ["id", "identifier", "ID", "Id"]
         ]
@@ -118,29 +124,36 @@ def preprocess_csv(file_path, output_file):
         # Drop rows with missing values
         df = df.dropna()
 
-        # Encode categorical columns
+        # Encode categorical variables
         label_encoders = {}
         for col in df.select_dtypes(include=["object"]).columns:
             label_encoders[col] = LabelEncoder()
             df[col] = label_encoders[col].fit_transform(df[col])
 
-        # Ensure at least one numerical column
+        # Select numerical columns
         numeric_columns = df.select_dtypes(include=["float64", "int64"]).columns
         if len(numeric_columns) < 1:
             raise ValueError("The dataset must have at least one numerical column.")
 
-        # Normalize numerical columns
+        # Calculate variance and sort columns by increasing variance
+        variances = df[numeric_columns].var().sort_values().index.tolist()
+
+        # Standardize numerical columns
         scaler = StandardScaler()
         df[numeric_columns] = scaler.fit_transform(df[numeric_columns])
 
-        # Add a unique Point_ID column
+        # Add a unique identifier for each data point
         df["Point_ID"] = range(len(df))
 
-        # Save the preprocessed file
+        # Save preprocessed data
         df.to_csv(output_file, index=False)
         logging.debug(f"Preprocessed data saved to {output_file}")
 
-        return output_file, numeric_columns, df  # Returning df for further processing
+        return (
+            output_file,
+            variances,
+            df,
+        )  # Return sorted columns instead of original order
 
     except Exception as e:
         logging.error(f"Error during preprocessing: {e}")
@@ -149,23 +162,23 @@ def preprocess_csv(file_path, output_file):
 
 def process_file(file_path, json_folder, json_filename):
     try:
-        # Preprocess the CSV file
-        preprocessed_file, numeric_columns, df = preprocess_csv(
+        # Preprocess data and get sorted numerical columns
+        preprocessed_file, sorted_columns, df = preprocess_csv(
             file_path, "preprocessed.csv"
         )
 
-        # Determine the label column
-        label_column = df.columns[-2]  # Assuming label is the second last column
+        # Label column selection (second last column)
+        label_column = df.columns[-2]
 
-        # Extract labels for each point
+        # Create label map
         label_map = defaultdict(list)
         for _, row in df.iterrows():
             label_map[row[label_column]].append(int(row["Point_ID"]))
 
-        # Construct subspace data
+        # Generate subspaces based on sorted variance order
         subspace_data = {}
-        for i in range(1, len(numeric_columns) + 1):
-            subspace = numeric_columns[:i]
+        for i in range(1, len(sorted_columns) + 1):
+            subspace = sorted_columns[:i]
             subspace_name = "_".join(subspace)
 
             coordinate_map = defaultdict(list)
@@ -178,16 +191,16 @@ def process_file(file_path, json_folder, json_filename):
                 for coord, point_ids in coordinate_map.items()
             ]
 
-        # Create output folder if it doesn't exist
+        # Ensure output folder exists
         if not os.path.exists(json_folder):
             os.makedirs(json_folder)
 
-        # Save subspace data to JSON
+        # Save subspaces to JSON
         json_file_path = os.path.join(json_folder, json_filename)
         with open(json_file_path, "w") as json_file:
             json.dump(subspace_data, json_file, indent=4)
 
-        # Save labels data to JSON
+        # Save labels to JSON
         labels_file_path = os.path.join(json_folder, "labels_file.json")
         with open(labels_file_path, "w") as labels_file:
             json.dump({"labels": label_map}, labels_file, indent=4)

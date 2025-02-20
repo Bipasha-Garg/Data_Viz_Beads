@@ -7,25 +7,25 @@ import pandas as pd
 from datetime import datetime
 from proc_withLabels import process_file
 
-# Set up logging
+
 logging.basicConfig(level=logging.DEBUG)
 
-# Initialize Flask app
-# app = Flask(__name__)
+
+
 app = Flask(__name__)
 CORS(
     app,
     resources={
         r"/upload": {"origins": ["http://localhost:3000"]},
         r"/public/*": {"origins": ["http://localhost:3000"]},
-        r"/uploads/*": {"origins": ["http://localhost:3000"]},  # Add this line
+        r"/uploads/*": {"origins": ["http://localhost:3000"]},  
     },
 )
 
 
-# Configure upload and JSON folders
+
 UPLOAD_FOLDER = "uploads"
-JSON_FOLDER = "uploads"  # Directly store JSON files here
+JSON_FOLDER = "uploads"  
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["JSON_FOLDER"] = JSON_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -34,22 +34,22 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 
 def process_file_and_convert_to_json(file_path, json_folder, filename_prefix="data"):
     try:
-        # Read the CSV file into a pandas DataFrame
+        
         df = pd.read_csv(file_path)
 
-        # Check if the CSV contains enough columns for clustering
+        
         if df.shape[1] < 2:
             raise ValueError("Insufficient columns in the CSV file")
 
-        # Call the process function to create the JSON
-        # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        
         json_filename = "processed.json"
         labels_file = "label_file.json"
         json_folder,json_filename, labels_file = process_file(
             file_path, json_folder, json_filename
         )
 
-        # Log the JSON creation
+        
         json_path = os.path.join(json_folder, json_filename)
         logging.debug(f"JSON file created: {json_path}")
 
@@ -70,21 +70,21 @@ def upload_file():
 
     try:
 
-        # Save the file to the server
+        
         filename = file.filename
         upload_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
         file.save(upload_path)
         logging.debug(f"File uploaded: {filename}")
 
-        # Call the new function to process the file and convert it to JSON
+        
         json_folder, json_filename, labels_file = process_file(
             upload_path, app.config["JSON_FOLDER"],"processed.json"
         )
 
-        json_path = os.path.join(json_folder, json_filename)  # Full path to JSON file
+        json_path = os.path.join(json_folder, json_filename)  
         logging.debug(f"JSON should be available at: {json_path}")
 
-        # Return the JSON file details to the front-end
+        
         return (
             jsonify(
                 {
@@ -104,7 +104,7 @@ def upload_file():
         return jsonify({"error": f"Error: {str(e)}"}), 500
 
 
-# Serve the processed JSON file when requested
+
 @app.route("/uploads/<filename>")
 def serve_file(filename):
     try:
