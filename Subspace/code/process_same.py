@@ -10,6 +10,10 @@ def preprocess_csv(file_path, output_file):
     try:
         # Load the CSV file
         df = pd.read_csv(file_path)
+        id_columns = [
+            col for col in df.columns if col.lower() in ["id", "identifier", "ID", "Id"]
+        ]
+        df = df.drop(columns=id_columns, errors="ignore")
 
         # Handle missing values (drop rows with NaN or use imputation)
         df = df.dropna()

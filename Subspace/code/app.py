@@ -5,7 +5,7 @@ import os
 import logging
 import pandas as pd
 from datetime import datetime
-from process_same import process_file
+from proc_withLabels import process_file
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -13,10 +13,15 @@ logging.basicConfig(level=logging.DEBUG)
 # Initialize Flask app
 # app = Flask(__name__)
 app = Flask(__name__)
-CORS(app, resources={
-    r"/upload": {"origins": ["http://localhost:3000"]},
-    r"/public/*": {"origins": ["http://localhost:3000"]}
-})# Enable CORS for cross-origin requests
+CORS(
+    app,
+    resources={
+        r"/upload": {"origins": ["http://localhost:3000"]},
+        r"/public/*": {"origins": ["http://localhost:3000"]},
+        r"/uploads/*": {"origins": ["http://localhost:3000"]},  # Add this line
+    },
+)
+
 
 # Configure upload and JSON folders
 UPLOAD_FOLDER = "uploads"
@@ -39,8 +44,9 @@ def process_file_and_convert_to_json(file_path, json_folder, filename_prefix="da
         # Call the process function to create the JSON
         # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         json_filename = "processed.json"
-        json_folder, json_filename = process_file(
-            file_path, json_folder, json_filename, 5, 3
+        labels_file = "label_file.json"
+        json_folder,json_filename, labels_file = process_file(
+            file_path, json_folder, json_filename
         )
 
         # Log the JSON creation
@@ -63,7 +69,7 @@ def upload_file():
         return jsonify({"error": "No selected file"}), 400
 
     try:
-        
+
         # Save the file to the server
         filename = file.filename
         upload_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
@@ -71,11 +77,12 @@ def upload_file():
         logging.debug(f"File uploaded: {filename}")
 
         # Call the new function to process the file and convert it to JSON
-        json_folder, json_filename = process_file(
+        json_folder, json_filename, labels_file = process_file(
             upload_path, app.config["JSON_FOLDER"],"processed.json"
         )
 
         json_path = os.path.join(json_folder, json_filename)  # Full path to JSON file
+        logging.debug(f"JSON should be available at: {json_path}")
 
         # Return the JSON file details to the front-end
         return (
@@ -86,6 +93,7 @@ def upload_file():
                     "json_folder": json_folder,
                     "json_filename": json_filename,
                     "json_path": json_path,
+                    "labels_file": labels_file,
                 }
             ),
             200,
@@ -97,15 +105,19 @@ def upload_file():
 
 
 # Serve the processed JSON file when requested
-@app.route("/public/<filename>")
+@app.route("/uploads/<filename>")
 def serve_file(filename):
     try:
-        logging.debug(f"Requesting file: {filename}")
-        # Serve the file from the public folder
-        return send_from_directory(app.config["JSON_FOLDER"], filename)
+        file_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+        
+        if not os.path.exists(file_path):
+            logging.error(f"File not found: {file_path}")
+            return jsonify({"error": "File not found"}), 404
+        
+        logging.debug(f"Serving file: {file_path}")
+        return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
     except Exception as e:
         logging.error(f"Error serving file: {e}")
-        return jsonify({"error": "File not found"}), 404
-
+        return jsonify({"error": "Error serving file"}), 500
 if __name__ == "__main__":
     app.run()
