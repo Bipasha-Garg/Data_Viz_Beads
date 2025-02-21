@@ -31,7 +31,7 @@ const HierarchicalGraph = ({ jsonData, setHoveredCoordinates }) => {
       .append("g")
       .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
-    const pointPositions = {}; // Store positions of points by Point_ID
+    const pointPositions = {}; 
 
     const tooltip = d3
       .select("body")

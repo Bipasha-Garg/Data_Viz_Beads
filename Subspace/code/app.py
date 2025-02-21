@@ -10,22 +10,18 @@ from proc_withLabels import process_file
 
 logging.basicConfig(level=logging.DEBUG)
 
-
-
 app = Flask(__name__)
 CORS(
     app,
     resources={
         r"/upload": {"origins": ["http://localhost:3000"]},
         r"/public/*": {"origins": ["http://localhost:3000"]},
-        r"/uploads/*": {"origins": ["http://localhost:3000"]},  
+        r"/uploads/*": {"origins": ["http://localhost:3000"]},
     },
 )
 
-
-
 UPLOAD_FOLDER = "uploads"
-JSON_FOLDER = "uploads"  
+JSON_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["JSON_FOLDER"] = JSON_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -34,22 +30,17 @@ os.makedirs(JSON_FOLDER, exist_ok=True)
 
 def process_file_and_convert_to_json(file_path, json_folder, filename_prefix="data"):
     try:
-        
         df = pd.read_csv(file_path)
 
-        
         if df.shape[1] < 2:
             raise ValueError("Insufficient columns in the CSV file")
 
-        
-        
         json_filename = "processed.json"
         labels_file = "label_file.json"
-        json_folder,json_filename, labels_file = process_file(
+        json_folder, json_filename, labels_file = process_file(
             file_path, json_folder, json_filename
         )
 
-        
         json_path = os.path.join(json_folder, json_filename)
         logging.debug(f"JSON file created: {json_path}")
 
@@ -70,21 +61,18 @@ def upload_file():
 
     try:
 
-        
         filename = file.filename
         upload_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
         file.save(upload_path)
         logging.debug(f"File uploaded: {filename}")
 
-        
         json_folder, json_filename, labels_file = process_file(
-            upload_path, app.config["JSON_FOLDER"],"processed.json"
+            upload_path, app.config["JSON_FOLDER"], "processed.json"
         )
 
-        json_path = os.path.join(json_folder, json_filename)  
+        json_path = os.path.join(json_folder, json_filename)
         logging.debug(f"JSON should be available at: {json_path}")
 
-        
         return (
             jsonify(
                 {
@@ -104,20 +92,21 @@ def upload_file():
         return jsonify({"error": f"Error: {str(e)}"}), 500
 
 
-
 @app.route("/uploads/<filename>")
 def serve_file(filename):
     try:
         file_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-        
+
         if not os.path.exists(file_path):
             logging.error(f"File not found: {file_path}")
             return jsonify({"error": "File not found"}), 404
-        
+
         logging.debug(f"Serving file: {file_path}")
         return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
     except Exception as e:
         logging.error(f"Error serving file: {e}")
         return jsonify({"error": "Error serving file"}), 500
+
+
 if __name__ == "__main__":
     app.run()

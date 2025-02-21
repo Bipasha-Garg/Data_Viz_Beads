@@ -82,7 +82,7 @@ const App = () => {
 
   return (
     <div className="h-screen bg-gray-100 p-6 flex">
-      {/* Sidebar with CSV input */}
+
       <div className="w-1/4 p-4 bg-white shadow rounded-lg">
         <h1 className="text-xl font-bold mb-4">File Upload</h1>
 
@@ -118,7 +118,6 @@ const App = () => {
           <div className="mt-2 text-blue-500">Processing your file...</div>
         )}
         <div className="my-12">
-          {/* Display hovered coordinates */}
           {hoveredCoordinates && (
             <div className="mb-4 p-2 bg-green-50 rounded text-2xl text-wrap">
               <strong>Hovered Node:</strong>
@@ -139,7 +138,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* Main content area */}
       <div className="h-full flex-1 flex flex-col items-center justify-center">
         <h2 className="text-2xl font-bold mb-4">JSON Data</h2>
         <div
