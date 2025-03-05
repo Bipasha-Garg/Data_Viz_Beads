@@ -1,7 +1,7 @@
 {
     "SepalWidthCm": [
         {
-            "SepalWidthCm": 1.0320572244889565,
+            "SepalWidthCm": 0.25,
             "Point_ID": [
                 0,
                 17,
@@ -12,7 +12,7 @@
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
+            "SepalWidthCm": -0.16666666666666652,
             "Point_ID": [
                 1,
                 12,
@@ -43,7 +43,7 @@
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
+            "SepalWidthCm": 0.0,
             "Point_ID": [
                 2,
                 29,
@@ -61,7 +61,7 @@
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
+            "SepalWidthCm": -0.08333333333333348,
             "Point_ID": [
                 3,
                 9,
@@ -78,7 +78,7 @@
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
+            "SepalWidthCm": 0.3333333333333335,
             "Point_ID": [
                 4,
                 22,
@@ -86,14 +86,14 @@
             ]
         },
         {
-            "SepalWidthCm": 1.957669085017169,
+            "SepalWidthCm": 0.583333333333333,
             "Point_ID": [
                 5,
                 16
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
+            "SepalWidthCm": 0.16666666666666652,
             "Point_ID": [
                 6,
                 7,
@@ -110,7 +110,7 @@
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
+            "SepalWidthCm": -0.25,
             "Point_ID": [
                 8,
                 58,
@@ -125,7 +125,7 @@
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
+            "SepalWidthCm": 0.4166666666666665,
             "Point_ID": [
                 10,
                 21,
@@ -133,19 +133,19 @@
             ]
         },
         {
-            "SepalWidthCm": 2.1890720501492225,
+            "SepalWidthCm": 0.6666666666666665,
             "Point_ID": [
                 14
             ]
         },
         {
-            "SepalWidthCm": 3.1146839106774356,
+            "SepalWidthCm": 1.0,
             "Point_ID": [
                 15
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
+            "SepalWidthCm": 0.49999999999999956,
             "Point_ID": [
                 18,
                 19,
@@ -156,7 +156,7 @@
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
+            "SepalWidthCm": 0.08333333333333304,
             "Point_ID": [
                 23,
                 49,
@@ -167,19 +167,19 @@
             ]
         },
         {
-            "SepalWidthCm": 2.4204750152812746,
+            "SepalWidthCm": 0.7499999999999996,
             "Point_ID": [
                 32
             ]
         },
         {
-            "SepalWidthCm": 2.651877980413329,
+            "SepalWidthCm": 0.8333333333333335,
             "Point_ID": [
                 33
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
+            "SepalWidthCm": -0.7500000000000002,
             "Point_ID": [
                 41,
                 53,
@@ -188,7 +188,7 @@
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
+            "SepalWidthCm": -0.3333333333333335,
             "Point_ID": [
                 54,
                 55,
@@ -207,7 +207,7 @@
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
+            "SepalWidthCm": -0.6666666666666667,
             "Point_ID": [
                 57,
                 80,
@@ -215,7 +215,7 @@
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
+            "SepalWidthCm": -0.4166666666666665,
             "Point_ID": [
                 59,
                 67,
@@ -229,13 +229,13 @@
             ]
         },
         {
-            "SepalWidthCm": -2.438987252491841,
+            "SepalWidthCm": -1.0,
             "Point_ID": [
                 60
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
+            "SepalWidthCm": -0.8333333333333333,
             "Point_ID": [
                 62,
                 68,
@@ -243,7 +243,7 @@
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
+            "SepalWidthCm": -0.5833333333333335,
             "Point_ID": [
                 69,
                 72,
@@ -256,7 +256,7 @@
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
+            "SepalWidthCm": -0.5,
             "Point_ID": [
                 79,
                 90,
@@ -268,8 +268,8 @@
     ],
     "SepalWidthCm_PetalWidthCm": [
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 0,
                 27,
@@ -277,8 +277,8 @@
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 1,
                 25,
@@ -286,8 +286,8 @@
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 2,
                 29,
@@ -297,39 +297,39 @@
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 3,
                 30
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 4,
                 22
             ]
         },
         {
-            "SepalWidthCm": 1.957669085017169,
-            "PetalWidthCm": -1.0500307872213979,
+            "SepalWidthCm": 0.583333333333333,
+            "PetalWidthCm": -0.7499999999999999,
             "Point_ID": [
                 5,
                 16
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.1815037572407716,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.8333333333333333,
             "Point_ID": [
                 6
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 7,
                 11,
@@ -340,15 +340,15 @@
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 8
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.4444496972795189,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9999999999999999,
             "Point_ID": [
                 9,
                 34,
@@ -356,170 +356,170 @@
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 10,
                 48
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.4444496972795189,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9999999999999999,
             "Point_ID": [
                 12,
                 13
             ]
         },
         {
-            "SepalWidthCm": 2.1890720501492225,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.6666666666666665,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 14
             ]
         },
         {
-            "SepalWidthCm": 3.1146839106774356,
-            "PetalWidthCm": -1.0500307872213979,
+            "SepalWidthCm": 1.0,
+            "PetalWidthCm": -0.7499999999999999,
             "Point_ID": [
                 15
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.1815037572407716,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.8333333333333333,
             "Point_ID": [
                 17,
                 40
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.1815037572407716,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.8333333333333333,
             "Point_ID": [
                 18,
                 19
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.0500307872213979,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.7499999999999999,
             "Point_ID": [
                 21
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": -0.9185578172020242,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": -0.6666666666666665,
             "Point_ID": [
                 23
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.0500307872213979,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.7499999999999999,
             "Point_ID": [
                 26,
                 31
             ]
         },
         {
-            "SepalWidthCm": 2.4204750152812746,
-            "PetalWidthCm": -1.4444496972795189,
+            "SepalWidthCm": 0.7499999999999996,
+            "PetalWidthCm": -0.9999999999999999,
             "Point_ID": [
                 32
             ]
         },
         {
-            "SepalWidthCm": 2.651877980413329,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.8333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 33
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": -1.1815037572407716,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": -0.8333333333333333,
             "Point_ID": [
                 41
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -0.7870848471826506,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.5833333333333333,
             "Point_ID": [
                 43
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.0500307872213979,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.7499999999999999,
             "Point_ID": [
                 44
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.1815037572407716,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.8333333333333333,
             "Point_ID": [
                 45
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 46
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": -1.3129767272601454,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": -0.9166666666666665,
             "Point_ID": [
                 49
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.2646989129723388,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.08333333333333348,
             "Point_ID": [
                 50
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.3961718829917126,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.16666666666666674,
             "Point_ID": [
                 51
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.3961718829917126,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.16666666666666674,
             "Point_ID": [
                 52,
                 86
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": 0.13322594295296525,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": 2.220446049250313e-16,
             "Point_ID": [
                 53,
                 87
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.3961718829917126,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.16666666666666674,
             "Point_ID": [
                 54,
                 133
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.13322594295296525,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
             "Point_ID": [
                 55,
                 71,
@@ -527,23 +527,23 @@
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 0.5276448530110863,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 0.2500000000000002,
             "Point_ID": [
                 56
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.2611929671051558,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.2499999999999999,
             "Point_ID": [
                 57,
                 81
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
             "Point_ID": [
                 58,
                 64,
@@ -553,22 +553,22 @@
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.2646989129723388,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.08333333333333348,
             "Point_ID": [
                 59
             ]
         },
         {
-            "SepalWidthCm": -2.438987252491841,
-            "PetalWidthCm": -0.2611929671051558,
+            "SepalWidthCm": -1.0,
+            "PetalWidthCm": -0.2499999999999999,
             "Point_ID": [
                 60
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.3961718829917126,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.16666666666666674,
             "Point_ID": [
                 61,
                 66,
@@ -576,189 +576,189 @@
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": -0.2611929671051558,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": -0.2499999999999999,
             "Point_ID": [
                 62
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.2646989129723388,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.08333333333333348,
             "Point_ID": [
                 63
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.2646989129723388,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.08333333333333348,
             "Point_ID": [
                 65
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": -0.2611929671051558,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": -0.2499999999999999,
             "Point_ID": [
                 67
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": 0.3961718829917126,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": 0.16666666666666674,
             "Point_ID": [
                 68,
                 119
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": -0.12971999708578205,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": -0.16666666666666652,
             "Point_ID": [
                 69,
                 98
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.7905907930498337,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.41666666666666674,
             "Point_ID": [
                 70,
                 125
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.3961718829917126,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.16666666666666674,
             "Point_ID": [
                 72
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.001752972933591456,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": -0.08333333333333326,
             "Point_ID": [
                 73
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.2646989129723388,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.08333333333333348,
             "Point_ID": [
                 75,
                 91
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.2646989129723388,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.08333333333333348,
             "Point_ID": [
                 76
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.6591178230304598,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.3333333333333335,
             "Point_ID": [
                 77
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.3961718829917126,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.16666666666666674,
             "Point_ID": [
                 78
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": -0.2611929671051558,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.2499999999999999,
             "Point_ID": [
                 79
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.12971999708578205,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.16666666666666652,
             "Point_ID": [
                 80
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.001752972933591456,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": -0.08333333333333326,
             "Point_ID": [
                 82
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.5276448530110863,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.2500000000000002,
             "Point_ID": [
                 83
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 0.5276448530110863,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.2500000000000002,
             "Point_ID": [
                 85
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.13322594295296525,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 2.220446049250313e-16,
             "Point_ID": [
                 88
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.13322594295296525,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
             "Point_ID": [
                 89
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.001752972933591456,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.08333333333333326,
             "Point_ID": [
                 90,
                 92
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": -0.2611929671051558,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": -0.2499999999999999,
             "Point_ID": [
                 93
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.13322594295296525,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 2.220446049250313e-16,
             "Point_ID": [
                 94
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.001752972933591456,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.08333333333333326,
             "Point_ID": [
                 95
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.7109015831854495,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 1.0000000000000002,
             "Point_ID": [
                 100,
                 144
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.9220637630692072,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.5,
             "Point_ID": [
                 101,
                 111,
@@ -766,8 +766,8 @@
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.1850097031079547,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.666666666666667,
             "Point_ID": [
                 102,
                 105,
@@ -775,65 +775,65 @@
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.7905907930498337,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.41666666666666674,
             "Point_ID": [
                 103,
                 107
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.3164826731273285,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.7500000000000002,
             "Point_ID": [
                 104
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.6591178230304598,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.3333333333333335,
             "Point_ID": [
                 106
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.7905907930498337,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.41666666666666674,
             "Point_ID": [
                 108
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": 1.7109015831854495,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": 1.0000000000000002,
             "Point_ID": [
                 109
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.053536733088581,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.5833333333333335,
             "Point_ID": [
                 110
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 1.053536733088581,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.5833333333333335,
             "Point_ID": [
                 113
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.5794286131660755,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.9166666666666667,
             "Point_ID": [
                 114
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.4479556431467018,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.8333333333333333,
             "Point_ID": [
                 115,
                 120,
@@ -841,8 +841,8 @@
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
             "Point_ID": [
                 116,
                 127,
@@ -851,150 +851,150 @@
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": 1.3164826731273285,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": 0.7500000000000002,
             "Point_ID": [
                 117
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 1.4479556431467018,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": 0.8333333333333333,
             "Point_ID": [
                 118
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.053536733088581,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5833333333333335,
             "Point_ID": [
                 121,
                 122
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.7905907930498337,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.41666666666666674,
             "Point_ID": [
                 123
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.1850097031079547,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 0.666666666666667,
             "Point_ID": [
                 124
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.7905907930498337,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.41666666666666674,
             "Point_ID": [
                 126
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.1850097031079547,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.666666666666667,
             "Point_ID": [
                 128
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.5276448530110863,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.2500000000000002,
             "Point_ID": [
                 129
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.9220637630692072,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5,
             "Point_ID": [
                 130
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": 1.053536733088581,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": 0.5833333333333335,
             "Point_ID": [
                 131
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.3164826731273285,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.7500000000000002,
             "Point_ID": [
                 132
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.2646989129723388,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": 0.08333333333333348,
             "Point_ID": [
                 134
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.4479556431467018,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
             "Point_ID": [
                 135,
                 145
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 1.5794286131660755,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.9166666666666667,
             "Point_ID": [
                 136
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.7905907930498337,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.41666666666666674,
             "Point_ID": [
                 137
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.1850097031079547,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.666666666666667,
             "Point_ID": [
                 139
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.5794286131660755,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.9166666666666667,
             "Point_ID": [
                 140
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.4479556431467018,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.8333333333333333,
             "Point_ID": [
                 141
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.9220637630692072,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.5,
             "Point_ID": [
                 146
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.053536733088581,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.5833333333333335,
             "Point_ID": [
                 147
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 1.4479556431467018,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
             "Point_ID": [
                 148
             ]
@@ -1002,83 +1002,83 @@
     ],
     "SepalWidthCm_PetalWidthCm_SepalLengthCm": [
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 0
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.1430169111851105,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6666666666666665,
             "Point_ID": [
                 1
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.3853526520724133,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7777777777777777,
             "Point_ID": [
                 2,
                 29
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.5065205225160652,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.8333333333333335,
             "Point_ID": [
                 3
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 4
             ]
         },
         {
-            "SepalWidthCm": 1.957669085017169,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.537177558966854,
+            "SepalWidthCm": 0.583333333333333,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.38888888888888884,
             "Point_ID": [
                 5,
                 16
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.5065205225160652,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.8333333333333335,
             "Point_ID": [
                 6
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 7
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.7488562634033669,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.9444444444444442,
             "Point_ID": [
                 8
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -1.1430169111851105,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -0.6666666666666665,
             "Point_ID": [
                 9,
                 34,
@@ -1086,1068 +1086,1068 @@
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.537177558966854,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.38888888888888884,
             "Point_ID": [
                 10
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.2641847816287624,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7222222222222223,
             "Point_ID": [
                 11,
                 24
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -1.2641847816287624,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -0.7222222222222223,
             "Point_ID": [
                 12
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -1.870024133847019,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -1.0,
             "Point_ID": [
                 13
             ]
         },
         {
-            "SepalWidthCm": 2.1890720501492225,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.05250607719224957,
+            "SepalWidthCm": 0.6666666666666665,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.16666666666666696,
             "Point_ID": [
                 14
             ]
         },
         {
-            "SepalWidthCm": 3.1146839106774356,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.1736739476359004,
+            "SepalWidthCm": 1.0,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.22222222222222232,
             "Point_ID": [
                 15
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 17
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -0.1736739476359004,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.22222222222222232,
             "Point_ID": [
                 18
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 19
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.537177558966854,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.38888888888888884,
             "Point_ID": [
                 20
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 21
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.5065205225160652,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.8333333333333335,
             "Point_ID": [
                 22
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": -0.9185578172020242,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": -0.6666666666666665,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 23
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 25
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 26
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.7795132998541568,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5,
             "Point_ID": [
                 27
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.7795132998541568,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5,
             "Point_ID": [
                 28
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.2641847816287624,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7222222222222223,
             "Point_ID": [
                 30
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.537177558966854,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.38888888888888884,
             "Point_ID": [
                 31
             ]
         },
         {
-            "SepalWidthCm": 2.4204750152812746,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -0.7795132998541568,
+            "SepalWidthCm": 0.7499999999999996,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -0.5,
             "Point_ID": [
                 32
             ]
         },
         {
-            "SepalWidthCm": 2.651877980413329,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.4160096885232032,
+            "SepalWidthCm": 0.8333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.3333333333333335,
             "Point_ID": [
                 33
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 35
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.4160096885232032,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.3333333333333335,
             "Point_ID": [
                 36
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.7488562634033669,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.9444444444444442,
             "Point_ID": [
                 38
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 39
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 40
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.6276883929597161,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.8888888888888888,
             "Point_ID": [
                 41
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.7488562634033669,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.9444444444444442,
             "Point_ID": [
                 42
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -0.7870848471826506,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.5833333333333333,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 43
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 44
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.2641847816287624,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.7222222222222223,
             "Point_ID": [
                 45
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 46
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.5065205225160652,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.8333333333333335,
             "Point_ID": [
                 47
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.658345429410506,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.44444444444444464,
             "Point_ID": [
                 48
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 49
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 1.401508368131566,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.5,
             "Point_ID": [
                 50
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.6745011454696588,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.16666666666666696,
             "Point_ID": [
                 51
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 1.2803404976879151,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.44444444444444464,
             "Point_ID": [
                 52
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.4160096885232032,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.3333333333333335,
             "Point_ID": [
                 53
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.7956690159133096,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.22222222222222232,
             "Point_ID": [
                 54
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.1736739476359004,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.22222222222222232,
             "Point_ID": [
                 55,
                 99
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 56
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -1.1430169111851105,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.6666666666666665,
             "Point_ID": [
                 57
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.9168368863569605,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.2777777777777777,
             "Point_ID": [
                 58
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": -0.7795132998541568,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -0.5,
             "Point_ID": [
                 59
             ]
         },
         {
-            "SepalWidthCm": -2.438987252491841,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": -1.0,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 60
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.06866179325140237,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.11111111111111072,
             "Point_ID": [
                 61
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": 0.18982966369505322,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.05555555555555536,
             "Point_ID": [
                 62
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.31099753413870407,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -4.440892098500626e-16,
             "Point_ID": [
                 63
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.29484181807955234,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.2777777777777781,
             "Point_ID": [
                 64
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 65
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": -0.29484181807955234,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.2777777777777781,
             "Point_ID": [
                 66
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -0.05250607719224957,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.16666666666666696,
             "Point_ID": [
                 67
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.432165404582356,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.0555555555555558,
             "Point_ID": [
                 68
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": -0.12971999708578205,
-            "SepalLengthCm": -0.29484181807955234,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": -0.16666666666666652,
+            "SepalLengthCm": -0.2777777777777781,
             "Point_ID": [
                 69
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.06866179325140237,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -0.11111111111111072,
             "Point_ID": [
                 70
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.31099753413870407,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -4.440892098500626e-16,
             "Point_ID": [
                 71
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 72
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": 0.31099753413870407,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -4.440892098500626e-16,
             "Point_ID": [
                 73
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.6745011454696588,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.16666666666666696,
             "Point_ID": [
                 74
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.9168368863569605,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.2777777777777777,
             "Point_ID": [
                 75
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 1.1591726272442633,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.38888888888888884,
             "Point_ID": [
                 76
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.6591178230304598,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.3333333333333335,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 77
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.18982966369505322,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.05555555555555536,
             "Point_ID": [
                 78
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -0.1736739476359004,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.22222222222222232,
             "Point_ID": [
                 79
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.12971999708578205,
-            "SepalLengthCm": -0.4160096885232032,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.16666666666666652,
+            "SepalLengthCm": -0.3333333333333335,
             "Point_ID": [
                 80
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -0.4160096885232032,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.3333333333333335,
             "Point_ID": [
                 81
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.05250607719224957,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.16666666666666696,
             "Point_ID": [
                 82
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 0.18982966369505322,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": -0.05555555555555536,
             "Point_ID": [
                 83
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": -0.537177558966854,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.38888888888888884,
             "Point_ID": [
                 84
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 0.18982966369505322,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": -0.05555555555555536,
             "Point_ID": [
                 85
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 86
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 87
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.29484181807955234,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.2777777777777781,
             "Point_ID": [
                 88
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.4160096885232032,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.3333333333333335,
             "Point_ID": [
                 89
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.4160096885232032,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.3333333333333335,
             "Point_ID": [
                 90
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.31099753413870407,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -4.440892098500626e-16,
             "Point_ID": [
                 91
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.05250607719224957,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.16666666666666696,
             "Point_ID": [
                 92
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -1.0218490407414595,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.6111111111111112,
             "Point_ID": [
                 93
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.29484181807955234,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.2777777777777781,
             "Point_ID": [
                 94
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.1736739476359004,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.22222222222222232,
             "Point_ID": [
                 95
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.1736739476359004,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.22222222222222232,
             "Point_ID": [
                 96
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.432165404582356,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.0555555555555558,
             "Point_ID": [
                 97
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": -0.12971999708578205,
-            "SepalLengthCm": -0.9006811702978088,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": -0.16666666666666652,
+            "SepalLengthCm": -0.5555555555555558,
             "Point_ID": [
                 98
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.7109015831854495,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 1.0000000000000002,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 100
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": -0.05250607719224957,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": -0.16666666666666696,
             "Point_ID": [
                 101,
                 142
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.522676238575217,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.5555555555555554,
             "Point_ID": [
                 102
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 103
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.3164826731273285,
-            "SepalLengthCm": 0.7956690159133096,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.7500000000000002,
+            "SepalLengthCm": 0.22222222222222232,
             "Point_ID": [
                 104
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 2.1285155907934734,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.833333333333333,
             "Point_ID": [
                 105
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.6591178230304598,
-            "SepalLengthCm": -1.1430169111851105,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.3333333333333335,
+            "SepalLengthCm": -0.6666666666666665,
             "Point_ID": [
                 106
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 1.7650119794625196,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.6666666666666661,
             "Point_ID": [
                 107
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 108
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": 1.7109015831854495,
-            "SepalLengthCm": 1.643844109018869,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": 1.0000000000000002,
+            "SepalLengthCm": 0.6111111111111112,
             "Point_ID": [
                 109
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 0.7956690159133096,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 0.22222222222222232,
             "Point_ID": [
                 110
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": 0.6745011454696588,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": 0.16666666666666696,
             "Point_ID": [
                 111
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.1591726272442633,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.38888888888888884,
             "Point_ID": [
                 112
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": -0.1736739476359004,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": -0.22222222222222232,
             "Point_ID": [
                 113
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.5794286131660755,
-            "SepalLengthCm": -0.05250607719224957,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.9166666666666667,
+            "SepalLengthCm": -0.16666666666666696,
             "Point_ID": [
                 114
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 0.6745011454696588,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.16666666666666696,
             "Point_ID": [
                 115
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.7956690159133096,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.22222222222222232,
             "Point_ID": [
                 116
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": 1.3164826731273285,
-            "SepalLengthCm": 2.2496834612371255,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": 0.7500000000000002,
+            "SepalLengthCm": 0.8888888888888884,
             "Point_ID": [
                 117
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 2.2496834612371255,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.8888888888888884,
             "Point_ID": [
                 118
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.18982966369505322,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.05555555555555536,
             "Point_ID": [
                 119
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.2803404976879151,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.44444444444444464,
             "Point_ID": [
                 120
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": -0.29484181807955234,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": -0.2777777777777781,
             "Point_ID": [
                 121
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 2.2496834612371255,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 0.8888888888888884,
             "Point_ID": [
                 122
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 123
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 124
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 1.643844109018869,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.6111111111111112,
             "Point_ID": [
                 125
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.432165404582356,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.0555555555555558,
             "Point_ID": [
                 126
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.31099753413870407,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -4.440892098500626e-16,
             "Point_ID": [
                 127
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 0.6745011454696588,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.16666666666666696,
             "Point_ID": [
                 128
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 1.643844109018869,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": 0.6111111111111112,
             "Point_ID": [
                 129
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": 1.8861798499061717,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": 0.7222222222222223,
             "Point_ID": [
                 130
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 2.4920192021244283,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 1.0,
             "Point_ID": [
                 131
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.3164826731273285,
-            "SepalLengthCm": 0.6745011454696588,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.7500000000000002,
+            "SepalLengthCm": 0.16666666666666696,
             "Point_ID": [
                 132
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 133
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.31099753413870407,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -4.440892098500626e-16,
             "Point_ID": [
                 134
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 2.2496834612371255,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.8888888888888884,
             "Point_ID": [
                 135
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 1.5794286131660755,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.9166666666666667,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 136
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.6745011454696588,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.16666666666666696,
             "Point_ID": [
                 137
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.18982966369505322,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -0.05555555555555536,
             "Point_ID": [
                 138
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.2803404976879151,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.44444444444444464,
             "Point_ID": [
                 139
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.5794286131660755,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.9166666666666667,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 140
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.2803404976879151,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.44444444444444464,
             "Point_ID": [
                 141
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.1591726272442633,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.38888888888888884,
             "Point_ID": [
                 143
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.7109015831854495,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 1.0000000000000002,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 144
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.0380047568006125,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.3333333333333335,
             "Point_ID": [
                 145
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": 0.5533332750260068,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": 0.11111111111111116,
             "Point_ID": [
                 146
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 0.7956690159133096,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 0.22222222222222232,
             "Point_ID": [
                 147
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 0.432165404582356,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.0555555555555558,
             "Point_ID": [
                 148
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.06866179325140237,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -0.11111111111111072,
             "Point_ID": [
                 149
             ]
@@ -2155,91 +2155,91 @@
     ],
     "SepalWidthCm_PetalWidthCm_SepalLengthCm_PetalLengthCm": [
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 0
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.1430169111851105,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6666666666666665,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 1
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.3853526520724133,
-            "PetalLengthCm": -1.3981381087490836,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7777777777777777,
+            "PetalLengthCm": -0.8983050847457628,
             "Point_ID": [
                 2
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.5065205225160652,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.8333333333333335,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 3
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 4
             ]
         },
         {
-            "SepalWidthCm": 1.957669085017169,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.537177558966854,
-            "PetalLengthCm": -1.1706752927920745,
+            "SepalWidthCm": 0.583333333333333,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.38888888888888884,
+            "PetalLengthCm": -0.7627118644067797,
             "Point_ID": [
                 5
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.5065205225160652,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.8333333333333335,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 6
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 7
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.7488562634033669,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.9444444444444442,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 8
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -1.1430169111851105,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -0.6666666666666665,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 9,
                 34,
@@ -2247,1235 +2247,1235 @@
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.537177558966854,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.38888888888888884,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 10
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.2641847816287624,
-            "PetalLengthCm": -1.2275409967813267,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7222222222222223,
+            "PetalLengthCm": -0.7966101694915254,
             "Point_ID": [
                 11
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -1.2641847816287624,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -0.7222222222222223,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 12
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -1.870024133847019,
-            "PetalLengthCm": -1.5118695167275884,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -1.0,
+            "PetalLengthCm": -0.9661016949152542,
             "Point_ID": [
                 13
             ]
         },
         {
-            "SepalWidthCm": 2.1890720501492225,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.05250607719224957,
-            "PetalLengthCm": -1.4550038127383362,
+            "SepalWidthCm": 0.6666666666666665,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.16666666666666696,
+            "PetalLengthCm": -0.9322033898305084,
             "Point_ID": [
                 14
             ]
         },
         {
-            "SepalWidthCm": 3.1146839106774356,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 1.0,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 15
             ]
         },
         {
-            "SepalWidthCm": 1.957669085017169,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.537177558966854,
-            "PetalLengthCm": -1.3981381087490836,
+            "SepalWidthCm": 0.583333333333333,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.38888888888888884,
+            "PetalLengthCm": -0.8983050847457628,
             "Point_ID": [
                 16
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 17
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": -1.1706752927920745,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": -0.7627118644067797,
             "Point_ID": [
                 18
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 19
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.537177558966854,
-            "PetalLengthCm": -1.1706752927920745,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.38888888888888884,
+            "PetalLengthCm": -0.7627118644067797,
             "Point_ID": [
                 20
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 21
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.5065205225160652,
-            "PetalLengthCm": -1.5687352207168408,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.8333333333333335,
+            "PetalLengthCm": -1.0,
             "Point_ID": [
                 22
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": -0.9185578172020242,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.1706752927920745,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": -0.6666666666666665,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.7627118644067797,
             "Point_ID": [
                 23
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.2641847816287624,
-            "PetalLengthCm": -1.05694388481357,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7222222222222223,
+            "PetalLengthCm": -0.6949152542372882,
             "Point_ID": [
                 24
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.2275409967813267,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.7966101694915254,
             "Point_ID": [
                 25
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.2275409967813267,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.7966101694915254,
             "Point_ID": [
                 26
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.7795132998541568,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 27
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.7795132998541568,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 28
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.3853526520724133,
-            "PetalLengthCm": -1.2275409967813267,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7777777777777777,
+            "PetalLengthCm": -0.7966101694915254,
             "Point_ID": [
                 29
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.2641847816287624,
-            "PetalLengthCm": -1.2275409967813267,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.7222222222222223,
+            "PetalLengthCm": -0.7966101694915254,
             "Point_ID": [
                 30
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.537177558966854,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.38888888888888884,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 31
             ]
         },
         {
-            "SepalWidthCm": 2.4204750152812746,
-            "PetalWidthCm": -1.4444496972795189,
-            "SepalLengthCm": -0.7795132998541568,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.7499999999999996,
+            "PetalWidthCm": -0.9999999999999999,
+            "SepalLengthCm": -0.5,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 32
             ]
         },
         {
-            "SepalWidthCm": 2.651877980413329,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.4160096885232032,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.8333333333333335,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.3333333333333335,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 33
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.4550038127383362,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.9322033898305084,
             "Point_ID": [
                 35
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.4160096885232032,
-            "PetalLengthCm": -1.3981381087490836,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.3333333333333335,
+            "PetalLengthCm": -0.8983050847457628,
             "Point_ID": [
                 36
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.7488562634033669,
-            "PetalLengthCm": -1.3981381087490836,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.9444444444444442,
+            "PetalLengthCm": -0.8983050847457628,
             "Point_ID": [
                 38
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 39
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.3981381087490836,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.8983050847457628,
             "Point_ID": [
                 40
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.6276883929597161,
-            "PetalLengthCm": -1.3981381087490836,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.8888888888888888,
+            "PetalLengthCm": -0.8983050847457628,
             "Point_ID": [
                 41
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.7488562634033669,
-            "PetalLengthCm": -1.3981381087490836,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.9444444444444442,
+            "PetalLengthCm": -0.8983050847457628,
             "Point_ID": [
                 42
             ]
         },
         {
-            "SepalWidthCm": 1.0320572244889565,
-            "PetalWidthCm": -0.7870848471826506,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.2275409967813267,
+            "SepalWidthCm": 0.25,
+            "PetalWidthCm": -0.5833333333333333,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.7966101694915254,
             "Point_ID": [
                 43
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.0500307872213979,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.05694388481357,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.7499999999999999,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.6949152542372882,
             "Point_ID": [
                 44
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": -1.1815037572407716,
-            "SepalLengthCm": -1.2641847816287624,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.8333333333333333,
+            "SepalLengthCm": -0.7222222222222223,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 45
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -1.2275409967813267,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.7966101694915254,
             "Point_ID": [
                 46
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.5065205225160652,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.8333333333333335,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 47
             ]
         },
         {
-            "SepalWidthCm": 1.494863154753063,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -0.658345429410506,
-            "PetalLengthCm": -1.284406700770579,
+            "SepalWidthCm": 0.4166666666666665,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.44444444444444464,
+            "PetalLengthCm": -0.8305084745762712,
             "Point_ID": [
                 48
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": -1.3129767272601454,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -1.3412724047598314,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": -0.9166666666666665,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.864406779661017,
             "Point_ID": [
                 49
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 1.401508368131566,
-            "PetalLengthCm": 0.5352958268854957,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.5,
+            "PetalLengthCm": 0.2542372881355932,
             "Point_ID": [
                 50
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.6745011454696588,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.16666666666666696,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 51
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 1.2803404976879151,
-            "PetalLengthCm": 0.6490272348640005,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.44444444444444464,
+            "PetalLengthCm": 0.3220338983050848,
             "Point_ID": [
                 52
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.4160096885232032,
-            "PetalLengthCm": 0.13723589896072927,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.3333333333333335,
+            "PetalLengthCm": 0.016949152542372836,
             "Point_ID": [
                 53
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.7956690159133096,
-            "PetalLengthCm": 0.4784301228962431,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.22222222222222232,
+            "PetalLengthCm": 0.22033898305084731,
             "Point_ID": [
                 54
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 55
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 0.5352958268854957,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.2542372881355932,
             "Point_ID": [
                 56
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -1.1430169111851105,
-            "PetalLengthCm": -0.26082402896403717,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.6666666666666665,
+            "PetalLengthCm": -0.22033898305084754,
             "Point_ID": [
                 57
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.9168368863569605,
-            "PetalLengthCm": 0.4784301228962431,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.2777777777777777,
+            "PetalLengthCm": 0.22033898305084731,
             "Point_ID": [
                 58
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": -0.7795132998541568,
-            "PetalLengthCm": 0.08037019497147688,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -0.5,
+            "PetalLengthCm": -0.016949152542373058,
             "Point_ID": [
                 59
             ]
         },
         {
-            "SepalWidthCm": -2.438987252491841,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -0.1470926209855324,
+            "SepalWidthCm": -1.0,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.15254237288135597,
             "Point_ID": [
                 60
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.06866179325140237,
-            "PetalLengthCm": 0.250967306939234,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.11111111111111072,
+            "PetalLengthCm": 0.0847457627118644,
             "Point_ID": [
                 61
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": 0.18982966369505322,
-            "PetalLengthCm": 0.13723589896072927,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.05555555555555536,
+            "PetalLengthCm": 0.016949152542372836,
             "Point_ID": [
                 62
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.31099753413870407,
-            "PetalLengthCm": 0.5352958268854957,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -4.440892098500626e-16,
+            "PetalLengthCm": 0.2542372881355932,
             "Point_ID": [
                 63
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.29484181807955234,
-            "PetalLengthCm": -0.09022691699628003,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.2777777777777781,
+            "PetalLengthCm": -0.11864406779661008,
             "Point_ID": [
                 64
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 0.3646987149177388,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.15254237288135597,
             "Point_ID": [
                 65
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": -0.29484181807955234,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.2777777777777781,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 66
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -0.05250607719224957,
-            "PetalLengthCm": 0.19410160294998138,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.16666666666666696,
+            "PetalLengthCm": 0.05084745762711851,
             "Point_ID": [
                 67
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.432165404582356,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.0555555555555558,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 68
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": -0.12971999708578205,
-            "SepalLengthCm": -0.29484181807955234,
-            "PetalLengthCm": 0.08037019497147688,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": -0.16666666666666652,
+            "SepalLengthCm": -0.2777777777777781,
+            "PetalLengthCm": -0.016949152542373058,
             "Point_ID": [
                 69
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.06866179325140237,
-            "PetalLengthCm": 0.5921615308747479,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -0.11111111111111072,
+            "PetalLengthCm": 0.2881355932203389,
             "Point_ID": [
                 70
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.31099753413870407,
-            "PetalLengthCm": 0.13723589896072927,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -4.440892098500626e-16,
+            "PetalLengthCm": 0.016949152542372836,
             "Point_ID": [
                 71
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 0.6490272348640005,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.3220338983050848,
             "Point_ID": [
                 72
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": 0.31099753413870407,
-            "PetalLengthCm": 0.5352958268854957,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -4.440892098500626e-16,
+            "PetalLengthCm": 0.2542372881355932,
             "Point_ID": [
                 73
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.6745011454696588,
-            "PetalLengthCm": 0.30783301092848614,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.16666666666666696,
+            "PetalLengthCm": 0.11864406779661008,
             "Point_ID": [
                 74
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.9168368863569605,
-            "PetalLengthCm": 0.3646987149177388,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.2777777777777777,
+            "PetalLengthCm": 0.15254237288135597,
             "Point_ID": [
                 75
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 1.1591726272442633,
-            "PetalLengthCm": 0.5921615308747479,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": 0.38888888888888884,
+            "PetalLengthCm": 0.2881355932203389,
             "Point_ID": [
                 76
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.6591178230304598,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 0.7058929388532527,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.3333333333333335,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.35593220338983045,
             "Point_ID": [
                 77
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.18982966369505322,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.05555555555555536,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 78
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": -0.1470926209855324,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": -0.15254237288135597,
             "Point_ID": [
                 79
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.12971999708578205,
-            "SepalLengthCm": -0.4160096885232032,
-            "PetalLengthCm": 0.02350449098222449,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.16666666666666652,
+            "SepalLengthCm": -0.3333333333333335,
+            "PetalLengthCm": -0.05084745762711873,
             "Point_ID": [
                 80
             ]
         },
         {
-            "SepalWidthCm": -1.5133753919636286,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -0.4160096885232032,
-            "PetalLengthCm": -0.03336121300702764,
+            "SepalWidthCm": -0.6666666666666667,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.3333333333333335,
+            "PetalLengthCm": -0.0847457627118644,
             "Point_ID": [
                 81
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.05250607719224957,
-            "PetalLengthCm": 0.08037019497147688,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.16666666666666696,
+            "PetalLengthCm": -0.016949152542373058,
             "Point_ID": [
                 82
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 0.18982966369505322,
-            "PetalLengthCm": 0.7627586428425047,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": -0.05555555555555536,
+            "PetalLengthCm": 0.3898305084745761,
             "Point_ID": [
                 83
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": -0.537177558966854,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.38888888888888884,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 84
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 0.18982966369505322,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": -0.05555555555555536,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 85
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 0.5352958268854957,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.2542372881355932,
             "Point_ID": [
                 86
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 0.3646987149177388,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.15254237288135597,
             "Point_ID": [
                 87
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.29484181807955234,
-            "PetalLengthCm": 0.19410160294998138,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.2777777777777781,
+            "PetalLengthCm": 0.05084745762711851,
             "Point_ID": [
                 88
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.4160096885232032,
-            "PetalLengthCm": 0.13723589896072927,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.3333333333333335,
+            "PetalLengthCm": 0.016949152542372836,
             "Point_ID": [
                 89
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.4160096885232032,
-            "PetalLengthCm": 0.3646987149177388,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.3333333333333335,
+            "PetalLengthCm": 0.15254237288135597,
             "Point_ID": [
                 90
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.31099753413870407,
-            "PetalLengthCm": 0.4784301228962431,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -4.440892098500626e-16,
+            "PetalLengthCm": 0.22033898305084731,
             "Point_ID": [
                 91
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.05250607719224957,
-            "PetalLengthCm": 0.13723589896072927,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.16666666666666696,
+            "PetalLengthCm": 0.016949152542372836,
             "Point_ID": [
                 92
             ]
         },
         {
-            "SepalWidthCm": -1.7447783570956819,
-            "PetalWidthCm": -0.2611929671051558,
-            "SepalLengthCm": -1.0218490407414595,
-            "PetalLengthCm": -0.26082402896403717,
+            "SepalWidthCm": -0.7500000000000002,
+            "PetalWidthCm": -0.2499999999999999,
+            "SepalLengthCm": -0.6111111111111112,
+            "PetalLengthCm": -0.22033898305084754,
             "Point_ID": [
                 93
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.29484181807955234,
-            "PetalLengthCm": 0.250967306939234,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.2777777777777781,
+            "PetalLengthCm": 0.0847457627118644,
             "Point_ID": [
                 94
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.001752972933591456,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": 0.250967306939234,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": -0.08333333333333326,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": 0.0847457627118644,
             "Point_ID": [
                 95
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": 0.250967306939234,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": 0.0847457627118644,
             "Point_ID": [
                 96
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": 0.432165404582356,
-            "PetalLengthCm": 0.30783301092848614,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": 0.0555555555555558,
+            "PetalLengthCm": 0.11864406779661008,
             "Point_ID": [
                 97
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": -0.12971999708578205,
-            "SepalLengthCm": -0.9006811702978088,
-            "PetalLengthCm": -0.43142114093179407,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": -0.16666666666666652,
+            "SepalLengthCm": -0.5555555555555558,
+            "PetalLengthCm": -0.3220338983050848,
             "Point_ID": [
                 98
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.13322594295296525,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": 0.19410160294998138,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 2.220446049250313e-16,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": 0.05084745762711851,
             "Point_ID": [
                 99
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.7109015831854495,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 1.274549978745776,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 1.0000000000000002,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.6949152542372881,
             "Point_ID": [
                 100
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": -0.05250607719224957,
-            "PetalLengthCm": 0.7627586428425047,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": -0.16666666666666696,
+            "PetalLengthCm": 0.3898305084745761,
             "Point_ID": [
                 101,
                 142
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.522676238575217,
-            "PetalLengthCm": 1.2176842747565237,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.5555555555555554,
+            "PetalLengthCm": 0.6610169491525424,
             "Point_ID": [
                 102
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 1.0470871627887663,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.5593220338983049,
             "Point_ID": [
                 103
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.3164826731273285,
-            "SepalLengthCm": 0.7956690159133096,
-            "PetalLengthCm": 1.1608185707672711,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.7500000000000002,
+            "SepalLengthCm": 0.22222222222222232,
+            "PetalLengthCm": 0.6271186440677965,
             "Point_ID": [
                 104
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 2.1285155907934734,
-            "PetalLengthCm": 1.6157442026812898,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.833333333333333,
+            "PetalLengthCm": 0.8983050847457625,
             "Point_ID": [
                 105
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.6591178230304598,
-            "SepalLengthCm": -1.1430169111851105,
-            "PetalLengthCm": 0.4215644189069909,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.3333333333333335,
+            "SepalLengthCm": -0.6666666666666665,
+            "PetalLengthCm": 0.18644067796610164,
             "Point_ID": [
                 106
             ]
         },
         {
-            "SepalWidthCm": -0.3563605663033627,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 1.7650119794625196,
-            "PetalLengthCm": 1.4451470907135329,
+            "SepalWidthCm": -0.25,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.6666666666666661,
+            "PetalLengthCm": 0.7966101694915251,
             "Point_ID": [
                 107
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 1.1608185707672711,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.6271186440677965,
             "Point_ID": [
                 108
             ]
         },
         {
-            "SepalWidthCm": 1.2634601896210098,
-            "PetalWidthCm": 1.7109015831854495,
-            "SepalLengthCm": 1.643844109018869,
-            "PetalLengthCm": 1.331415682735028,
+            "SepalWidthCm": 0.3333333333333335,
+            "PetalWidthCm": 1.0000000000000002,
+            "SepalLengthCm": 0.6111111111111112,
+            "PetalLengthCm": 0.7288135593220337,
             "Point_ID": [
                 109
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 0.7956690159133096,
-            "PetalLengthCm": 0.7627586428425047,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 0.22222222222222232,
+            "PetalLengthCm": 0.3898305084745761,
             "Point_ID": [
                 110
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": 0.6745011454696588,
-            "PetalLengthCm": 0.8764900508210095,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": 0.16666666666666696,
+            "PetalLengthCm": 0.4576271186440677,
             "Point_ID": [
                 111
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.1591726272442633,
-            "PetalLengthCm": 0.9902214587995143,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.38888888888888884,
+            "PetalLengthCm": 0.5254237288135593,
             "Point_ID": [
                 112
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": -0.1736739476359004,
-            "PetalLengthCm": 0.7058929388532527,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": -0.22222222222222232,
+            "PetalLengthCm": 0.35593220338983045,
             "Point_ID": [
                 113
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.5794286131660755,
-            "SepalLengthCm": -0.05250607719224957,
-            "PetalLengthCm": 0.7627586428425047,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.9166666666666667,
+            "SepalLengthCm": -0.16666666666666696,
+            "PetalLengthCm": 0.3898305084745761,
             "Point_ID": [
                 114
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 0.6745011454696588,
-            "PetalLengthCm": 0.8764900508210095,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.16666666666666696,
+            "PetalLengthCm": 0.4576271186440677,
             "Point_ID": [
                 115
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.7956690159133096,
-            "PetalLengthCm": 0.9902214587995143,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.22222222222222232,
+            "PetalLengthCm": 0.5254237288135593,
             "Point_ID": [
                 116
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": 1.3164826731273285,
-            "SepalLengthCm": 2.2496834612371255,
-            "PetalLengthCm": 1.6726099066705424,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": 0.7500000000000002,
+            "SepalLengthCm": 0.8888888888888884,
+            "PetalLengthCm": 0.9322033898305087,
             "Point_ID": [
                 117
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 2.2496834612371255,
-            "PetalLengthCm": 1.7863413146490472,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.8888888888888884,
+            "PetalLengthCm": 1.0,
             "Point_ID": [
                 118
             ]
         },
         {
-            "SepalWidthCm": -1.9761813222277342,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.18982966369505322,
-            "PetalLengthCm": 0.7058929388532527,
+            "SepalWidthCm": -0.8333333333333333,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": -0.05555555555555536,
+            "PetalLengthCm": 0.35593220338983045,
             "Point_ID": [
                 119
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.2803404976879151,
-            "PetalLengthCm": 1.103952866778019,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.44444444444444464,
+            "PetalLengthCm": 0.5932203389830508,
             "Point_ID": [
                 120
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": -0.29484181807955234,
-            "PetalLengthCm": 0.6490272348640005,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": -0.2777777777777781,
+            "PetalLengthCm": 0.3220338983050848,
             "Point_ID": [
                 121
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 2.2496834612371255,
-            "PetalLengthCm": 1.6726099066705424,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 0.8888888888888884,
+            "PetalLengthCm": 0.9322033898305087,
             "Point_ID": [
                 122
             ]
         },
         {
-            "SepalWidthCm": -0.8191664965674684,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 0.6490272348640005,
+            "SepalWidthCm": -0.4166666666666665,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.3220338983050848,
             "Point_ID": [
                 123
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 1.103952866778019,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.5932203389830508,
             "Point_ID": [
                 124
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 1.643844109018869,
-            "PetalLengthCm": 1.274549978745776,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.6111111111111112,
+            "PetalLengthCm": 0.6949152542372881,
             "Point_ID": [
                 125
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.432165404582356,
-            "PetalLengthCm": 0.5921615308747479,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.0555555555555558,
+            "PetalLengthCm": 0.2881355932203389,
             "Point_ID": [
                 126
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.31099753413870407,
-            "PetalLengthCm": 0.6490272348640005,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -4.440892098500626e-16,
+            "PetalLengthCm": 0.3220338983050848,
             "Point_ID": [
                 127
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 0.6745011454696588,
-            "PetalLengthCm": 1.0470871627887663,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.16666666666666696,
+            "PetalLengthCm": 0.5593220338983049,
             "Point_ID": [
                 128
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.5276448530110863,
-            "SepalLengthCm": 1.643844109018869,
-            "PetalLengthCm": 1.1608185707672711,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.2500000000000002,
+            "SepalLengthCm": 0.6111111111111112,
+            "PetalLengthCm": 0.6271186440677965,
             "Point_ID": [
                 129
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": 1.8861798499061717,
-            "PetalLengthCm": 1.331415682735028,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": 0.7222222222222223,
+            "PetalLengthCm": 0.7288135593220337,
             "Point_ID": [
                 130
             ]
         },
         {
-            "SepalWidthCm": 1.7262661198851155,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 2.4920192021244283,
-            "PetalLengthCm": 1.5020127947027855,
+            "SepalWidthCm": 0.49999999999999956,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 1.0,
+            "PetalLengthCm": 0.8305084745762712,
             "Point_ID": [
                 131
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 1.3164826731273285,
-            "SepalLengthCm": 0.6745011454696588,
-            "PetalLengthCm": 1.0470871627887663,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.7500000000000002,
+            "SepalLengthCm": 0.16666666666666696,
+            "PetalLengthCm": 0.5593220338983049,
             "Point_ID": [
                 132
             ]
         },
         {
-            "SepalWidthCm": -0.587763531435416,
-            "PetalWidthCm": 0.3961718829917126,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 0.7627586428425047,
+            "SepalWidthCm": -0.3333333333333335,
+            "PetalWidthCm": 0.16666666666666674,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.3898305084745761,
             "Point_ID": [
                 133
             ]
         },
         {
-            "SepalWidthCm": -1.0505694616995218,
-            "PetalWidthCm": 0.2646989129723388,
-            "SepalLengthCm": 0.31099753413870407,
-            "PetalLengthCm": 1.0470871627887663,
+            "SepalWidthCm": -0.5,
+            "PetalWidthCm": 0.08333333333333348,
+            "SepalLengthCm": -4.440892098500626e-16,
+            "PetalLengthCm": 0.5593220338983049,
             "Point_ID": [
                 134
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 2.2496834612371255,
-            "PetalLengthCm": 1.331415682735028,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.8888888888888884,
+            "PetalLengthCm": 0.7288135593220337,
             "Point_ID": [
                 135
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 1.5794286131660755,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 1.0470871627887663,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.9166666666666667,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.5593220338983049,
             "Point_ID": [
                 136
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.6745011454696588,
-            "PetalLengthCm": 0.9902214587995143,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": 0.16666666666666696,
+            "PetalLengthCm": 0.5254237288135593,
             "Point_ID": [
                 137
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.18982966369505322,
-            "PetalLengthCm": 0.5921615308747479,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -0.05555555555555536,
+            "PetalLengthCm": 0.2881355932203389,
             "Point_ID": [
                 138
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.1850097031079547,
-            "SepalLengthCm": 1.2803404976879151,
-            "PetalLengthCm": 0.9333557548102621,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.666666666666667,
+            "SepalLengthCm": 0.44444444444444464,
+            "PetalLengthCm": 0.4915254237288136,
             "Point_ID": [
                 139
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.5794286131660755,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 1.0470871627887663,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.9166666666666667,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.5593220338983049,
             "Point_ID": [
                 140
             ]
         },
         {
-            "SepalWidthCm": 0.10644536396074403,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.2803404976879151,
-            "PetalLengthCm": 0.7627586428425047,
+            "SepalWidthCm": -0.08333333333333348,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.44444444444444464,
+            "PetalLengthCm": 0.3898305084745761,
             "Point_ID": [
                 141
             ]
         },
         {
-            "SepalWidthCm": 0.3378483290927974,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.1591726272442633,
-            "PetalLengthCm": 1.2176842747565237,
+            "SepalWidthCm": 0.0,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.38888888888888884,
+            "PetalLengthCm": 0.6610169491525424,
             "Point_ID": [
                 143
             ]
         },
         {
-            "SepalWidthCm": 0.5692512942248498,
-            "PetalWidthCm": 1.7109015831854495,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 1.103952866778019,
+            "SepalWidthCm": 0.08333333333333304,
+            "PetalWidthCm": 1.0000000000000002,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.5932203389830508,
             "Point_ID": [
                 144
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 1.0380047568006125,
-            "PetalLengthCm": 0.8196243468317573,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.3333333333333335,
+            "PetalLengthCm": 0.423728813559322,
             "Point_ID": [
                 145
             ]
         },
         {
-            "SepalWidthCm": -1.281972426831575,
-            "PetalWidthCm": 0.9220637630692072,
-            "SepalLengthCm": 0.5533332750260068,
-            "PetalLengthCm": 0.7058929388532527,
+            "SepalWidthCm": -0.5833333333333335,
+            "PetalWidthCm": 0.5,
+            "SepalLengthCm": 0.11111111111111116,
+            "PetalLengthCm": 0.35593220338983045,
             "Point_ID": [
                 146
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 1.053536733088581,
-            "SepalLengthCm": 0.7956690159133096,
-            "PetalLengthCm": 0.8196243468317573,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.5833333333333335,
+            "SepalLengthCm": 0.22222222222222232,
+            "PetalLengthCm": 0.423728813559322,
             "Point_ID": [
                 147
             ]
         },
         {
-            "SepalWidthCm": 0.8006542593569032,
-            "PetalWidthCm": 1.4479556431467018,
-            "SepalLengthCm": 0.432165404582356,
-            "PetalLengthCm": 0.9333557548102621,
+            "SepalWidthCm": 0.16666666666666652,
+            "PetalWidthCm": 0.8333333333333333,
+            "SepalLengthCm": 0.0555555555555558,
+            "PetalLengthCm": 0.4915254237288136,
             "Point_ID": [
                 148
             ]
         },
         {
-            "SepalWidthCm": -0.12495760117130933,
-            "PetalWidthCm": 0.7905907930498337,
-            "SepalLengthCm": 0.06866179325140237,
-            "PetalLengthCm": 0.7627586428425047,
+            "SepalWidthCm": -0.16666666666666652,
+            "PetalWidthCm": 0.41666666666666674,
+            "SepalLengthCm": -0.11111111111111072,
+            "PetalLengthCm": 0.3898305084745761,
             "Point_ID": [
                 149
             ]
