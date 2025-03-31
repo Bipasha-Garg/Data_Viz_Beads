@@ -1,12 +1,10 @@
-from flask import Flask, request, jsonify
-from flask import send_from_directory
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os
 import logging
 import pandas as pd
 from datetime import datetime
 from proc_withLabels import process_file
-
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -15,36 +13,38 @@ CORS(
     app,
     resources={
         r"/upload": {"origins": ["http://localhost:3000"]},
-        r"/public/*": {"origins": ["http://localhost:3000"]},
         r"/uploads/*": {"origins": ["http://localhost:3000"]},
     },
 )
 
 UPLOAD_FOLDER = "uploads"
-JSON_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-app.config["JSON_FOLDER"] = JSON_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(JSON_FOLDER, exist_ok=True)
 
 
 def process_file_and_convert_to_json(file_path, json_folder, filename_prefix="data"):
     try:
         df = pd.read_csv(file_path)
-
         if df.shape[1] < 2:
             raise ValueError("Insufficient columns in the CSV file")
 
+        # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         json_filename = "processed.json"
-        labels_file = "label_file.json"
-        json_folder, json_filename, labels_file = process_file(
-            file_path, json_folder, json_filename
+        cluster_file = "classification.json"
+        parallel_file = "parallel.json"
+        json_folder, json_filename, labels_file, cluster_file, parallel_file = (
+            process_file(
+                file_path, json_folder, json_filename, cluster_file, parallel_file
+            )
         )
 
-        json_path = os.path.join(json_folder, json_filename)
-        logging.debug(f"JSON file created: {json_path}")
-
-        return json_folder, json_filename
+        return {
+            "json_folder": json_folder,
+            "json_filename": json_filename,
+            "labels_file": labels_file,
+            "cluster_file": cluster_file,
+            "parallel_file": parallel_file,
+        }
 
     except Exception as e:
         logging.error(f"Error processing file: {e}")
@@ -60,28 +60,36 @@ def upload_file():
         return jsonify({"error": "No selected file"}), 400
 
     try:
-
-        filename = file.filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{file.filename}"
         upload_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
         file.save(upload_path)
-        logging.debug(f"File uploaded: {filename}")
+        logging.debug(f"File uploaded: {upload_path}")
 
-        json_folder, json_filename, labels_file = process_file(
-            upload_path, app.config["JSON_FOLDER"], "processed.json"
+        # Process file and get all results
+        result = process_file_and_convert_to_json(
+            upload_path, app.config["UPLOAD_FOLDER"], "data"
         )
-
-        json_path = os.path.join(json_folder, json_filename)
-        logging.debug(f"JSON should be available at: {json_path}")
 
         return (
             jsonify(
                 {
                     "message": "File uploaded and processed successfully",
                     "filename": filename,
-                    "json_folder": json_folder,
-                    "json_filename": json_filename,
-                    "json_path": json_path,
-                    "labels_file": labels_file,
+                    "json_folder": result["json_folder"],
+                    "json_filename": result["json_filename"],
+                    "labels_file": result["labels_file"],
+                    "cluster_file": result["cluster_file"],
+                    "parallel_file": result["parallel_file"],
+                    "paths": {
+                        "uploaded_file": upload_path,
+                        "json": os.path.join(
+                            result["json_folder"], result["json_filename"]
+                        ),
+                        "labels": result["labels_file"],
+                        "classification": result["cluster_file"],
+                        "parallel": result["parallel_file"],
+                    },
                 }
             ),
             200,
@@ -96,7 +104,6 @@ def upload_file():
 def serve_file(filename):
     try:
         file_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-
         if not os.path.exists(file_path):
             logging.error(f"File not found: {file_path}")
             return jsonify({"error": "File not found"}), 404
@@ -109,4 +116,4 @@ def serve_file(filename):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, host="0.0.0.0", port=5000)

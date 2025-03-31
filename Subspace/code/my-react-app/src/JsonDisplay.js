@@ -1,15 +1,280 @@
-// // import React, { useEffect, useRef } from "react";
+// // // import React, { useEffect, useRef, useState } from "react";
+// // // import * as d3 from "d3";
+
+// // // const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVisibility }) => {
+// // //   const graphRef = useRef(null);
+// // //   const [viewMode, setViewMode] = useState("normal");
+
+// // //   useEffect(() => {
+// // //     if (!jsonData || typeof jsonData !== "object" || Object.keys(jsonData).length === 0) {
+// // //       console.error("Invalid or empty jsonData:", jsonData);
+// // //       return;
+// // //     }
+
+// // //     if (!labelsData || typeof labelsData !== "object") {
+// // //       console.error("Invalid labelsData:", labelsData);
+// // //       return;
+// // //     }
+
+// // //     const svg = d3.select(graphRef.current);
+// // //     svg.selectAll("*").remove();
+
+// // //     const width = 800;
+// // //     const height = 800;
+// // //     const margin = 20;
+// // //     const maxRadius = Math.min(width, height) / 2 - margin;
+
+// // //     const g = svg
+// // //       .attr("width", width)
+// // //       .attr("height", height)
+// // //       .append("g")
+// // //       .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+// // //     const tooltip = d3
+// // //       .select("body")
+// // //       .append("div")
+// // //       .attr("class", "tooltip")
+// // //       .style("position", "absolute")
+// // //       .style("visibility", "hidden")
+// // //       .style("background-color", "rgba(0, 0, 0, 0.7)")
+// // //       .style("color", "white")
+// // //       .style("padding", "5px")
+// // //       .style("border-radius", "4px")
+// // //       .style("font-size", "12px");
+
+// // //     const getLabelColor = (pointId) => {
+// // //       if (!labelsData || !labelsData.labels) return "gray";
+// // //       for (const label of Object.keys(labelsData.labels)) {
+// // //         const pointList = labelsData.labels[label];
+// // //         if (Array.isArray(pointList) && pointList.includes(Number(pointId))) {
+// // //           return colorScale(label);
+// // //         }
+// // //       }
+// // //       return "gray";
+// // //     };
+
+// // //     const colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(Object.keys(labelsData.labels || {}));
+// // //     const getRingColor = (index) => {
+// // //       const totalRings = Object.keys(jsonData).length;
+// // //       const colorScaleInd = d3.scaleSequential(d3.interpolatePlasma).domain([totalRings, 0]);
+// // //       return d3.color(colorScaleInd(index));
+// // //     };
+// // //     const getSectorColor = (index, sectorIndex) => {
+// // //       const baseColor = d3.hsl(getRingColor(index));
+// // //       const isPositive = sectorIndex % 2 === 0;
+// // //       return d3.hsl(baseColor.h, baseColor.s, isPositive ? 0.75 : 0.35).toString();
+// // //     };
+
+// // //     const subspaces = Object.keys(jsonData);
+// // //     subspaces.sort((a, b) => a.length - b.length);
+// // //     const pointsData = subspaces.map((key) => ({
+// // //       key,
+// // //       points: jsonData[key] || [],
+// // //       dimensions: key.length,
+// // //       subspaceId: key,
+// // //     }));
+// // //     console.log("Points data:", pointsData.dimensions);
+// // //     const ringLabels = subspaces.map((_, i) => String.fromCharCode(65 + i));
+// // //     const pointPositions = {};
+
+// // //     const renderNormalView = () => {
+// // //       subspaces.forEach((key, index) => {
+// // //         if (!ringVisibility[key]) return;
+// // //         const innerRadius = (index / subspaces.length) * maxRadius;
+// // //         const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
+// // //         const sectors = 2 ** (index + 1);
+// // //         const rotationOffset = Math.PI / 2;
+
+// // //         for (let i = 0; i < sectors; i++) {
+// // //           const startAngle = (2 * Math.PI * i) / sectors + rotationOffset;
+// // //           const endAngle = (2 * Math.PI * (i + 1)) / sectors + rotationOffset;
+
+// // //           g.append("path")
+// // //             .attr("d", d3.arc()
+// // //               .innerRadius(innerRadius)
+// // //               .outerRadius(outerRadius)
+// // //               .startAngle(startAngle)
+// // //               .endAngle(endAngle)
+// // //             )
+// // //             .attr("fill", getSectorColor(index, i))
+// // //             .attr("fill-opacity", 0.3)
+// // //             .attr("stroke", "black")
+// // //             .attr("stroke-width", 0.5)
+// // //             .style("cursor", "pointer");
+
+// // //           g.append("text")
+// // //             .attr("x", 0)
+// // //             .attr("y", -outerRadius - 5)
+// // //             .attr("text-anchor", "middle")
+// // //             .attr("font-size", "16px")
+// // //             .attr("fill", "red")
+// // //             .attr("font-weight", "bold")
+// // //             .text(ringLabels[index]);
+// // //         }
+// // //         renderPoints(index, innerRadius, outerRadius, sectors);
+// // //       });
+// // //     };
+
+
+// // //     const renderPoints = (index, innerRadius, outerRadius, anglesOrSectors) => {
+// // //       const isProportional = viewMode === "proportional";
+// // //       const sectors = isProportional ? anglesOrSectors.length : anglesOrSectors;
+// // //       const angles = isProportional ? anglesOrSectors : Array(sectors).fill(2 * Math.PI / sectors);
+
+// // //       let currentAngle = Math.PI / 2;
+// // //       pointsData[index].points.forEach((point, i) => {
+// // //         const pointData = Object.entries(point).filter(([key]) => key !== "Point_ID");
+// // //         const bitVector = pointData.map(([_, coord]) => (coord >= 0 ? 1 : 0)).join("");
+// // //         const bitVectorIndex = Math.min(parseInt(bitVector, 2), sectors - 1);
+
+// // //         const startAngle = isProportional ?
+// // //           currentAngle + angles.slice(0, bitVectorIndex).reduce((a, b) => a + b, 0) :
+// // //           (2 * Math.PI * bitVectorIndex) / sectors;
+// // //         const angleWidth = isProportional ? angles[bitVectorIndex] : (2 * Math.PI / sectors);
+// // //         const centerAngle = startAngle + angleWidth / 2;
+
+// // //         const minRadius = innerRadius;
+// // //         const maxRadius = outerRadius;
+// // //         const randomRadius = minRadius + Math.random() * (maxRadius - minRadius);
+// // //         const totalPoints = pointsData[index].points.length;
+// // //         const clusterFactor = 0.9;
+// // //         const overlapRadius =
+// // //           innerRadius +
+// // //           (clusterFactor * (outerRadius - innerRadius) * (i % totalPoints)) /
+// // //           totalPoints;
+// // //         const x = overlapRadius * Math.cos(centerAngle);
+// // //         const y = overlapRadius * Math.sin(centerAngle);
+
+// // //         point.Point_ID.forEach((id) => {
+// // //           if (!pointPositions[id]) {
+// // //             pointPositions[id] = [];
+// // //           }
+// // //           pointPositions[id].push({ x, y, point, subspaceId: pointsData[index].key });
+// // //         });
+
+// // //         g.append("circle")
+// // //           .attr("cx", x)
+// // //           .attr("cy", y)
+// // //           .attr("r", 3)
+// // //           .attr("fill", "black")
+// // //           .attr("stroke", "white")
+// // //           .attr("stroke-width", 0.5)
+// // //           .style("pointer-events", "visible")
+// // //           .on("mouseover", (event) => {
+// // //             const pointIds = point.Point_ID.join(", ");
+// // //             let associatedLabels = [];
+// // //             if (labelsData && labelsData.labels) {
+// // //               Object.entries(labelsData.labels).forEach(([label, pointList]) => {
+// // //                 if (point.Point_ID.some(id => pointList.includes(Number(id)))) {
+// // //                   associatedLabels.push(label);
+// // //                 }
+// // //               });
+// // //             }
+// // //             const labelText = associatedLabels.length > 0 ? associatedLabels.join(", ") : "No Label";
+
+// // //             tooltip
+// // //               .style("visibility", "visible")
+// // //               .html(
+// // //                 `Point_IDs: ${pointIds}<br>Coordinates: (${x.toFixed(2)}, ${y.toFixed(2)})<br>Subspace: ${pointsData[index].key}<br>Label: ${labelText}`
+// // //               );
+// // //             setHoveredCoordinates({ ...point, label: labelText });
+// // //           })
+// // //           .on("mousemove", (event) => {
+// // //             tooltip
+// // //               .style("top", event.pageY + 10 + "px")
+// // //               .style("left", event.pageX + 10 + "px");
+// // //           })
+// // //           .on("mouseout", () => {
+// // //             tooltip.style("visibility", "hidden");
+// // //             setHoveredCoordinates(null);
+// // //           });
+// // //       });
+// // //     };
+
+// // //     if (viewMode === "normal") {
+// // //       renderNormalView();
+// // //     } 
+// // //     Object.entries(pointPositions).forEach(([pointId, positions]) => {
+// // //       if (positions.length > 1) {
+// // //         for (let i = 0; i < positions.length - 1; i++) {
+// // //           const line = g.append("line")
+// // //             .attr("x1", positions[i].x)
+// // //             .attr("y1", positions[i].y)
+// // //             .attr("x2", positions[i + 1].x)
+// // //             .attr("y2", positions[i + 1].y)
+// // //             .attr("stroke", getLabelColor(pointId))
+// // //             .attr("stroke-width", 1.5)
+// // //             .attr("stroke-opacity", 0.9)
+// // //             .style("cursor", "pointer")
+// // //             .on("mouseover", (event) => {
+// // //               tooltip
+// // //                 .style("visibility", "visible")
+// // //                 .html(`Connection: Point_ID ${pointId}`);
+// // //             })
+// // //             .on("mousemove", (event) => {
+// // //               tooltip
+// // //                 .style("top", event.pageY + 10 + "px")
+// // //                 .style("left", event.pageX + 10 + "px");
+// // //             })
+// // //             .on("mouseout", () => {
+// // //               tooltip.style("visibility", "hidden");
+// // //             });
+// // //         }
+// // //       }
+// // //     });
+
+// // //     const zoom = d3.zoom().on("zoom", (event) => {
+// // //       g.attr("transform", event.transform);
+// // //     });
+// // //     svg.call(zoom);
+
+// // //     return () => {
+// // //       tooltip.remove();
+// // //     };
+// // //   }, [jsonData, labelsData, ringVisibility, setHoveredCoordinates, viewMode]);
+
+// // //   return (
+// // //     <div style={{ width: "100%", height: "100%" }}>
+// // //       <div style={{ marginBottom: "10px" }}>
+// // //         <button
+// // //           onClick={() => setViewMode("normal")}
+// // //           style={{
+// // //             marginRight: "10px",
+// // //             padding: "5px 10px",
+// // //             backgroundColor: viewMode === "normal" ? "#4CAF50" : "#f0f0f0",
+// // //             color: viewMode === "normal" ? "white" : "black",
+// // //           }}
+// // //         >
+// // //           Normal View
+// // //         </button>
+// // //         <button
+// // //           onClick={() => setViewMode("proportional")}
+// // //           style={{
+// // //             padding: "5px 10px",
+// // //             backgroundColor: viewMode === "proportional" ? "#4CAF50" : "#f0f0f0",
+// // //             color: viewMode === "proportional" ? "white" : "black",
+// // //           }}
+// // //         >
+// // //           Proportional View
+// // //         </button>
+// // //       </div>
+// // //       <svg ref={graphRef} style={{ width: "100%", height: "800px" }}></svg>
+// // //     </div>
+// // //   );
+// // // };
+
+// // // export default HierarchicalGraph;
+
+
+// // import React, { useEffect, useRef, useState } from "react";
 // // import * as d3 from "d3";
 
 // // const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVisibility }) => {
 // //   const graphRef = useRef(null);
+// //   const [viewMode, setViewMode] = useState("normal");
 
 // //   useEffect(() => {
-// //     if (
-// //       !jsonData ||
-// //       typeof jsonData !== "object" ||
-// //       Object.keys(jsonData).length === 0
-// //     ) {
+// //     if (!jsonData || typeof jsonData !== "object" || Object.keys(jsonData).length === 0) {
 // //       console.error("Invalid or empty jsonData:", jsonData);
 // //       return;
 // //     }
@@ -45,20 +310,6 @@
 // //       .style("border-radius", "4px")
 // //       .style("font-size", "12px");
 
-// //     const edgePopup = d3
-// //       .select("body")
-// //       .append("div")
-// //       .attr("class", "edge-popup")
-// //       .style("position", "absolute")
-// //       .style("visibility", "hidden")
-// //       .style("background-color", "rgba(255, 255, 255, 0.9)")
-// //       .style("color", "black")
-// //       .style("padding", "10px")
-// //       .style("border-radius", "4px")
-// //       .style("font-size", "12px")
-// //       .style("box-shadow", "0 2px 4px rgba(0,0,0,0.2)")
-// //       .style("max-width", "300px");
-
 // //     const getLabelColor = (pointId) => {
 // //       if (!labelsData || !labelsData.labels) return "gray";
 // //       for (const label of Object.keys(labelsData.labels)) {
@@ -70,64 +321,76 @@
 // //       return "gray";
 // //     };
 
-// //     const colorScale = d3
-// //       .scaleOrdinal(d3.schemeCategory10)
-// //       .domain(Object.keys(labelsData.labels || {}));
-
-// //     const getSectorColor = (index, sectorIndex) => {
-// //       return d3.hsl(sectorIndex % 2 === 0 ? 0 : 220, 0.9, 0.6);
+// //     const colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(Object.keys(labelsData.labels || {}));
+// //     const getRingColor = (index) => {
+// //       const totalRings = Object.keys(jsonData).length;
+// //       const colorScaleInd = d3.scaleSequential(d3.interpolatePlasma).domain([totalRings, 0]);
+// //       return d3.color(colorScaleInd(index));
 // //     };
-
+// //     const getSectorColor = (index, sectorIndex) => {
+// //       const baseColor = d3.hsl(getRingColor(index));
+// //       const isPositive = sectorIndex % 2 === 0;
+// //       return d3.hsl(baseColor.h, baseColor.s, isPositive ? 0.75 : 0.35).toString();
+// //     };
 
 // //     const subspaces = Object.keys(jsonData);
 // //     subspaces.sort((a, b) => a.length - b.length);
-
 // //     const pointsData = subspaces.map((key) => ({
 // //       key,
-// //       points: jsonData[key],
+// //       points: jsonData[key] || [],
 // //       dimensions: key.length,
 // //       subspaceId: key,
 // //     }));
-// //     const ringLabels = subspaces.map((_, i) => String.fromCharCode(65 + i)); 
-
+// //     const ringLabels = subspaces.map((_, i) => String.fromCharCode(65 + i));
 // //     const pointPositions = {};
-// //     let highlightedElements = null;
 
-// //     // Function to clear highlights
-// //     const clearHighlights = () => {
-// //       if (highlightedElements) {
-// //         highlightedElements.line.attr("stroke-width", 0.3).attr("stroke", highlightedElements.originalColor);
-// //         highlightedElements.circles.forEach(circle =>
-// //           circle.attr("r", 3).attr("fill", "black")
-// //         );
-// //         highlightedElements = null;
-// //       }
+// //     const calculateProportionalAngles = (index) => {
+// //       const sectors = 2 ** (index + 1);
+// //       const points = pointsData[index].points;
+// //       const sectorCounts = Array(sectors).fill(0);
+// //       const minAngle = 0.1 * (Math.PI * 2) / sectors;
+
+// //       points.forEach(point => {
+// //         const pointData = Object.entries(point).filter(([key]) => key !== "Point_ID");
+// //         const bitVector = pointData.map(([_, coord]) => (coord >= 0 ? 1 : 0)).join("");
+// //         const bitVectorIndex = Math.min(parseInt(bitVector, 2), sectors - 1);
+// //         sectorCounts[bitVectorIndex]++;
+// //       });
+
+// //       const totalPoints = points.length || 1; // Avoid division by zero
+// //       const remainingAngle = 2 * Math.PI - (minAngle * sectorCounts.filter(count => count === 0).length);
+
+// //       return sectorCounts.map(count => {
+// //         if (count === 0) return minAngle;
+// //         return (count / totalPoints) * remainingAngle;
+// //       });
 // //     };
 
-// //     subspaces.forEach((key, index) => {
-// //       if (!ringVisibility[key]) return;
+// //     const renderNormalView = () => {
+// //       subspaces.forEach((key, index) => {
+// //         if (!ringVisibility[key]) return;
+// //         const innerRadius = (index / subspaces.length) * maxRadius;
+// //         const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
+// //         const sectors = 2 ** (index + 1);
+// //         const rotationOffset = Math.PI / 2;
 
-// //       const innerRadius = (index / subspaces.length) * maxRadius;
-// //       const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
-// //       const sectors = 2 ** (index + 1);
-// //       const rotationOffset = Math.PI / 2;
+// //         for (let i = 0; i < sectors; i++) {
+// //           const startAngle = (2 * Math.PI * i) / sectors + rotationOffset;
+// //           const endAngle = (2 * Math.PI * (i + 1)) / sectors + rotationOffset;
 
-// //       for (let i = 0; i < sectors; i++) {
-// //         const startAngle = (2 * Math.PI * i) / sectors + rotationOffset;
-// //         const endAngle = (2 * Math.PI * (i + 1)) / sectors + rotationOffset;
-
-// //         g.append("path")
-// //           .attr("d", d3.arc()
-// //             .innerRadius(innerRadius)
-// //             .outerRadius(outerRadius)
-// //             .startAngle(startAngle)
-// //             .endAngle(endAngle)
-// //           )
-// //           .attr("fill", getSectorColor(index, i))
-// //           .attr("fill-opacity", 0.3)
-// //           .attr("stroke", "black")
-// //           .attr("stroke-width", 0.1)
-// //           .style("cursor", "pointer");
+// //           g.append("path")
+// //             .attr("d", d3.arc()
+// //               .innerRadius(innerRadius)
+// //               .outerRadius(outerRadius)
+// //               .startAngle(startAngle)
+// //               .endAngle(endAngle)
+// //             )
+// //             .attr("fill", getSectorColor(index, i))
+// //             .attr("fill-opacity", 0.3)
+// //             .attr("stroke", "black")
+// //             .attr("stroke-width", 0.5)
+// //             .style("cursor", "pointer");
+// //         }
 
 // //         g.append("text")
 // //           .attr("x", 0)
@@ -136,58 +399,92 @@
 // //           .attr("font-size", "16px")
 // //           .attr("fill", "red")
 // //           .attr("font-weight", "bold")
-// //         // .text(key);
-// //           .text(ringLabels[index]); // Use generated lab
-// //       }
+// //           .text(ringLabels[index]);
 
-// //       for (let i = 0; i < sectors; i++) {
-// //         const angle = (2 * Math.PI * i) / sectors;
-// //         const x1 = outerRadius * Math.cos(angle);
-// //         const y1 = outerRadius * Math.sin(angle);
-// //         const x2 = innerRadius * Math.cos(angle);
-// //         const y2 = innerRadius * Math.sin(angle);
-// //         g.append("line")
-// //           .attr("x1", x2)
-// //           .attr("y1", y2)
-// //           .attr("x2", x1)
-// //           .attr("y2", y1)
-// //           .attr("stroke", "black")
-// //           .attr("stroke-width", 0.25)
-// //           .style("pointer-events", "none");
-// //       }
+// //         renderPoints(index, innerRadius, outerRadius, sectors);
+// //       });
+// //     };
+
+// //     const renderProportionalView = () => {
+// //       subspaces.forEach((key, index) => {
+// //         if (!ringVisibility[key]) return;
+// //         const innerRadius = (index / subspaces.length) * maxRadius;
+// //         const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
+// //         const rotationOffset = Math.PI / 2;
+
+// //         const proportionalAngles = calculateProportionalAngles(index);
+
+// //         let currentAngle = rotationOffset;
+// //         proportionalAngles.forEach((angle, i) => {
+// //           const startAngle = currentAngle;
+// //           const endAngle = currentAngle + angle;
+
+// //           g.append("path")
+// //             .attr("d", d3.arc()
+// //               .innerRadius(innerRadius)
+// //               .outerRadius(outerRadius)
+// //               .startAngle(startAngle)
+// //               .endAngle(endAngle)
+// //             )
+// //             .attr("fill", getSectorColor(index, i))
+// //             .attr("fill-opacity", 0.3)
+// //             .attr("stroke", "black")
+// //             .attr("stroke-width", 0.5)
+// //             .style("cursor", "pointer");
+
+// //           currentAngle = endAngle;
+// //         });
+
+// //         g.append("text")
+// //           .attr("x", 0)
+// //           .attr("y", -outerRadius - 5)
+// //           .attr("text-anchor", "middle")
+// //           .attr("font-size", "16px")
+// //           .attr("fill", "red")
+// //           .attr("font-weight", "bold")
+// //           .text(ringLabels[index]);
+
+// //         renderPoints(index, innerRadius, outerRadius, proportionalAngles);
+// //       });
+// //     };
+
+// //     const renderPoints = (index, innerRadius, outerRadius, anglesOrSectors) => {
+// //       const isProportional = viewMode === "proportional";
+// //       const sectors = isProportional ? anglesOrSectors.length : anglesOrSectors;
+// //       const angles = isProportional ? anglesOrSectors : Array(sectors).fill(2 * Math.PI / sectors);
+// //       const rotationOffset = Math.PI / 2;
 
 // //       pointsData[index].points.forEach((point, i) => {
-// //         const pointData = Object.entries(point).filter(
-// //           ([key]) => key !== "Point_ID"
-// //         );
-// //         const bitVector = pointData
-// //           .map(([key, coord]) => (coord >= 0 ? 1 : 0))
-// //           .join("");
+// //         const pointData = Object.entries(point).filter(([key]) => key !== "Point_ID");
+// //         const bitVector = pointData.map(([_, coord]) => (coord >= 0 ? 1 : 0)).join("");
+// //         const bitVectorIndex = Math.min(parseInt(bitVector, 2), sectors - 1);
 
-// //         const minRadius = innerRadius;
-// //         const maxRadius = outerRadius;
-// //         const randomRadius =
-// //           minRadius + Math.random() * (maxRadius - minRadius);
+// //         let startAngle = rotationOffset;
+// //         if (isProportional) {
+// //           for (let j = 0; j < bitVectorIndex; j++) {
+// //             startAngle += angles[j];
+// //           }
+// //         } else {
+// //           startAngle += (2 * Math.PI * bitVectorIndex) / sectors;
+// //         }
 
-// //         const bitVectorIndex = parseInt(bitVector, 2);
-// //         const angleStart = (2 * Math.PI * bitVectorIndex) / sectors;
-// //         const angleEnd = (2 * Math.PI * (bitVectorIndex + 1)) / sectors;
-// //         const centerAngle = (angleStart + angleEnd) / 2;
+// //         const angleWidth = angles[bitVectorIndex];
+// //         const centerAngle = startAngle + angleWidth / 2;
 
 // //         const totalPoints = pointsData[index].points.length;
-// //         const clusterFactor = 0.86;
+// //         const clusterFactor = 0.9;
 // //         const overlapRadius =
 // //           innerRadius +
 // //           (clusterFactor * (outerRadius - innerRadius) * (i % totalPoints)) /
 // //           totalPoints;
-
 // //         const x = overlapRadius * Math.cos(centerAngle);
 // //         const y = overlapRadius * Math.sin(centerAngle);
+
 // //         point.Point_ID.forEach((id) => {
 // //           if (!pointPositions[id]) {
 // //             pointPositions[id] = [];
 // //           }
-// //           pointPositions[id].push({ x, y, point, subspaceId: key });
+// //           pointPositions[id].push({ x, y, point, subspaceId: pointsData[index].key });
 // //         });
 
 // //         g.append("circle")
@@ -213,7 +510,7 @@
 // //             tooltip
 // //               .style("visibility", "visible")
 // //               .html(
-// //                 `Point_IDs: ${pointIds}<br>Coordinates: (${x.toFixed(2)}, ${y.toFixed(2)})<br>Subspace: ${key}<br>Label: ${labelText}`
+// //                 `Point_IDs: ${pointIds}<br>Coordinates: (${x.toFixed(2)}, ${y.toFixed(2)})<br>Subspace: ${pointsData[index].key}<br>Label: ${labelText}`
 // //               );
 // //             setHoveredCoordinates({ ...point, label: labelText });
 // //           })
@@ -227,7 +524,13 @@
 // //             setHoveredCoordinates(null);
 // //           });
 // //       });
-// //     });
+// //     };
+
+// //     if (viewMode === "normal") {
+// //       renderNormalView();
+// //     } else if (viewMode === "proportional") {
+// //       renderProportionalView();
+// //     }
 
 // //     Object.entries(pointPositions).forEach(([pointId, positions]) => {
 // //       if (positions.length > 1) {
@@ -238,7 +541,8 @@
 // //             .attr("x2", positions[i + 1].x)
 // //             .attr("y2", positions[i + 1].y)
 // //             .attr("stroke", getLabelColor(pointId))
-// //             .attr("stroke-width", 0.3)
+// //             .attr("stroke-width", 1.5)
+// //             .attr("stroke-opacity", 0.9)
 // //             .style("cursor", "pointer")
 // //             .on("mouseover", (event) => {
 // //               tooltip
@@ -252,68 +556,6 @@
 // //             })
 // //             .on("mouseout", () => {
 // //               tooltip.style("visibility", "hidden");
-// //             })
-// //             .on("click", (event) => {
-// //               // Clear previous highlights
-// //               clearHighlights();
-
-// //               // Highlight the clicked edge
-// //               const originalColor = getLabelColor(pointId);
-// //               line.attr("stroke-width", 2).attr("stroke", "yellow");
-
-// //               // Highlight connected points
-// //               const circles = g.selectAll("circle")
-// //                 .filter(d => {
-// //                   const circleX = parseFloat(this.getAttribute("cx"));
-// //                   const circleY = parseFloat(this.getAttribute("cy"));
-// //                   return (
-// //                     (Math.abs(circleX - positions[i].x) < 0.1 && Math.abs(circleY - positions[i].y) < 0.1) ||
-// //                     (Math.abs(circleX - positions[i + 1].x) < 0.1 && Math.abs(circleY - positions[i + 1].y) < 0.1)
-// //                 )})
-// //                 .attr("r", 6)
-// //                 .attr("fill", "yellow");
-
-// //               highlightedElements = { line, circles, originalColor };
-
-// //               // Show popup
-// //               const point1 = positions[i].point;
-// //               const point2 = positions[i + 1].point;
-
-// //               const coords1 = Object.entries(point1)
-// //                 .filter(([key]) => key !== "Point_ID")
-// //                 .map(([key, value]) => `${key}: ${value}`)
-// //                 .join(", ");
-// //               const coords2 = Object.entries(point2)
-// //                 .filter(([key]) => key !== "Point_ID")
-// //                 .map(([key, value]) => `${key}: ${value}`)
-// //                 .join(", ");
-
-// //               const label1 = Object.entries(labelsData?.labels || {})
-// //                 .find(([_, ids]) => ids.includes(Number(pointId)))?.[0] || "No Label";
-
-// //               edgePopup
-// //                 .style("visibility", "visible")
-// //                 .html(`
-// //                   <strong>Connected Points (ID: ${pointId})</strong><br><br>
-// //                   <strong>Point 1</strong><br>
-// //                   Subspace: ${positions[i].subspaceId}<br>
-// //                   Coordinates: ${coords1}<br>
-// //                   Label: ${label1}<br><br>
-// //                   <strong>Point 2</strong><br>
-// //                   Subspace: ${positions[i + 1].subspaceId}<br>
-// //                   Coordinates: ${coords2}<br>
-// //                   Label: ${label1}
-// //                 `)
-// //                 .style("top", event.pageY + 15 + "px")
-// //                 .style("left", event.pageX + 15 + "px");
-
-// //               d3.select("body").on("click.edgePopup", (e) => {
-// //                 if (!edgePopup.node().contains(e.target)) {
-// //                   edgePopup.style("visibility", "hidden");
-// //                   clearHighlights();
-// //                   d3.select("body").on("click.edgePopup", null);
-// //                 }
-// //               });
 // //             });
 // //         }
 // //       }
@@ -323,17 +565,37 @@
 // //       g.attr("transform", event.transform);
 // //     });
 // //     svg.call(zoom);
+
 // //     return () => {
 // //       tooltip.remove();
-// //       edgePopup.remove();
-// //       svg.select(".zoom-view").remove();
 // //     };
-
-    
-// //   }, [jsonData, labelsData, ringVisibility, setHoveredCoordinates]);
+// //   }, [jsonData, labelsData, ringVisibility, setHoveredCoordinates, viewMode]);
 
 // //   return (
 // //     <div style={{ width: "100%", height: "100%" }}>
+// //       <div style={{ marginBottom: "10px" }}>
+// //         <button
+// //           onClick={() => setViewMode("normal")}
+// //           style={{
+// //             marginRight: "10px",
+// //             padding: "5px 10px",
+// //             backgroundColor: viewMode === "normal" ? "#4CAF50" : "#f0f0f0",
+// //             color: viewMode === "normal" ? "white" : "black",
+// //           }}
+// //         >
+// //           Normal View
+// //         </button>
+// //         <button
+// //           onClick={() => setViewMode("proportional")}
+// //           style={{
+// //             padding: "5px 10px",
+// //             backgroundColor: viewMode === "proportional" ? "#4CAF50" : "#f0f0f0",
+// //             color: viewMode === "proportional" ? "white" : "black",
+// //           }}
+// //         >
+// //           Proportional View
+// //         </button>
+// //       </div>
 // //       <svg ref={graphRef} style={{ width: "100%", height: "800px" }}></svg>
 // //     </div>
 // //   );
@@ -347,20 +609,14 @@ import * as d3 from "d3";
 
 const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVisibility }) => {
   const graphRef = useRef(null);
-  const [isProportionalView, setIsProportionalView] = useState(false);
-  const [applyToAllRings, setApplyToAllRings] = useState(false);
+  const [viewMode, setViewMode] = useState("normal");
 
   useEffect(() => {
-    // check data json file
-    if (
-      !jsonData ||
-      typeof jsonData !== "object" ||
-      Object.keys(jsonData).length === 0
-    ) {
+    if (!jsonData || typeof jsonData !== "object" || Object.keys(jsonData).length === 0) {
       console.error("Invalid or empty jsonData:", jsonData);
       return;
     }
-// check label json file
+
     if (!labelsData || typeof labelsData !== "object") {
       console.error("Invalid labelsData:", labelsData);
       return;
@@ -373,6 +629,12 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
     const height = 800;
     const margin = 20;
     const maxRadius = Math.min(width, height) / 2 - margin;
+
+    const g = svg
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
     const tooltip = d3
       .select("body")
@@ -397,79 +659,139 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
       return "gray";
     };
 
-    const colorScale = d3
-      .scaleOrdinal(d3.schemeCategory10)
-      .domain(Object.keys(labelsData.labels || {}));
-
+    const colorScale = d3.scaleOrdinal(d3.schemeCategory10).domain(Object.keys(labelsData.labels || {}));
+    const getRingColor = (index) => {
+      const totalRings = Object.keys(jsonData).length;
+      const colorScaleInd = d3.scaleSequential(d3.interpolatePlasma).domain([totalRings, 0]);
+      return d3.color(colorScaleInd(index));
+    };
     const getSectorColor = (index, sectorIndex) => {
-      return d3.hsl(sectorIndex % 2 === 0 ? 0 : 220, 0.9, 0.6);
+      const baseColor = d3.hsl(getRingColor(index));
+      const isPositive = sectorIndex % 2 === 0;
+      return d3.hsl(baseColor.h, baseColor.s, isPositive ? 0.75 : 0.35).toString();
     };
 
     const subspaces = Object.keys(jsonData);
-    // subspaces.sort((a, b) => a.length - b.length);
-
+    subspaces.sort((a, b) => a.length - b.length);
     const pointsData = subspaces.map((key) => ({
       key,
-      points: jsonData[key],
-      dimensions: key.length,
+      points: jsonData[key] || [],
+      dimensions: key.length || 1, // Ensure dimensions is at least 1
       subspaceId: key,
     }));
     const ringLabels = subspaces.map((_, i) => String.fromCharCode(65 + i));
-
     const pointPositions = {};
-    let highlightedElements = null;
 
+    const calculateProportionalAngles = (index) => {
+      if (index < 0 || index >= pointsData.length) {
+        console.error("Invalid index:", index);
+        return Array(2).fill(Math.PI); // Return a safe default
+      }
 
-    const drawGraph = () => {
-      svg.selectAll("*").remove();
-      const g = svg
-        .attr("width", width)
-        .attr("height", height)
-        .append("g")
-        .attr("transform", `translate(${width / 2}, ${height / 2})`);
+      const currentSubspace = pointsData[index];
+      const dimensions = Math.max(1, currentSubspace.dimensions);
 
-      subspaces.forEach((key, index) => {
-        if (!ringVisibility[key]) return;
+      // Calculate sectors based on dimensions, with a safe upper limit
+      const maxSafeDimensions = 10; // Limit to prevent excessive sectors
+      const safeDimensions = Math.min(dimensions, maxSafeDimensions);
+      const sectors = Math.pow(2, safeDimensions);
 
-        const innerRadius = (index / subspaces.length) * maxRadius;
-        const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
-        const sectors = 2 ** (index + 1);
-        // const rotationOffset = Math.PI / 2;
+      // Ensure sectors is a safe number
+      if (!Number.isFinite(sectors) || sectors <= 0 || sectors > 1024) {
+        console.error("Invalid sectors calculation:", { index, dimensions, sectors });
+        return Array(2).fill(Math.PI); // Return a safe default
+      }
 
-        const pointsBySector = new Array(sectors).fill(0);
-        pointsData[index].points.forEach((point) => {
-          const pointData = Object.entries(point).filter(([k]) => k !== "Point_ID");
-          const bitVector = pointData.map(([_, coord]) => (coord >= 0 ? 1 : 0)).join("");
-          const sectorIndex = parseInt(bitVector, 2);
-          pointsBySector[sectorIndex]++;
-        });
+      // Initialize angles array with the correct size
+      const sectorAngles = Array(sectors).fill(0);
 
-        const totalPoints = pointsData[index].points.length;
-        const minSectorAngle = totalPoints > 0 ? (Math.PI * 0.91) / sectors : (2 * Math.PI) / sectors;
+      if (index === pointsData.length - 1) { // Outermost ring
+        const sectorCounts = Array(sectors).fill(0);
+        const minAngle = 0.1 * (Math.PI * 2) / sectors;
 
-        let sectorAngles = [];
-        if (isProportionalView && (applyToAllRings || index === subspaces.length - 1)) {
-          const totalAngle = 2 * Math.PI;
-          const totalOccupiedSectors = pointsBySector.filter(count => count > 0).length;
-          const remainingAngle = totalAngle - (totalOccupiedSectors * minSectorAngle);
-          
-          sectorAngles = pointsBySector.map(count => {
-            if (count === 0) return minSectorAngle;
-            return minSectorAngle + (remainingAngle * count / totalPoints);
+        // Count points in each sector
+        if (Array.isArray(currentSubspace.points)) {
+          currentSubspace.points.forEach(point => {
+            const pointData = Object.entries(point).filter(([key]) => key !== "Point_ID");
+
+            // Ensure we don't exceed the number of dimensions we can handle
+            const limitedPointData = pointData.slice(0, safeDimensions);
+
+            // Create bit vector based on coordinates
+            const bitVector = limitedPointData.map(([_, coord]) => (coord >= 0 ? 1 : 0)).join("");
+
+            // Parse bit vector to get sector index with safe fallback
+            let bitVectorIndex;
+            try {
+              bitVectorIndex = parseInt(bitVector, 2);
+              if (isNaN(bitVectorIndex)) bitVectorIndex = 0;
+            } catch (e) {
+              bitVectorIndex = 0;
+            }
+
+            // Ensure index is within bounds
+            bitVectorIndex = Math.min(bitVectorIndex, sectors - 1);
+            sectorCounts[bitVectorIndex]++;
           });
-        } else {
-          sectorAngles = new Array(sectors).fill(2 * Math.PI / sectors);
         }
 
-        // let currentAngle = rotationOffset;
-        let currentAngle = 0;
-        const sectorStartAngles = [currentAngle];
+        const totalPoints = currentSubspace.points.length || 1;
+        const emptyCount = sectorCounts.filter(count => count === 0).length;
+        const remainingAngle = 2 * Math.PI - (minAngle * emptyCount);
+        const pointTotal = sectorCounts.reduce((sum, count) => sum + count, 0);
+
+        // Calculate proportional angles
+        for (let i = 0; i < sectors; i++) {
+          if (sectorCounts[i] === 0) {
+            sectorAngles[i] = minAngle;
+          } else {
+            sectorAngles[i] = (sectorCounts[i] / (pointTotal || 1)) * remainingAngle;
+          }
+        }
+
+        return sectorAngles;
+      } else { // Inner rings
+        // Get angles from next ring
+        let nextRingAngles = [];
+        try {
+          nextRingAngles = calculateProportionalAngles(index + 1);
+        } catch (e) {
+          console.error("Error calculating next ring angles:", e);
+          return Array(sectors).fill(2 * Math.PI / sectors); // Safe fallback
+        }
+
+        // If next ring doesn't have valid angles, use equal distribution
+        if (!nextRingAngles || nextRingAngles.length === 0) {
+          return Array(sectors).fill(2 * Math.PI / sectors);
+        }
+
+        // Create angles for this ring by combining pairs from next ring
+        for (let i = 0; i < sectors; i++) {
+          const childIndex1 = i * 2;
+          const childIndex2 = i * 2 + 1;
+
+          // Safely get angles from next ring
+          const angle1 = childIndex1 < nextRingAngles.length ? nextRingAngles[childIndex1] : 0;
+          const angle2 = childIndex2 < nextRingAngles.length ? nextRingAngles[childIndex2] : 0;
+
+          sectorAngles[i] = angle1 + angle2;
+        }
+
+        return sectorAngles;
+      }
+    };
+
+    const renderNormalView = () => {
+      subspaces.forEach((key, index) => {
+        if (!ringVisibility[key]) return;
+        const innerRadius = (index / subspaces.length) * maxRadius;
+        const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
+        const sectors = Math.pow(2, index + 1);
+        const rotationOffset = Math.PI / 2;
 
         for (let i = 0; i < sectors; i++) {
-          const startAngle = currentAngle;
-          const endAngle = startAngle + sectorAngles[i];
-          currentAngle = endAngle;
-          sectorStartAngles.push(currentAngle);
+          const startAngle = (2 * Math.PI * i) / sectors + rotationOffset;
+          const endAngle = (2 * Math.PI * (i + 1)) / sectors + rotationOffset;
 
           g.append("path")
             .attr("d", d3.arc()
@@ -481,88 +803,239 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
             .attr("fill", getSectorColor(index, i))
             .attr("fill-opacity", 0.3)
             .attr("stroke", "black")
-            .attr("stroke-width", 0.1)
+            .attr("stroke-width", 0.5)
             .style("cursor", "pointer");
-
-          if (i === 0) {
-            g.append("text")
-              .attr("x", 0)
-              .attr("y", -outerRadius - 5)
-              .attr("text-anchor", "middle")
-              .attr("font-size", "16px")
-              .attr("fill", "red")
-              .attr("font-weight", "bold")
-              .text(ringLabels[index]);
-          }
-
-          const x1 = outerRadius * Math.cos(endAngle);
-          const y1 = outerRadius * Math.sin(endAngle);
-          const x2 = innerRadius * Math.cos(endAngle);
-          const y2 = innerRadius * Math.sin(endAngle);
-          g.append("line")
-            .attr("x1", x2)
-            .attr("y1", y2)
-            .attr("x2", x1)
-            .attr("y2", y1)
-            .attr("stroke", "black")
-            .attr("stroke-width", 0.25)
-            .style("pointer-events", "none");
         }
 
-        pointsData[index].points.forEach((point, i) => {
-          const pointData = Object.entries(point).filter(([k]) => k !== "Point_ID");
-          const bitVector = pointData.map(([_, coord]) => (coord >= 0 ? 1 : 0)).join("");
-          const bitVectorIndex = parseInt(bitVector, 2);
+        g.append("text")
+          .attr("x", 0)
+          .attr("y", -outerRadius - 5)
+          .attr("text-anchor", "middle")
+          .attr("font-size", "16px")
+          .attr("fill", "red")
+          .attr("font-weight", "bold")
+          .text(ringLabels[index]);
 
-          const minRadius = innerRadius;
-          const maxRadius = outerRadius;
-          const randomRadius = minRadius + Math.random() * (maxRadius - minRadius);
+        renderPoints(index, innerRadius, outerRadius, sectors);
+      });
+    };
 
-          const startAngle = sectorStartAngles[bitVectorIndex];
-          const endAngle = sectorStartAngles[bitVectorIndex + 1];
-          const centerAngle = (startAngle + endAngle) / 2;
+    const renderProportionalView = () => {
+      for (let index = subspaces.length - 1; index >= 0; index--) {
+        if (!ringVisibility[pointsData[index].key]) continue;
 
-          const totalPointsInSector = pointsBySector[bitVectorIndex];
-          const clusterFactor = 0.86;
-          const overlapRadius = totalPointsInSector > 0
-            ? innerRadius + (clusterFactor * (outerRadius - innerRadius) * (i % totalPointsInSector)) / totalPointsInSector
-            : randomRadius;
+        const innerRadius = (index / subspaces.length) * maxRadius;
+        const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
+        const rotationOffset = Math.PI / 2;
 
-          const x = overlapRadius * Math.cos(centerAngle);
-          const y = overlapRadius * Math.sin(centerAngle);
-          point.Point_ID.forEach((id) => {
-            if (!pointPositions[id]) {
-              pointPositions[id] = [];
-            }
-            pointPositions[id].push({ x, y, point, subspaceId: key });
-          });
+        let proportionalAngles;
+        try {
+          proportionalAngles = calculateProportionalAngles(index);
+        } catch (e) {
+          console.error("Error calculating proportional angles:", e);
+          // Fallback to equal distribution
+          const safeSectors = Math.pow(2, Math.min(index + 1, 8));
+          proportionalAngles = Array(safeSectors).fill(2 * Math.PI / safeSectors);
+        }
 
-          g.append("circle")
-            .attr("cx", x)
-            .attr("cy", y)
-            .attr("r", 3)
-            .attr("fill", "black")
-            .attr("stroke", "white")
+        // Validate proportionalAngles
+        if (!Array.isArray(proportionalAngles) || proportionalAngles.length === 0) {
+          console.error("Invalid angles for index:", index);
+          continue;
+        }
+
+        let currentAngle = rotationOffset;
+
+        // Render sectors in the same order as normal view
+        for (let i = 0; i < proportionalAngles.length; i++) {
+          const angle = proportionalAngles[i];
+
+          // Ensure angle is a valid number
+          if (typeof angle !== 'number' || !isFinite(angle)) {
+            console.error("Invalid angle:", angle);
+            continue;
+          }
+
+          const startAngle = currentAngle;
+          const endAngle = currentAngle + angle;
+
+          g.append("path")
+            .attr("d", d3.arc()
+              .innerRadius(innerRadius)
+              .outerRadius(outerRadius)
+              .startAngle(startAngle)
+              .endAngle(endAngle)
+            )
+            .attr("fill", getSectorColor(index, i))
+            .attr("fill-opacity", 0.3)
+            .attr("stroke", "black")
             .attr("stroke-width", 0.5)
-            .style("pointer-events", "visible")
-            .on("mouseover", (event) => {
-              const pointIds = point.Point_ID.join(", ");
-              let associatedLabels = [];
-              if (labelsData && labelsData.labels) {
-                Object.entries(labelsData.labels).forEach(([label, pointList]) => {
-                  if (point.Point_ID.some(id => pointList.includes(Number(id)))) {
-                    associatedLabels.push(label);
-                  }
-                });
-              }
-              const labelText = associatedLabels.length > 0 ? associatedLabels.join(", ") : "No Label";
+            .style("cursor", "pointer");
 
+          currentAngle = endAngle;
+        }
+
+        g.append("text")
+          .attr("x", 0)
+          .attr("y", -outerRadius - 5)
+          .attr("text-anchor", "middle")
+          .attr("font-size", "16px")
+          .attr("fill", "red")
+          .attr("font-weight", "bold")
+          .text(ringLabels[index]);
+
+        renderPoints(index, innerRadius, outerRadius, proportionalAngles);
+      }
+    };
+
+    const renderPoints = (index, innerRadius, outerRadius, anglesOrSectors) => {
+      const isProportional = viewMode === "proportional";
+      const points = pointsData[index].points;
+
+      if (!Array.isArray(points) || points.length === 0) {
+        return; // No points to render
+      }
+
+      // Ensure we have valid angles or sectors
+      let sectors, angles;
+      if (isProportional) {
+        if (!Array.isArray(anglesOrSectors) || anglesOrSectors.length === 0) {
+          console.error("Invalid angles for point rendering:", anglesOrSectors);
+          return;
+        }
+        sectors = anglesOrSectors.length;
+        angles = anglesOrSectors;
+      } else {
+        if (!Number.isFinite(anglesOrSectors) || anglesOrSectors <= 0) {
+          console.error("Invalid sectors for point rendering:", anglesOrSectors);
+          return;
+        }
+        sectors = anglesOrSectors;
+        angles = Array(sectors).fill(2 * Math.PI / sectors);
+      }
+
+      const rotationOffset = Math.PI / 2;
+      const dimensions = Math.min(pointsData[index].dimensions, 10); // Limit dimensions
+
+      points.forEach((point, i) => {
+        if (!point || typeof point !== 'object') {
+          console.error("Invalid point:", point);
+          return;
+        }
+
+        const pointData = Object.entries(point).filter(([key]) => key !== "Point_ID");
+
+        // Ensure we don't exceed the number of dimensions we can handle
+        const limitedPointData = pointData.slice(0, dimensions);
+
+        // Create bit vector based on coordinates
+        const bitVector = limitedPointData.map(([_, coord]) => {
+          const num = parseFloat(coord);
+          return isNaN(num) ? 0 : (num >= 0 ? 1 : 0);
+        }).join("");
+
+        // Parse bit vector to get sector index with safe fallback
+        let bitVectorIndex;
+        try {
+          bitVectorIndex = parseInt(bitVector, 2);
+          if (isNaN(bitVectorIndex)) bitVectorIndex = 0;
+        } catch (e) {
+          bitVectorIndex = 0;
+        }
+
+        // Ensure index is within bounds
+        bitVectorIndex = Math.min(bitVectorIndex, sectors - 1);
+
+        let startAngle = rotationOffset;
+        if (isProportional) {
+          for (let j = 0; j < bitVectorIndex; j++) {
+            if (j < angles.length) {
+              startAngle += angles[j] || 0;
+            }
+          }
+        } else {
+          startAngle += (2 * Math.PI * bitVectorIndex) / sectors;
+        }
+
+        const angleWidth = bitVectorIndex < angles.length ? angles[bitVectorIndex] : 2 * Math.PI / sectors;
+        const centerAngle = startAngle + angleWidth / 2;
+        const totalPoints = points.length || 1;
+        const clusterFactor = 0.9;
+        const overlapRadius = innerRadius + (clusterFactor * (outerRadius - innerRadius) * (i % totalPoints)) / totalPoints;
+        const x = overlapRadius * Math.cos(centerAngle);
+        const y = overlapRadius * Math.sin(centerAngle);
+
+        // Ensure Point_ID is an array
+        const pointIds = Array.isArray(point.Point_ID) ? point.Point_ID : [point.Point_ID];
+
+        pointIds.forEach((id) => {
+          if (!id) return;
+          if (!pointPositions[id]) pointPositions[id] = [];
+          pointPositions[id].push({ x, y, point, subspaceId: pointsData[index].key });
+        });
+
+        g.append("circle")
+          .attr("cx", x)
+          .attr("cy", y)
+          .attr("r", 3)
+          .attr("fill", "black")
+          .attr("stroke", "white")
+          .attr("stroke-width", 0.5)
+          .style("pointer-events", "visible")
+          .on("mouseover", (event) => {
+            const pointIds = Array.isArray(point.Point_ID) ? point.Point_ID.join(", ") : point.Point_ID;
+            let associatedLabels = [];
+            if (labelsData && labelsData.labels) {
+              Object.entries(labelsData.labels).forEach(([label, pointList]) => {
+                if (Array.isArray(point.Point_ID) && Array.isArray(pointList) &&
+                  point.Point_ID.some(id => pointList.includes(Number(id)))) {
+                  associatedLabels.push(label);
+                }
+              });
+            }
+            const labelText = associatedLabels.length > 0 ? associatedLabels.join(", ") : "No Label";
+
+            tooltip
+              .style("visibility", "visible")
+              .html(
+                `Point_IDs: ${pointIds}<br>Coordinates: (${x.toFixed(2)}, ${y.toFixed(2)})<br>Subspace: ${pointsData[index].key}<br>Label: ${labelText}`
+              );
+            setHoveredCoordinates({ ...point, label: labelText });
+          })
+          .on("mousemove", (event) => {
+            tooltip
+              .style("top", event.pageY + 10 + "px")
+              .style("left", event.pageX + 10 + "px");
+          })
+          .on("mouseout", () => {
+            tooltip.style("visibility", "hidden");
+            setHoveredCoordinates(null);
+          });
+      });
+    };
+
+    if (viewMode === "normal") {
+      renderNormalView();
+    } else if (viewMode === "proportional") {
+      renderProportionalView();
+    }
+
+    Object.entries(pointPositions).forEach(([pointId, positions]) => {
+      if (positions.length > 1) {
+        for (let i = 0; i < positions.length - 1; i++) {
+          g.append("line")
+            .attr("x1", positions[i].x)
+            .attr("y1", positions[i].y)
+            .attr("x2", positions[i + 1].x)
+            .attr("y2", positions[i + 1].y)
+            .attr("stroke", getLabelColor(pointId))
+            .attr("stroke-width", 1.5)
+            .attr("stroke-opacity", 0.9)
+            .style("cursor", "pointer")
+            .on("mouseover", (event) => {
               tooltip
                 .style("visibility", "visible")
-                .html(
-                  `Point_IDs: ${pointIds}<br>Coordinates: (${x.toFixed(2)}, ${y.toFixed(2)})<br>Subspace: ${key}<br>Label: ${labelText}`
-                );
-              setHoveredCoordinates({ ...point, label: labelText });
+                .html(`Connection: Point_ID ${pointId}`);
             })
             .on("mousemove", (event) => {
               tooltip
@@ -571,141 +1044,45 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
             })
             .on("mouseout", () => {
               tooltip.style("visibility", "hidden");
-              setHoveredCoordinates(null);
             });
-        });
-      });
-
-      Object.entries(pointPositions).forEach(([pointId, positions]) => {
-        if (positions.length > 1) {
-          for (let i = 0; i < positions.length - 1; i++) {
-            const line = g.append("line")
-              .attr("x1", positions[i].x)
-              .attr("y1", positions[i].y)
-              .attr("x2", positions[i + 1].x)
-              .attr("y2", positions[i + 1].y)
-              .attr("stroke", getLabelColor(pointId))
-              .attr("stroke-width", 0.3)
-              .style("cursor", "pointer")
-              .on("mouseover", (event) => {
-                tooltip
-                  .style("visibility", "visible")
-                  .html(`Connection: Point_ID ${pointId}`);
-              })
-              .on("mousemove", (event) => {
-                tooltip
-                  .style("top", event.pageY + 10 + "px")
-                  .style("left", event.pageX + 10 + "px");
-              })
-              .on("mouseout", () => {
-                tooltip.style("visibility", "hidden");
-              })
-              .on("click", (event) => {
-                // clearHighlights();
-
-                const originalColor = getLabelColor(pointId);
-                line.attr("stroke-width", 2).attr("stroke", "yellow");
-
-                const circles = g.selectAll("circle")
-                  .filter(d => {
-                    const circleX = parseFloat(this.getAttribute("cx"));
-                    const circleY = parseFloat(this.getAttribute("cy"));
-                    return (
-                      (Math.abs(circleX - positions[i].x) < 0.1 && Math.abs(circleY - positions[i].y) < 0.1) ||
-                      (Math.abs(circleX - positions[i + 1].x) < 0.1 && Math.abs(circleY - positions[i + 1].y) < 0.1)
-                    );
-                  })
-                  .attr("r", 6)
-                  .attr("fill", "yellow");
-
-                highlightedElements = { line, circles, originalColor };
-
-                const point1 = positions[i].point;
-                const point2 = positions[i + 1].point;
-
-                const coords1 = Object.entries(point1)
-                  .filter(([key]) => key !== "Point_ID")
-                  .map(([key, value]) => `${key}: ${value}`)
-                  .join(", ");
-                const coords2 = Object.entries(point2)
-                  .filter(([key]) => key !== "Point_ID")
-                  .map(([key, value]) => `${key}: ${value}`)
-                  .join(", ");
-
-                const label1 = Object.entries(labelsData?.labels || {})
-                  .find(([_, ids]) => ids.includes(Number(pointId)))?.[0] || "No Label";
-
-                // edgePopup
-                //   .style("visibility", "visible")
-                //   .html(`
-                //     <strong>Connected Points (ID: ${pointId})</strong><br><br>
-                //     <strong>Point 1</strong><br>
-                //     Subspace: ${positions[i].subspaceId}<br>
-                //     Coordinates: ${coords1}<br>
-                //     Label: ${label1}<br><br>
-                //     <strong>Point 2</strong><br>
-                //     Subspace: ${positions[i + 1].subspaceId}<br>
-                //     Coordinates: ${coords2}<br>
-                //     Label: ${label1}
-                //   `)
-                //   .style("top", event.pageY + 15 + "px")
-                //   .style("left", event.pageX + 15 + "px");
-
-                // d3.select("body").on("click.edgePopup", (e) => {
-                //   if (!edgePopup.node().contains(e.target)) {
-                //     edgePopup.style("visibility", "hidden");
-                //     // clearHighlights();
-                //     d3.select("body").on("click.edgePopup", null);
-                //   }
-                // });
-              });
-          }
         }
-      });
+      }
+    });
 
-      const zoom = d3.zoom().on("zoom", (event) => {
-        g.attr("transform", event.transform);
-      });
-      svg.call(zoom);
-    };
-
-    drawGraph();
+    const zoom = d3.zoom().on("zoom", (event) => {
+      g.attr("transform", event.transform);
+    });
+    svg.call(zoom);
 
     return () => {
       tooltip.remove();
-      // edgePopup.remove();
-      svg.select(".zoom-view").remove();
     };
-  }, [jsonData, labelsData, ringVisibility, setHoveredCoordinates, isProportionalView, applyToAllRings]);
+  }, [jsonData, labelsData, ringVisibility, setHoveredCoordinates, viewMode]);
 
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <div style={{ marginBottom: "10px" }}>
-        <button 
-          onClick={() => setIsProportionalView(!isProportionalView)}
+        <button
+          onClick={() => setViewMode("normal")}
           style={{
-            padding: "5px 10px",
             marginRight: "10px",
-            backgroundColor: isProportionalView ? "#4CAF50" : "#f0f0f0",
-            color: isProportionalView ? "white" : "black",
-            border: "1px solid #ccc",
-            borderRadius: "4px",
-            cursor: "pointer"
+            padding: "5px 10px",
+            backgroundColor: viewMode === "normal" ? "#4CAF50" : "#f0f0f0",
+            color: viewMode === "normal" ? "white" : "black",
           }}
         >
-          {isProportionalView ? "Normal View" : "Proportional View"}
+          Normal View
         </button>
-        
-        {isProportionalView && (
-          <label style={{ marginLeft: "10px" }}>
-            <input
-              type="checkbox"
-              checked={applyToAllRings}
-              onChange={(e) => setApplyToAllRings(e.target.checked)}
-            />
-            Apply to all rings
-          </label>
-        )}
+        <button
+          onClick={() => setViewMode("proportional")}
+          style={{
+            padding: "5px 10px",
+            backgroundColor: viewMode === "proportional" ? "#4CAF50" : "#f0f0f0",
+            color: viewMode === "proportional" ? "white" : "black",
+          }}
+        >
+          Proportional View
+        </button>
       </div>
       <svg ref={graphRef} style={{ width: "100%", height: "800px" }}></svg>
     </div>
@@ -713,15 +1090,4 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
 };
 
 export default HierarchicalGraph;
-
-
-
-
-
-
-// ____________________________________________________________________________________________________________________________________________
-
-
-
-
 
