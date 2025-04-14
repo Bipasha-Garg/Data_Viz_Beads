@@ -283,7 +283,7 @@ const App = () => {
       {/* New Visualizations */}
       <div className="w-full flex flex-col lg:flex-row gap-4">
         {/* Scatter Plot */}
-        <div className="w-full lg:w-1/2 p-4 bg-white shadow rounded-lg">
+        {/* <div className="w-full lg:w-1/2 p-4 bg-white shadow rounded-lg">
           <h2 className="text-lg sm:text-xl font-bold mb-4">Scatter Plot</h2>
           <div className="w-full h-[40vh] overflow-auto">
             {classificationData && (
@@ -294,10 +294,10 @@ const App = () => {
               />
             )}
           </div>
-        </div>
+        </div> */}
 
         {/* Parallel Coordinates */}
-        <div className="w-full lg:w-1/2 p-4 bg-white shadow rounded-lg">
+        {/* <div className="w-full lg:w-1/2 p-4 bg-white shadow rounded-lg">
           <h2 className="text-lg sm:text-xl font-bold mb-4">Parallel Coordinates</h2>
           <div className="w-full h-[40vh] overflow-auto">
             {parallelData && (
@@ -308,7 +308,7 @@ const App = () => {
               />
             )}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
