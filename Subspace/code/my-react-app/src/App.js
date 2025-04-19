@@ -5,6 +5,7 @@ import HierarchicalGraph from "./JsonDisplay";
 // import HierarchicalGraph from "./GraphBase";
 import ScatterPlot from "./ScatterPlot";
 import ParallelCoordinates from "./ParallelCoordinates";
+import HorizontalStrip from "./strip";
 
 const App = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -246,6 +247,18 @@ const App = () => {
               />
             )}
           </div>
+          {/* Horizontal Strip Visualization */}
+          {/* {jsonData && (
+            <div className="mt-6 w-full">
+              <HorizontalStrip
+                jsonData={jsonData}
+                labelsData={labelsData}
+                setHoveredCoordinates={setHoveredCoordinates}
+                stripHeight={120}
+                stripMargin={{ top: 30, right: 30, bottom: 40, left: 30 }}
+              />
+            </div>
+          )} */}
         </div>
 
         {/* Right Dashboard */}
