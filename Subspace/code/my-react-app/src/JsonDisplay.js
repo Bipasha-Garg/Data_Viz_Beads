@@ -3,6 +3,7 @@
 
 // const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVisibility }) => {
 //   const graphRef = useRef(null);
+//   const stripRef = useRef(null);
 //   const [viewMode, setViewMode] = useState("normal");
 
 //   useEffect(() => {
@@ -103,8 +104,8 @@
 //       const lastRingIndex = subspaces.length - 1;
 //       for (let ringIndex = lastRingIndex; ringIndex >= 0; ringIndex--) {
 //         const sectors = 2 ** (ringIndex + 1);
-//         const totalPoints = pointsData[ringIndex].points.length || 1; 
-//         const minAngle = 0.05 * (Math.PI * 2) / sectors; 
+//         const totalPoints = pointsData[ringIndex].points.length || 1;
+//         const minAngle = 0.05 * (Math.PI * 2) / sectors;
 //         if (ringIndex === lastRingIndex) {
 //           const emptySectors = sectorCounts[ringIndex].filter(count => count === 0).length;
 //           const remainingAngle = 2 * Math.PI - (minAngle * emptySectors);
@@ -186,7 +187,6 @@
 //         const innerRadius = (index / subspaces.length) * maxRadius;
 //         const outerRadius = ((index + 1) / subspaces.length) * maxRadius;
 
-//         // Draw sectors with their proportional angles
 //         let currentAngle = rotationOffset;
 //         sectorAngles[index].forEach((angle, i) => {
 //           const startAngle = currentAngle;
@@ -380,13 +380,157 @@
 //     });
 //     svg.call(zoom);
 
+//     // Add strip visualization for the last ring
+//     const strip = d3.select(stripRef.current);
+//     strip.selectAll("*").remove();
+
+//     const lastRingIndex = subspaces.length - 1;
+//     const lastRingKey = subspaces[lastRingIndex];
+
+//     if (ringVisibility[lastRingKey]) {
+//       const stripWidth = 1100;
+//       const stripHeight = 200;
+//       const stripMargin = { top: 20, right: 20, bottom: 20, left: 20 };
+
+//       const stripG = strip
+//         .attr("width", stripWidth)
+//         .attr("height", stripHeight)
+//         .append("g")
+//         .attr("transform", `translate(${stripMargin.left}, ${stripMargin.top})`);
+
+//       const sectors = 2 ** (lastRingIndex + 1);
+//       const sectorWidth = (stripWidth - stripMargin.left - stripMargin.right) / sectors;
+//       const availableHeight = stripHeight - stripMargin.top - stripMargin.bottom;
+
+//       // Group points by sector
+//       const pointsBySector = {};
+//       pointsData[lastRingIndex].points.forEach(point => {
+//         const pointData = Object.entries(point).filter(([key]) => key !== "Point_ID");
+//         const bitVector = pointData.map(([_, coord]) => (coord >= 0 ? 1 : 0)).join("");
+//         const sectorIndex = Math.min(parseInt(bitVector, 2), sectors - 1);
+
+//         if (!pointsBySector[sectorIndex]) {
+//           pointsBySector[sectorIndex] = [];
+//         }
+//         pointsBySector[sectorIndex].push(point);
+//       });
+
+//       // Draw sectors in the strip
+//       for (let i = 0; i < sectors; i++) {
+//         const sectorX = i * sectorWidth;
+
+//         // Draw sector background
+//         stripG.append("rect")
+//           .attr("x", sectorX)
+//           .attr("y", 0)
+//           .attr("width", sectorWidth)
+//           .attr("height", availableHeight)
+//           .attr("fill", getSectorColor(lastRingIndex, i))
+//           .attr("fill-opacity", 0.3)
+//           .attr("stroke", "black")
+//           .attr("stroke-width", 0.5);
+
+//         const sectorPoints = pointsBySector[i] || [];
+//         const numPoints = sectorPoints.length;
+
+//         if (numPoints > 0) {
+//           // Calculate min and max values for this sector
+//           const values = sectorPoints.map(point => {
+//             const coords = Object.entries(point).filter(([key]) => key !== "Point_ID");
+//             return coords.reduce((sum, [_, coord]) => sum + Math.abs(coord), 0) / coords.length;
+//           });
+
+//           const minValue = Math.min(...values);
+//           const maxValue = Math.max(...values);
+//           const valueRange = maxValue - minValue || 1; // Avoid division by zero
+
+//           // Draw horizontal lines for each point
+//           const lineSpacing = availableHeight / (numPoints + 1);
+
+//           sectorPoints.forEach((point, j) => {
+//             const y = (j + 1) * lineSpacing;
+
+//             // Draw the horizontal line
+//             stripG.append("line")
+//               .attr("x1", sectorX)
+//               .attr("y1", y)
+//               .attr("x2", sectorX + sectorWidth)
+//               .attr("y2", y)
+//               .attr("stroke", "#ddd")
+//               .attr("stroke-width", 1);
+
+//             // Calculate point position based on its value
+//             const coords = Object.entries(point).filter(([key]) => key !== "Point_ID");
+//             const value = coords.reduce((sum, [_, coord]) => sum + Math.abs(coord), 0) / coords.length;
+//             const normalizedValue = (value - minValue) / valueRange;
+//             const x = sectorX + normalizedValue * sectorWidth;
+
+//             // Draw the point
+//             stripG.append("circle")
+//               .attr("cx", x)
+//               .attr("cy", y)
+//               .attr("r", 3)
+//               .attr("fill", "black")
+//               .attr("stroke", "white")
+//               .attr("stroke-width", 0.5)
+//               .style("cursor", "pointer")
+//               .on("mouseover", (event) => {
+//                 const pointIds = point.Point_ID.join(", ");
+//                 let associatedLabels = [];
+//                 if (labelsData && labelsData.labels) {
+//                   Object.entries(labelsData.labels).forEach(([label, pointList]) => {
+//                     if (point.Point_ID.some(id => pointList.includes(Number(id)))) {
+//                       associatedLabels.push(label);
+//                     }
+//                   });
+//                 }
+//                 const labelText = associatedLabels.length > 0 ? associatedLabels.join(", ") : "No Label";
+
+//                 tooltip
+//                   .style("visibility", "visible")
+//                   .html(
+//                     `Point_IDs: ${pointIds}<br>Value: ${value.toFixed(2)}<br>Sector: ${i}<br>Label: ${labelText}`
+//                   );
+//                 setHoveredCoordinates({ ...point, label: labelText });
+//               })
+//               .on("mousemove", (event) => {
+//                 tooltip
+//                   .style("top", event.pageY + 10 + "px")
+//                   .style("left", event.pageX + 10 + "px");
+//               })
+//               .on("mouseout", () => {
+//                 tooltip.style("visibility", "hidden");
+//                 setHoveredCoordinates(null);
+//               });
+//           });
+//         }
+
+//         // Add sector label
+//         stripG.append("text")
+//           .attr("x", sectorX + sectorWidth / 2)
+//           .attr("y", availableHeight + 15)
+//           .attr("text-anchor", "middle")
+//           .attr("font-size", "12px")
+//           .text(`Sector ${i}`);
+//       }
+
+//       // Add title for the strip
+//       stripG.append("text")
+//         .attr("x", (stripWidth - stripMargin.left - stripMargin.right) / 2)
+//         .attr("y", -5)
+//         .attr("text-anchor", "middle")
+//         .attr("font-size", "16px")
+//         .attr("font-weight", "bold")
+//         .text(`Linear Strip Visualization - Ring ${ringLabels[lastRingIndex]}`);
+//     }
+
 //     return () => {
 //       tooltip.remove();
 //     };
 //   }, [jsonData, labelsData, ringVisibility, setHoveredCoordinates, viewMode]);
 
 //   return (
-//     <div style={{ width: "100%", height: "100%" }}>
+//     <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column" }}>
 //       <div style={{ marginBottom: "10px" }}>
 //         <button
 //           onClick={() => setViewMode("normal")}
@@ -411,13 +555,12 @@
 //         </button>
 //       </div>
 //       <svg ref={graphRef} style={{ width: "100%", height: "800px" }}></svg>
+//       <svg ref={stripRef} style={{ width: "100%", height: "200px", marginTop: "20px" }}></svg>
 //     </div>
 //   );
 // };
 
 // export default HierarchicalGraph;
-
-
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
@@ -819,8 +962,8 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
         .attr("transform", `translate(${stripMargin.left}, ${stripMargin.top})`);
 
       const sectors = 2 ** (lastRingIndex + 1);
-      const sectorWidth = (stripWidth - stripMargin.left - stripMargin.right) / sectors;
       const availableHeight = stripHeight - stripMargin.top - stripMargin.bottom;
+      const availableWidth = stripWidth - stripMargin.left - stripMargin.right;
 
       // Group points by sector
       const pointsBySector = {};
@@ -835,9 +978,48 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
         pointsBySector[sectorIndex].push(point);
       });
 
+      // Calculate sector widths based on view mode
+      let sectorStartPositions = [];
+      if (viewMode === "normal") {
+        // Uniform sector widths
+        const sectorWidth = availableWidth / sectors;
+        sectorStartPositions = Array.from({ length: sectors }, (_, i) => i * sectorWidth);
+      } else if (viewMode === "proportional") {
+        // Proportional sector widths based on number of points
+        const totalPoints = pointsData[lastRingIndex].points.length || 1;
+        const minSectorWidth = 20; // Minimum width for empty sectors
+
+        // Calculate proportional widths
+        let totalNonEmptyWidth = 0;
+        let emptyCount = 0;
+
+        const sectorCounts = [];
+        for (let i = 0; i < sectors; i++) {
+          const count = pointsBySector[i] ? pointsBySector[i].length : 0;
+          sectorCounts[i] = count;
+          if (count > 0) {
+            totalNonEmptyWidth += count;
+          } else {
+            emptyCount++;
+          }
+        }
+
+        const availableForNonEmpty = availableWidth - (emptyCount * minSectorWidth);
+        let currentX = 0;
+
+        for (let i = 0; i < sectors; i++) {
+          sectorStartPositions[i] = currentX;
+          const count = sectorCounts[i];
+          const width = count === 0 ? minSectorWidth : (count / totalNonEmptyWidth) * availableForNonEmpty;
+          currentX += width;
+        }
+      }
+
       // Draw sectors in the strip
       for (let i = 0; i < sectors; i++) {
-        const sectorX = i * sectorWidth;
+        const sectorX = sectorStartPositions[i];
+        const nextX = i < sectors - 1 ? sectorStartPositions[i + 1] : availableWidth;
+        const sectorWidth = nextX - sectorX;
 
         // Draw sector background
         stripG.append("rect")
@@ -936,12 +1118,12 @@ const HierarchicalGraph = ({ jsonData, labelsData, setHoveredCoordinates, ringVi
 
       // Add title for the strip
       stripG.append("text")
-        .attr("x", (stripWidth - stripMargin.left - stripMargin.right) / 2)
+        .attr("x", availableWidth / 2)
         .attr("y", -5)
         .attr("text-anchor", "middle")
         .attr("font-size", "16px")
         .attr("font-weight", "bold")
-        .text(`Linear Strip Visualization - Ring ${ringLabels[lastRingIndex]}`);
+        .text(`Linear Strip Visualization - Ring ${ringLabels[lastRingIndex]} (${viewMode.charAt(0).toUpperCase() + viewMode.slice(1)})`);
     }
 
     return () => {
